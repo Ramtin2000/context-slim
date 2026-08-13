@@ -1,18 +1,31 @@
 # context-slim
 
-**Prune your LLM agent's context without destroying your prompt cache.**
+**The only context pruner that will tell you not to prune.**
+
+```
+REFUSE  msg 2   pruning here costs $0.000412 to save $0.000020.
+                W/S = 41.2 means 461 turns to break even. You have 20.
+```
+
+Every other tool reports tokens removed. You pay dollars. On a cached agent
+loop those are not the same number, and sometimes they have opposite signs.
+
+## Why
 
 ```
 N = 11.5·(W/S) − 12.5
 ```
 
-That is how many turns a prune takes to pay for itself. `W` is the tokens that
-must be re-written because you edited behind them; `S` is the tokens you saved.
-Delete 1k tokens from the front of a 10k cached prefix and you need **102 more
-turns** before you break even. Your agent has twenty.
+Turns before a prune pays for itself. `W` is the tokens that must be
+re-written because you edited behind them; `S` is the tokens you saved. Prompt
+caches are *prefix* caches, so editing at any point invalidates everything after
+it. Delete 1k tokens from the front of a 10k cached prefix and you need **102
+more turns** to break even. Your agent has twenty.
 
-Every context pruner reports tokens removed. You pay dollars. On a cached loop
-those are not the same number, and sometimes they have opposite signs.
+None of this is a new observation — Anthropic documents the tradeoff,
+`clear_at_least` exists to blunt it, and Claude Code already moved its
+compaction to tail-first. What is missing everywhere is a policy that prices the
+decision and declines.
 
 ## Install
 
