@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push: { branches: [main] }
+  pull_request:
+  schedule:
+    # Rates go stale at 90 days; catch it on a Monday, not in a launch thread.
+    - cron: "0 6 * * 1"
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.9", "3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python }}" }
+      - run: pip install -e ".[dev]"
+      - run: pytest -q --cov=context_slim --cov-report=term-missing
+      - name: no runtime dependencies
+        run: |
+          pip install pipdeptree
+          pipdeptree -p context-slim --warn silence | tee /tmp/deps.txt
+          test "$(grep -c '^  ' /tmp/deps.txt || true)" -eq 0
+        shell: bash
+        if: matrix.os == 'ubuntu-latest'
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: mypy --strict src/context_slim

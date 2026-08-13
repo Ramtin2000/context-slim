@@ -1,0 +1,73 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "context-slim"
+dynamic = ["version"]
+description = "Prune your LLM agent's context without destroying your prompt cache."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ramtin" }]
+keywords = ["llm", "agents", "prompt-caching", "context-engineering", "finops"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+
+# Law 3: zero runtime dependencies. This empty list is a product claim.
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-cov",
+    "hypothesis",
+    "mypy>=1.8",
+    "ruff>=0.4",
+]
+bench = ["openai>=1.40"]
+
+[project.scripts]
+context-slim = "context_slim.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ramtin/context-slim"
+Repository = "https://github.com/ramtin/context-slim"
+Issues = "https://github.com/ramtin/context-slim/issues"
+
+[tool.hatch.version]
+path = "src/context_slim/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/context_slim"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+# The cost-model docs use real mathematical typography (− U+2212, · U+00B7).
+# That is deliberate and worth more than the homoglyph warning.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.mypy]
+# 3.10 is the floor mypy still supports; runtime support for 3.9 is proven by
+# the CI test matrix, not by this setting.
+python_version = "3.10"
+strict = true
+files = ["src/context_slim"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
