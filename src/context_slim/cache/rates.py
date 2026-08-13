@@ -94,18 +94,27 @@ CLAUDE_OPUS_5 = ModelRates(
 # from third-party aggregators and are flagged accordingly: confirm them
 # against OpenAI's pricing page before publishing any dollar figure.
 
+# Luna's prices are confirmed against OpenAI's own model page: $0.20 input,
+# $0.02 cached input, $1.20 output per Mtok. The $0.02 cached rate is exactly
+# 0.1x the $0.20 input rate, which independently corroborates the 90%-off
+# multiplier taken from the caching guide.
+#
+# Caveat not modelled here: requests over 272K input tokens incur a 2x input
+# multiplier. Irrelevant at the 8k prefixes the benchmark uses, but it would
+# silently break the cost model on genuinely long contexts.
+
 GPT_5_6_LUNA = ModelRates(
     provider="openai",
     model="gpt-5.6-luna",
     input_nano_per_mtok=200_000_000,  # $0.20 / Mtok
     output_nano_per_mtok=1_200_000_000,  # $1.20 / Mtok
-    cache_read_mult=Fraction(1, 10),  # 90% off
+    cache_read_mult=Fraction(1, 10),  # $0.02 / Mtok
     cache_write_mult={TTL_30M: Fraction(5, 4)},  # 1.25x, GPT-5.6+ only
     default_ttl=TTL_30M,
     min_cacheable_tokens=1024,
     verified_on=_VERIFIED,
-    source=_OPENAI_DOCS,
-    price_confidence="third-party",
+    source="https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    price_confidence="official",
 )
 
 GPT_5_6_TERRA = ModelRates(
