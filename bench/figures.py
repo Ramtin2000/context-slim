@@ -19,7 +19,7 @@ import sys
 import matplotlib as mpl
 
 mpl.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
+import matplotlib.pyplot as plt
 
 RESULTS = pathlib.Path(__file__).parent / "results" / "killgate.json"
 OUT = pathlib.Path(__file__).parent / "figures"
