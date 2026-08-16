@@ -24,12 +24,16 @@ Usage::
 
     python -m bench.killgate --dry-run
     OPENAI_API_KEY=... python -m bench.killgate --max-spend 0.50
+
+Prefer a ``.env`` file (git-ignored, mode 600) over an inline environment
+variable — a key on the command line lands in shell history.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import pathlib
 import sys
 from dataclasses import asdict, dataclass
@@ -57,18 +61,65 @@ _FILLER = (
 )
 
 
+def load_dotenv() -> None:
+    """Read ``.env`` into the environment if present.
+
+    A key passed inline on the command line is written to shell history in
+    plaintext; a mode-600 ``.env`` is not. Existing environment variables win,
+    so an explicit inline key still overrides the file.
+    """
+    env = pathlib.Path(__file__).resolve().parents[1] / ".env"
+    if not env.is_file():
+        return
+    for line in env.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        os.environ.setdefault(key.strip(), value.strip().strip("'\""))
+
+
 def _filler(target_tokens: int) -> str:
     reps = max(1, target_tokens * 5 // len(_FILLER))
     return (_FILLER * reps)[: target_tokens * 4]
 
 
 def build_loop(prefix_tokens: int, turns: int, tool_tokens: int) -> list[Message]:
-    """A synthetic agent loop: a big stable system prefix, then tool churn."""
+    """A synthetic agent loop: a big stable system prefix, then tool churn.
+
+    The tool-call plumbing is not decoration. OpenAI rejects a ``tool`` message
+    that does not answer an immediately preceding ``assistant`` message carrying
+    a matching ``tool_calls`` entry, so the triple must be well-formed or the
+    whole run 400s. ``render_stub`` copies every key it is given, which is what
+    keeps ``tool_call_id`` intact through pruning.
+    """
     msgs: list[Message] = [{"role": "system", "content": _filler(prefix_tokens)}]
     for i in range(turns):
+        call_id = f"call_{i:04d}"
         msgs.append({"role": "user", "content": f"Step {i}: what next?"})
-        msgs.append({"role": "assistant", "content": f"Calling inspect_files (step {i})."})
-        msgs.append({"role": "tool", "content": f"[{i}] " + _filler(tool_tokens)})
+        msgs.append(
+            {
+                "role": "assistant",
+                "content": None,
+                "tool_calls": [
+                    {
+                        "id": call_id,
+                        "type": "function",
+                        "function": {
+                            "name": "inspect_files",
+                            "arguments": json.dumps({"step": i}),
+                        },
+                    }
+                ],
+            }
+        )
+        msgs.append(
+            {
+                "role": "tool",
+                "tool_call_id": call_id,
+                "content": f"[{i}] " + _filler(tool_tokens),
+            }
+        )
     return msgs
 
 
@@ -161,6 +212,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--dry-run", action="store_true", help="price the run, call nothing")
     args = p.parse_args(argv)
 
+    load_dotenv()
     records = plan_run(args.prefix_tokens, args.turns, args.tool_tokens, args.repeats)
     projected = project_cost(records, args.model)
     ledger = load_ledger()
@@ -185,6 +237,14 @@ def main(argv: list[str] | None = None) -> int:
     if args.dry_run:
         print("\ndry run — no API calls made.")
         return 0
+
+    if not os.environ.get("OPENAI_API_KEY"):
+        print(
+            "\nno OPENAI_API_KEY found. Put it in a git-ignored .env:\n"
+            "    printf 'OPENAI_API_KEY=sk-proj-...\\n' > .env && chmod 600 .env",
+            file=sys.stderr,
+        )
+        return 1
 
     try:
         from openai import OpenAI

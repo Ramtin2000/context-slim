@@ -37,9 +37,20 @@ def estimate_tokens(text: str) -> int:
 
 
 def message_tokens(message: Message) -> int:
+    # Tool calls are billed but live outside ``content`` — an assistant message
+    # that only makes a call has content=None and would otherwise count as ~1
+    # token while costing dozens. Undercounting here shows up directly as error
+    # in the predicted-vs-actual validation, so it is counted alongside.
+    extra = 0
+    tool_calls = message.get("tool_calls")
+    if tool_calls:
+        extra = estimate_tokens(json.dumps(tool_calls))
+
     content = message.get("content", "")
     if isinstance(content, str):
-        return estimate_tokens(content)
+        return estimate_tokens(content) + extra
+    if content is None:
+        return extra
     if isinstance(content, list):
         total = 0
         for block in content:
@@ -48,8 +59,8 @@ def message_tokens(message: Message) -> int:
                 total += estimate_tokens(text if isinstance(text, str) else json.dumps(block))
             else:
                 total += estimate_tokens(str(block))
-        return total
-    return estimate_tokens(json.dumps(content))
+        return total + extra
+    return estimate_tokens(json.dumps(content)) + extra
 
 
 def total_tokens(messages: Sequence[Message]) -> int:
