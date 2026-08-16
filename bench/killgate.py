@@ -32,9 +32,11 @@ variable — a key on the command line lands in shell history.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import pathlib
+import random
 import sys
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
@@ -85,8 +87,19 @@ def _filler(target_tokens: int) -> str:
     return (_FILLER * reps)[: target_tokens * 4]
 
 
-def build_loop(prefix_tokens: int, turns: int, tool_tokens: int) -> list[Message]:
+def build_loop(
+    prefix_tokens: int, turns: int, tool_tokens: int, salt: str = ""
+) -> list[Message]:
     """A synthetic agent loop: a big stable system prefix, then tool churn.
+
+    ``salt`` is the cache-namespace isolator and is not cosmetic. Provider
+    prompt caches are content-addressed and scoped to the *account*, not to the
+    process or the experiment, so two arms sharing a prefix share cache entries:
+    whichever runs first pays the cache write and every later arm free-rides on
+    it. Runs 1 and 2 had no salt, and their cost aggregates are worthless
+    because of it - conditions converged on bit-identical costs once nothing
+    was being written any more. A high-entropy salt at the very front of the
+    system message forces divergence at token 0, so each arm pays its own way.
 
     The tool-call plumbing is not decoration. OpenAI rejects a ``tool`` message
     that does not answer an immediately preceding ``assistant`` message carrying
@@ -94,7 +107,10 @@ def build_loop(prefix_tokens: int, turns: int, tool_tokens: int) -> list[Message
     whole run 400s. ``render_stub`` copies every key it is given, which is what
     keeps ``tool_call_id`` intact through pruning.
     """
-    msgs: list[Message] = [{"role": "system", "content": _filler(prefix_tokens)}]
+    prefix = _filler(prefix_tokens)
+    if salt:
+        prefix = f"[session {salt}]\n{prefix}"
+    msgs: list[Message] = [{"role": "system", "content": prefix}]
     for i in range(turns):
         call_id = f"call_{i:04d}"
         msgs.append({"role": "user", "content": f"Step {i}: what next?"})
@@ -124,7 +140,12 @@ def build_loop(prefix_tokens: int, turns: int, tool_tokens: int) -> list[Message
     return msgs
 
 
-def prune(messages: list[Message], condition: str, keep_recent: int = 2) -> list[Message]:
+def prune(
+    messages: list[Message],
+    condition: str,
+    keep_recent: int = 2,
+    budget: int = 9500,
+) -> list[Message]:
     """Apply one strategy's worth of pruning, ignoring economics entirely.
 
     This is deliberately *not* using ``context_slim.plan()`` — the gate has to
@@ -133,13 +154,53 @@ def prune(messages: list[Message], condition: str, keep_recent: int = 2) -> list
     if condition == "no_prune":
         return list(messages)
     order = "oldest_first" if condition == "oldest_first" else "tail_first"
-    cands = expiry.candidates(messages, order=order, keep_recent=keep_recent)
-    if not cands:
-        return list(messages)
     out = [dict(m) for m in messages]
-    for c in cands[: max(1, len(cands) // 2)]:
-        out[c.index] = expiry.render_stub(out[c.index], f"{order} policy")
+    for idx in sorted(cleared_indices(messages, order, keep_recent, budget)):
+        if idx < len(out):
+            out[idx] = expiry.render_stub(out[idx], f"{order} policy")
     return out
+
+
+def cleared_indices(
+    messages: list[Message], order: str, keep_recent: int, budget: int
+) -> set[int]:
+    """Indices cleared by a monotonic, budget-triggered policy.
+
+    Two properties, both taken from how real pruners behave and both absent
+    from earlier revisions of this harness:
+
+    1. **Monotonic.** Once cleared, an index stays cleared.
+       ``clear_tool_uses_20250919`` and LangChain's truncation both work this
+       way. Run 3's policy recomputed "newest half of candidates" from scratch
+       each turn, so previously-stubbed messages reverted to full content as
+       the loop grew - a deep prefix change every turn, which made
+       ``tail_first`` look catastrophic (69.1% hit) for reasons that had
+       nothing to do with tail-first pruning.
+
+    2. **Budget-triggered.** Clear the *minimum* needed to get back under a
+       token threshold, rather than a fixed fraction. Clearing a fraction
+       accumulates monotonically until every candidate is cleared, at which
+       point both orderings converge on the same set and the independent
+       variable disappears - which is what a fraction-based fix produced
+       (8585 vs 8566 tokens, indistinguishable).
+
+    Only under both properties do the two orderings stay genuinely different
+    while remaining realistic.
+    """
+    cleared: set[int] = set()
+    for end in range(4, len(messages) + 1, 3):
+        window = messages[:end]
+        cands = expiry.candidates(window, order=order, keep_recent=keep_recent)
+        queue = [c.index for c in cands if c.index not in cleared]
+        while queue:
+            staged = [
+                expiry.render_stub(dict(m), "policy") if i in cleared else m
+                for i, m in enumerate(window)
+            ]
+            if total_tokens(staged) <= budget:
+                break
+            cleared.add(queue.pop(0))
+    return cleared
 
 
 @dataclass
@@ -147,6 +208,7 @@ class TurnRecord:
     condition: str
     turn: int
     est_tokens: int
+    salt: str = ""
     prompt_tokens: int = 0
     cached_tokens: int = 0
     cost_nano: int = 0
@@ -154,7 +216,15 @@ class TurnRecord:
 
     @property
     def key(self) -> str:
-        return f"{self.condition}@{self.turn}"
+        """Identity includes the salt.
+
+        Without it, a checkpoint from a differently-designed run resumes into
+        this one: run 2's ``no_prune#0@1`` matches run 3's, so 180 confounded
+        records would have been silently adopted as if they were corrected
+        measurements. The salt is the cache namespace, so binding to it makes
+        incompatible runs unable to collide.
+        """
+        return f"{self.condition}@{self.turn}#{self.salt[:8]}"
 
     @property
     def done(self) -> bool:
@@ -181,20 +251,37 @@ def actual_cost(prompt_tokens: int, cached_tokens: int, model_key: str) -> Money
     return write_cost(r, fresh) + read_cost(r, cached_tokens)
 
 
-def plan_run(prefix_tokens: int, turns: int, tool_tokens: int, repeats: int) -> list[TurnRecord]:
+def plan_run(
+    prefix_tokens: int,
+    turns: int,
+    tool_tokens: int,
+    repeats: int,
+    seed: int = 0,
+) -> list[TurnRecord]:
+    """Lay out the run with one cache namespace per arm, arms interleaved.
+
+    Every (condition, repeat) gets its own salt so no arm can read another's
+    cache entries, and the arms are shuffled under a fixed seed so position in
+    the execution sequence is not confounded with treatment.
+    """
     records: list[TurnRecord] = []
-    for condition in CONDITIONS:
-        for rep in range(repeats):
-            loop = build_loop(prefix_tokens, turns, tool_tokens)
-            for t in range(1, turns + 1):
-                window = prune(loop[: 1 + t * 3], condition)
-                records.append(
-                    TurnRecord(
-                        condition=f"{condition}#{rep}",
-                        turn=t,
-                        est_tokens=total_tokens(window),
-                    )
+    arms = [(c, r) for c in CONDITIONS for r in range(repeats)]
+    random.Random(seed).shuffle(arms)
+    for condition, rep in arms:
+        salt = hashlib.blake2b(
+            f"{seed}:{condition}:{rep}".encode(), digest_size=8
+        ).hexdigest()
+        loop = build_loop(prefix_tokens, turns, tool_tokens, salt)
+        for t in range(1, turns + 1):
+            window = prune(loop[: 1 + t * 3], condition)
+            records.append(
+                TurnRecord(
+                    condition=f"{condition}#{rep}",
+                    turn=t,
+                    est_tokens=total_tokens(window),
+                    salt=salt,
                 )
+            )
     return records
 
 
@@ -258,13 +345,19 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="ignore the checkpoint and re-run every request from scratch",
     )
-    p.add_argument("--repeats", type=int, default=3)
+    p.add_argument("--repeats", type=int, default=5)
+    p.add_argument("--seed", type=int, default=0, help="arm-order shuffle seed")
     p.add_argument("--max-spend", type=float, default=1.00, help="hard USD cap, cumulative")
     p.add_argument("--dry-run", action="store_true", help="price the run, call nothing")
     args = p.parse_args(argv)
 
     load_dotenv()
-    records = plan_run(args.prefix_tokens, args.turns, args.tool_tokens, args.repeats)
+    if args.fresh:
+        CHECKPOINT.unlink(missing_ok=True)
+
+    records = plan_run(
+        args.prefix_tokens, args.turns, args.tool_tokens, args.repeats, args.seed
+    )
     projected = project_cost(records, args.model)
     ledger = load_ledger()
     spent = Money(int(ledger["total_nano"]))
@@ -307,8 +400,6 @@ def main(argv: list[str] | None = None) -> int:
 
     # Resume: a flaky link cannot finish 180 requests in one pass, and without
     # this every failure discards the money already spent.
-    if args.fresh:
-        CHECKPOINT.unlink(missing_ok=True)
     resumed = 0
     if not args.fresh:
         done = load_checkpoint()
@@ -334,7 +425,9 @@ def main(argv: list[str] | None = None) -> int:
             if rec.done:
                 completed = i + 1
                 continue
-            loop = build_loop(args.prefix_tokens, args.turns, args.tool_tokens)
+            loop = build_loop(
+                args.prefix_tokens, args.turns, args.tool_tokens, rec.salt
+            )
             window = prune(loop[: 1 + rec.turn * 3], rec.condition.split("#")[0])
             resp = client.chat.completions.create(
                 model=args.api_model,
