@@ -207,6 +207,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--prefix-tokens", type=int, default=8_000)
     p.add_argument("--turns", type=int, default=20)
     p.add_argument("--tool-tokens", type=int, default=400)
+    p.add_argument(
+        "--reasoning-effort",
+        default="none",
+        help=(
+            "gpt-5.6 is a reasoning model and reasoning tokens are billed against "
+            "max_completion_tokens; 'none' keeps the response empty and cheap"
+        ),
+    )
+    p.add_argument("--max-completion-tokens", type=int, default=16)
     p.add_argument("--repeats", type=int, default=3)
     p.add_argument("--max-spend", type=float, default=1.00, help="hard USD cap, cumulative")
     p.add_argument("--dry-run", action="store_true", help="price the run, call nothing")
@@ -254,26 +263,53 @@ def main(argv: list[str] | None = None) -> int:
 
     client = OpenAI()
     run_cost = Money.zero()
-    for i, rec in enumerate(records):
-        loop = build_loop(args.prefix_tokens, args.turns, args.tool_tokens)
-        window = prune(loop[: 1 + rec.turn * 3], rec.condition.split("#")[0])
-        resp = client.chat.completions.create(
-            model=args.api_model,
-            messages=window,  # type: ignore[arg-type]
-            max_completion_tokens=1,
-        )
-        usage = resp.usage
-        assert usage is not None
-        details = getattr(usage, "prompt_tokens_details", None)
-        rec.prompt_tokens = usage.prompt_tokens
-        rec.cached_tokens = getattr(details, "cached_tokens", 0) or 0
-        cost = actual_cost(rec.prompt_tokens, rec.cached_tokens, args.model)
-        rec.cost_nano = cost.nano
-        run_cost = run_cost + cost
+    completed = 0
+    failure: str | None = None
 
-        if run_cost.nano + spent.nano > cap.nano:
-            print(f"\nSTOP at request {i}: cap reached.", file=sys.stderr)
-            break
+    # Anything spent must be recorded even if the run dies partway, or the
+    # ledger under-reports and the cap silently stops protecting anything.
+    try:
+        for i, rec in enumerate(records):
+            loop = build_loop(args.prefix_tokens, args.turns, args.tool_tokens)
+            window = prune(loop[: 1 + rec.turn * 3], rec.condition.split("#")[0])
+            resp = client.chat.completions.create(
+                model=args.api_model,
+                messages=window,  # type: ignore[arg-type]
+                max_completion_tokens=args.max_completion_tokens,
+                reasoning_effort=args.reasoning_effort,
+            )
+            usage = resp.usage
+            assert usage is not None
+            details = getattr(usage, "prompt_tokens_details", None)
+            rec.prompt_tokens = usage.prompt_tokens
+            rec.cached_tokens = getattr(details, "cached_tokens", 0) or 0
+            cost = actual_cost(rec.prompt_tokens, rec.cached_tokens, args.model)
+            rec.cost_nano = cost.nano
+            run_cost = run_cost + cost
+            completed = i + 1
+
+            if completed % 20 == 0:
+                pct = 100 * rec.cached_tokens / max(1, rec.prompt_tokens)
+                print(
+                    f"  {completed:>3}/{len(records)}  {run_cost}  "
+                    f"cached {pct:.0f}%",
+                    flush=True,
+                )
+
+            if run_cost.nano + spent.nano > cap.nano:
+                print(f"\nSTOP at request {i}: cap reached.", file=sys.stderr)
+                break
+    except KeyboardInterrupt:
+        failure = "interrupted by user"
+    except Exception as exc:  # partial results are still worth keeping
+        failure = f"{type(exc).__name__}: {exc}"
+
+    if failure:
+        print(
+            f"\nRUN INCOMPLETE after {completed}/{len(records)} requests: {failure}\n"
+            f"{run_cost} spent so far has been recorded to the ledger.",
+            file=sys.stderr,
+        )
 
     RESULTS.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(timezone.utc).isoformat()
@@ -283,6 +319,9 @@ def main(argv: list[str] | None = None) -> int:
             {
                 "timestamp": stamp,
                 "args": vars(args),
+                "completed": completed,
+                "total_requests": len(records),
+                "failure": failure,
                 "actual_cost_nano": run_cost.nano,
                 "records": [asdict(r) for r in records],
             },
@@ -291,7 +330,9 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     ledger["total_nano"] = spent.nano + run_cost.nano
-    ledger["runs"].append({"timestamp": stamp, "cost_nano": run_cost.nano})
+    ledger["runs"].append(
+        {"timestamp": stamp, "cost_nano": run_cost.nano, "completed": completed}
+    )
     save_ledger(ledger)
 
     by_condition: dict[str, int] = {}
