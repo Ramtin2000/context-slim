@@ -11,3 +11,4 @@ build/
 .coverage
 htmlcov/
 .env
+results/.killgate_progress.json

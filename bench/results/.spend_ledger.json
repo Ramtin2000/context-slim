@@ -1,0 +1,50 @@
+{
+  "total_nano": 20760690,
+  "runs": [
+    {
+      "timestamp": "2026-08-16T08:29:45.899145+00:00",
+      "cost_nano": 7110510,
+      "completed": 24
+    },
+    {
+      "timestamp": "2026-08-16T08:43:41.075650+00:00",
+      "cost_nano": 13404160,
+      "completed": 64
+    },
+    {
+      "timestamp": "2026-08-16T08:45:26.599930+00:00",
+      "cost_nano": 0,
+      "completed": 0
+    },
+    {
+      "timestamp": "2026-08-16T08:46:36.463975+00:00",
+      "cost_nano": 0,
+      "completed": 0
+    },
+    {
+      "timestamp": "2026-08-16T08:48:13.321681+00:00",
+      "cost_nano": 0,
+      "completed": 0
+    },
+    {
+      "timestamp": "2026-08-16T08:58:45.746659+00:00",
+      "cost_nano": 123010,
+      "completed": 1
+    },
+    {
+      "timestamp": "2026-08-16T08:59:47.684321+00:00",
+      "cost_nano": 0,
+      "completed": 0
+    },
+    {
+      "timestamp": "2026-08-16T09:10:46.530897+00:00",
+      "cost_nano": 123010,
+      "completed": 1
+    },
+    {
+      "timestamp": "2026-08-16T09:26:37.823879+00:00",
+      "cost_nano": 0,
+      "completed": 0
+    }
+  ]
+}

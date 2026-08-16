@@ -51,6 +51,7 @@ from context_slim.ops import expiry
 
 RESULTS = pathlib.Path(__file__).parent / "results"
 LEDGER = RESULTS / ".spend_ledger.json"
+CHECKPOINT = RESULTS / ".killgate_progress.json"
 CONDITIONS = ("no_prune", "oldest_first", "tail_first")
 
 # Deterministic filler. Real prose so the tokenizer behaves normally, repeated
@@ -149,6 +150,15 @@ class TurnRecord:
     prompt_tokens: int = 0
     cached_tokens: int = 0
     cost_nano: int = 0
+    at: str = ""  # wall clock, so cache-TTL gaps across resumes are detectable
+
+    @property
+    def key(self) -> str:
+        return f"{self.condition}@{self.turn}"
+
+    @property
+    def done(self) -> bool:
+        return self.prompt_tokens > 0
 
 
 def project_cost(records: list[TurnRecord], model_key: str) -> Money:
@@ -188,6 +198,24 @@ def plan_run(prefix_tokens: int, turns: int, tool_tokens: int, repeats: int) -> 
     return records
 
 
+def load_checkpoint() -> dict[str, dict[str, Any]]:
+    """Completed requests from earlier attempts, keyed by condition@turn."""
+    if not CHECKPOINT.exists():
+        return {}
+    try:
+        raw = json.loads(CHECKPOINT.read_text())
+        return {k: v for k, v in raw.items() if isinstance(v, dict)}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def save_checkpoint(records: list[TurnRecord]) -> None:
+    RESULTS.mkdir(parents=True, exist_ok=True)
+    CHECKPOINT.write_text(
+        json.dumps({r.key: asdict(r) for r in records if r.done}, indent=2)
+    )
+
+
 def load_ledger() -> dict[str, Any]:
     if LEDGER.exists():
         data: dict[str, Any] = json.loads(LEDGER.read_text())
@@ -216,6 +244,20 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     p.add_argument("--max-completion-tokens", type=int, default=16)
+    p.add_argument(
+        "--timeout", type=float, default=90.0, help="per-request timeout, seconds"
+    )
+    p.add_argument(
+        "--max-retries",
+        type=int,
+        default=8,
+        help="SDK-level retries with exponential backoff, for flaky links",
+    )
+    p.add_argument(
+        "--fresh",
+        action="store_true",
+        help="ignore the checkpoint and re-run every request from scratch",
+    )
     p.add_argument("--repeats", type=int, default=3)
     p.add_argument("--max-spend", type=float, default=1.00, help="hard USD cap, cumulative")
     p.add_argument("--dry-run", action="store_true", help="price the run, call nothing")
@@ -261,7 +303,26 @@ def main(argv: list[str] | None = None) -> int:
         print("\ninstall the bench extra first:  pip install -e '.[bench]'", file=sys.stderr)
         return 1
 
-    client = OpenAI()
+    client = OpenAI(timeout=args.timeout, max_retries=args.max_retries)
+
+    # Resume: a flaky link cannot finish 180 requests in one pass, and without
+    # this every failure discards the money already spent.
+    if args.fresh:
+        CHECKPOINT.unlink(missing_ok=True)
+    resumed = 0
+    if not args.fresh:
+        done = load_checkpoint()
+        for rec in records:
+            prior = done.get(rec.key)
+            if prior:
+                rec.prompt_tokens = prior.get("prompt_tokens", 0)
+                rec.cached_tokens = prior.get("cached_tokens", 0)
+                rec.cost_nano = prior.get("cost_nano", 0)
+                rec.at = prior.get("at", "")
+                resumed += 1
+        if resumed:
+            print(f"resuming   : {resumed}/{len(records)} already done, skipping\n")
+
     run_cost = Money.zero()
     completed = 0
     failure: str | None = None
@@ -270,6 +331,9 @@ def main(argv: list[str] | None = None) -> int:
     # ledger under-reports and the cap silently stops protecting anything.
     try:
         for i, rec in enumerate(records):
+            if rec.done:
+                completed = i + 1
+                continue
             loop = build_loop(args.prefix_tokens, args.turns, args.tool_tokens)
             window = prune(loop[: 1 + rec.turn * 3], rec.condition.split("#")[0])
             resp = client.chat.completions.create(
@@ -285,9 +349,12 @@ def main(argv: list[str] | None = None) -> int:
             rec.cached_tokens = getattr(details, "cached_tokens", 0) or 0
             cost = actual_cost(rec.prompt_tokens, rec.cached_tokens, args.model)
             rec.cost_nano = cost.nano
+            rec.at = datetime.now(timezone.utc).isoformat()
             run_cost = run_cost + cost
             completed = i + 1
 
+            if completed % 10 == 0:
+                save_checkpoint(records)
             if completed % 20 == 0:
                 pct = 100 * rec.cached_tokens / max(1, rec.prompt_tokens)
                 print(
@@ -304,10 +371,13 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as exc:  # partial results are still worth keeping
         failure = f"{type(exc).__name__}: {exc}"
 
+    save_checkpoint(records)
+
     if failure:
         print(
             f"\nRUN INCOMPLETE after {completed}/{len(records)} requests: {failure}\n"
-            f"{run_cost} spent so far has been recorded to the ledger.",
+            f"{run_cost} spent so far has been recorded to the ledger.\n"
+            f"Re-run the same command to resume; completed requests are skipped.",
             file=sys.stderr,
         )
 
@@ -341,7 +411,28 @@ def main(argv: list[str] | None = None) -> int:
             by_condition.get(rec.condition.split("#")[0], 0) + rec.cost_nano
         )
 
-    print(f"\nactual cost: {run_cost}")
+    outstanding = [r for r in records if not r.done]
+    if outstanding:
+        print(f"\n{len(outstanding)}/{len(records)} requests still outstanding.")
+
+    # A resume that straddles the 30-minute cache TTL reads as a cache miss
+    # that the pruning policy did not cause. Surface it rather than let it
+    # quietly contaminate the comparison.
+    stamps = sorted(r.at for r in records if r.at)
+    if stamps and resumed:
+        span_min = (
+            datetime.fromisoformat(stamps[-1]) - datetime.fromisoformat(stamps[0])
+        ).total_seconds() / 60
+        if span_min > 30:
+            print(
+                f"\n⚠️  data spans {span_min:.0f} min, longer than the 30-min cache "
+                f"TTL.\n    Requests after a gap will show false cache misses. "
+                f"Re-run with --fresh\n    for a clean single-pass measurement "
+                f"before publishing any number.",
+                file=sys.stderr,
+            )
+
+    print(f"\nactual cost this run: {run_cost}")
     for name, nano in sorted(by_condition.items()):
         print(f"  {name:<14} {Money(nano)}")
     print(f"\nwrote {out}")
