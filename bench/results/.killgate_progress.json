@@ -1,0 +1,1352 @@
+{
+  "no_prune#0@1": {
+    "condition": "no_prune#0",
+    "turn": 1,
+    "est_tokens": 7822,
+    "prompt_tokens": 6116,
+    "cached_tokens": 0,
+    "cost_nano": 1529000,
+    "at": "2026-08-16T13:12:53.411539+00:00"
+  },
+  "no_prune#0@2": {
+    "condition": "no_prune#0",
+    "turn": 2,
+    "est_tokens": 8222,
+    "prompt_tokens": 6448,
+    "cached_tokens": 6113,
+    "cost_nano": 206010,
+    "at": "2026-08-16T13:12:54.698876+00:00"
+  },
+  "no_prune#0@3": {
+    "condition": "no_prune#0",
+    "turn": 3,
+    "est_tokens": 8622,
+    "prompt_tokens": 6780,
+    "cached_tokens": 6445,
+    "cost_nano": 212650,
+    "at": "2026-08-16T13:12:56.061575+00:00"
+  },
+  "no_prune#0@4": {
+    "condition": "no_prune#0",
+    "turn": 4,
+    "est_tokens": 9022,
+    "prompt_tokens": 7112,
+    "cached_tokens": 6777,
+    "cost_nano": 219290,
+    "at": "2026-08-16T13:12:57.346099+00:00"
+  },
+  "no_prune#0@5": {
+    "condition": "no_prune#0",
+    "turn": 5,
+    "est_tokens": 9422,
+    "prompt_tokens": 7444,
+    "cached_tokens": 7109,
+    "cost_nano": 225930,
+    "at": "2026-08-16T13:12:58.626425+00:00"
+  },
+  "no_prune#0@6": {
+    "condition": "no_prune#0",
+    "turn": 6,
+    "est_tokens": 9822,
+    "prompt_tokens": 7776,
+    "cached_tokens": 7441,
+    "cost_nano": 232570,
+    "at": "2026-08-16T13:12:59.772583+00:00"
+  },
+  "no_prune#0@7": {
+    "condition": "no_prune#0",
+    "turn": 7,
+    "est_tokens": 10222,
+    "prompt_tokens": 8108,
+    "cached_tokens": 7773,
+    "cost_nano": 239210,
+    "at": "2026-08-16T13:13:01.226127+00:00"
+  },
+  "no_prune#0@8": {
+    "condition": "no_prune#0",
+    "turn": 8,
+    "est_tokens": 10622,
+    "prompt_tokens": 8440,
+    "cached_tokens": 8105,
+    "cost_nano": 245850,
+    "at": "2026-08-16T13:13:02.321344+00:00"
+  },
+  "no_prune#0@9": {
+    "condition": "no_prune#0",
+    "turn": 9,
+    "est_tokens": 11022,
+    "prompt_tokens": 8772,
+    "cached_tokens": 8437,
+    "cost_nano": 252490,
+    "at": "2026-08-16T13:13:03.416553+00:00"
+  },
+  "no_prune#0@10": {
+    "condition": "no_prune#0",
+    "turn": 10,
+    "est_tokens": 11422,
+    "prompt_tokens": 9104,
+    "cached_tokens": 8769,
+    "cost_nano": 259130,
+    "at": "2026-08-16T13:13:04.743719+00:00"
+  },
+  "no_prune#0@11": {
+    "condition": "no_prune#0",
+    "turn": 11,
+    "est_tokens": 11822,
+    "prompt_tokens": 9436,
+    "cached_tokens": 9101,
+    "cost_nano": 265770,
+    "at": "2026-08-16T13:13:05.928957+00:00"
+  },
+  "no_prune#0@12": {
+    "condition": "no_prune#0",
+    "turn": 12,
+    "est_tokens": 12222,
+    "prompt_tokens": 9768,
+    "cached_tokens": 9433,
+    "cost_nano": 272410,
+    "at": "2026-08-16T13:13:07.027276+00:00"
+  },
+  "no_prune#0@13": {
+    "condition": "no_prune#0",
+    "turn": 13,
+    "est_tokens": 12622,
+    "prompt_tokens": 10100,
+    "cached_tokens": 9765,
+    "cost_nano": 279050,
+    "at": "2026-08-16T13:13:08.187337+00:00"
+  },
+  "no_prune#0@14": {
+    "condition": "no_prune#0",
+    "turn": 14,
+    "est_tokens": 13022,
+    "prompt_tokens": 10432,
+    "cached_tokens": 10097,
+    "cost_nano": 285690,
+    "at": "2026-08-16T13:13:09.423150+00:00"
+  },
+  "no_prune#0@15": {
+    "condition": "no_prune#0",
+    "turn": 15,
+    "est_tokens": 13422,
+    "prompt_tokens": 10764,
+    "cached_tokens": 10429,
+    "cost_nano": 292330,
+    "at": "2026-08-16T13:13:10.694581+00:00"
+  },
+  "no_prune#0@16": {
+    "condition": "no_prune#0",
+    "turn": 16,
+    "est_tokens": 13822,
+    "prompt_tokens": 11096,
+    "cached_tokens": 10761,
+    "cost_nano": 298970,
+    "at": "2026-08-16T13:13:11.916904+00:00"
+  },
+  "no_prune#0@17": {
+    "condition": "no_prune#0",
+    "turn": 17,
+    "est_tokens": 14222,
+    "prompt_tokens": 11428,
+    "cached_tokens": 11093,
+    "cost_nano": 305610,
+    "at": "2026-08-16T13:13:13.434116+00:00"
+  },
+  "no_prune#0@18": {
+    "condition": "no_prune#0",
+    "turn": 18,
+    "est_tokens": 14622,
+    "prompt_tokens": 11760,
+    "cached_tokens": 11425,
+    "cost_nano": 312250,
+    "at": "2026-08-16T13:13:14.683221+00:00"
+  },
+  "no_prune#0@19": {
+    "condition": "no_prune#0",
+    "turn": 19,
+    "est_tokens": 15022,
+    "prompt_tokens": 12092,
+    "cached_tokens": 11757,
+    "cost_nano": 318890,
+    "at": "2026-08-16T13:13:15.967611+00:00"
+  },
+  "no_prune#0@20": {
+    "condition": "no_prune#0",
+    "turn": 20,
+    "est_tokens": 15422,
+    "prompt_tokens": 12424,
+    "cached_tokens": 12089,
+    "cost_nano": 325530,
+    "at": "2026-08-16T13:13:17.068243+00:00"
+  },
+  "no_prune#1@1": {
+    "condition": "no_prune#1",
+    "turn": 1,
+    "est_tokens": 7822,
+    "prompt_tokens": 6116,
+    "cached_tokens": 6113,
+    "cost_nano": 123010,
+    "at": "2026-08-16T13:13:18.764701+00:00"
+  },
+  "no_prune#1@2": {
+    "condition": "no_prune#1",
+    "turn": 2,
+    "est_tokens": 8222,
+    "prompt_tokens": 6448,
+    "cached_tokens": 6445,
+    "cost_nano": 129650,
+    "at": "2026-08-16T13:13:19.873315+00:00"
+  },
+  "no_prune#1@3": {
+    "condition": "no_prune#1",
+    "turn": 3,
+    "est_tokens": 8622,
+    "prompt_tokens": 6780,
+    "cached_tokens": 6777,
+    "cost_nano": 136290,
+    "at": "2026-08-16T13:13:21.102399+00:00"
+  },
+  "no_prune#1@4": {
+    "condition": "no_prune#1",
+    "turn": 4,
+    "est_tokens": 9022,
+    "prompt_tokens": 7112,
+    "cached_tokens": 7109,
+    "cost_nano": 142930,
+    "at": "2026-08-16T13:13:22.212832+00:00"
+  },
+  "no_prune#1@5": {
+    "condition": "no_prune#1",
+    "turn": 5,
+    "est_tokens": 9422,
+    "prompt_tokens": 7444,
+    "cached_tokens": 7441,
+    "cost_nano": 149570,
+    "at": "2026-08-16T13:13:23.356417+00:00"
+  },
+  "no_prune#1@6": {
+    "condition": "no_prune#1",
+    "turn": 6,
+    "est_tokens": 9822,
+    "prompt_tokens": 7776,
+    "cached_tokens": 7773,
+    "cost_nano": 156210,
+    "at": "2026-08-16T13:13:24.658265+00:00"
+  },
+  "no_prune#1@7": {
+    "condition": "no_prune#1",
+    "turn": 7,
+    "est_tokens": 10222,
+    "prompt_tokens": 8108,
+    "cached_tokens": 8105,
+    "cost_nano": 162850,
+    "at": "2026-08-16T13:13:25.838248+00:00"
+  },
+  "no_prune#1@8": {
+    "condition": "no_prune#1",
+    "turn": 8,
+    "est_tokens": 10622,
+    "prompt_tokens": 8440,
+    "cached_tokens": 8437,
+    "cost_nano": 169490,
+    "at": "2026-08-16T13:13:26.939108+00:00"
+  },
+  "no_prune#1@9": {
+    "condition": "no_prune#1",
+    "turn": 9,
+    "est_tokens": 11022,
+    "prompt_tokens": 8772,
+    "cached_tokens": 8769,
+    "cost_nano": 176130,
+    "at": "2026-08-16T13:13:28.193832+00:00"
+  },
+  "no_prune#1@10": {
+    "condition": "no_prune#1",
+    "turn": 10,
+    "est_tokens": 11422,
+    "prompt_tokens": 9104,
+    "cached_tokens": 9101,
+    "cost_nano": 182770,
+    "at": "2026-08-16T13:13:29.489663+00:00"
+  },
+  "no_prune#1@11": {
+    "condition": "no_prune#1",
+    "turn": 11,
+    "est_tokens": 11822,
+    "prompt_tokens": 9436,
+    "cached_tokens": 9433,
+    "cost_nano": 189410,
+    "at": "2026-08-16T13:13:31.115114+00:00"
+  },
+  "no_prune#1@12": {
+    "condition": "no_prune#1",
+    "turn": 12,
+    "est_tokens": 12222,
+    "prompt_tokens": 9768,
+    "cached_tokens": 9765,
+    "cost_nano": 196050,
+    "at": "2026-08-16T13:13:32.326087+00:00"
+  },
+  "no_prune#1@13": {
+    "condition": "no_prune#1",
+    "turn": 13,
+    "est_tokens": 12622,
+    "prompt_tokens": 10100,
+    "cached_tokens": 10097,
+    "cost_nano": 202690,
+    "at": "2026-08-16T13:13:33.548473+00:00"
+  },
+  "no_prune#1@14": {
+    "condition": "no_prune#1",
+    "turn": 14,
+    "est_tokens": 13022,
+    "prompt_tokens": 10432,
+    "cached_tokens": 10429,
+    "cost_nano": 209330,
+    "at": "2026-08-16T13:13:34.725207+00:00"
+  },
+  "no_prune#1@15": {
+    "condition": "no_prune#1",
+    "turn": 15,
+    "est_tokens": 13422,
+    "prompt_tokens": 10764,
+    "cached_tokens": 10761,
+    "cost_nano": 215970,
+    "at": "2026-08-16T13:13:36.072706+00:00"
+  },
+  "no_prune#1@16": {
+    "condition": "no_prune#1",
+    "turn": 16,
+    "est_tokens": 13822,
+    "prompt_tokens": 11096,
+    "cached_tokens": 0,
+    "cost_nano": 2774000,
+    "at": "2026-08-16T13:13:37.397960+00:00"
+  },
+  "no_prune#1@17": {
+    "condition": "no_prune#1",
+    "turn": 17,
+    "est_tokens": 14222,
+    "prompt_tokens": 11428,
+    "cached_tokens": 11425,
+    "cost_nano": 229250,
+    "at": "2026-08-16T13:13:38.456105+00:00"
+  },
+  "no_prune#1@18": {
+    "condition": "no_prune#1",
+    "turn": 18,
+    "est_tokens": 14622,
+    "prompt_tokens": 11760,
+    "cached_tokens": 11757,
+    "cost_nano": 235890,
+    "at": "2026-08-16T13:13:39.578237+00:00"
+  },
+  "no_prune#1@19": {
+    "condition": "no_prune#1",
+    "turn": 19,
+    "est_tokens": 15022,
+    "prompt_tokens": 12092,
+    "cached_tokens": 12089,
+    "cost_nano": 242530,
+    "at": "2026-08-16T13:13:40.793253+00:00"
+  },
+  "no_prune#1@20": {
+    "condition": "no_prune#1",
+    "turn": 20,
+    "est_tokens": 15422,
+    "prompt_tokens": 12424,
+    "cached_tokens": 12421,
+    "cost_nano": 249170,
+    "at": "2026-08-16T13:13:42.065501+00:00"
+  },
+  "no_prune#2@1": {
+    "condition": "no_prune#2",
+    "turn": 1,
+    "est_tokens": 7822,
+    "prompt_tokens": 6116,
+    "cached_tokens": 6113,
+    "cost_nano": 123010,
+    "at": "2026-08-16T13:13:43.424946+00:00"
+  },
+  "no_prune#2@2": {
+    "condition": "no_prune#2",
+    "turn": 2,
+    "est_tokens": 8222,
+    "prompt_tokens": 6448,
+    "cached_tokens": 6445,
+    "cost_nano": 129650,
+    "at": "2026-08-16T13:13:44.590936+00:00"
+  },
+  "no_prune#2@3": {
+    "condition": "no_prune#2",
+    "turn": 3,
+    "est_tokens": 8622,
+    "prompt_tokens": 6780,
+    "cached_tokens": 6777,
+    "cost_nano": 136290,
+    "at": "2026-08-16T13:13:45.739564+00:00"
+  },
+  "no_prune#2@4": {
+    "condition": "no_prune#2",
+    "turn": 4,
+    "est_tokens": 9022,
+    "prompt_tokens": 7112,
+    "cached_tokens": 7109,
+    "cost_nano": 142930,
+    "at": "2026-08-16T13:13:47.052248+00:00"
+  },
+  "no_prune#2@5": {
+    "condition": "no_prune#2",
+    "turn": 5,
+    "est_tokens": 9422,
+    "prompt_tokens": 7444,
+    "cached_tokens": 7441,
+    "cost_nano": 149570,
+    "at": "2026-08-16T13:13:48.098533+00:00"
+  },
+  "no_prune#2@6": {
+    "condition": "no_prune#2",
+    "turn": 6,
+    "est_tokens": 9822,
+    "prompt_tokens": 7776,
+    "cached_tokens": 7773,
+    "cost_nano": 156210,
+    "at": "2026-08-16T13:13:49.207305+00:00"
+  },
+  "no_prune#2@7": {
+    "condition": "no_prune#2",
+    "turn": 7,
+    "est_tokens": 10222,
+    "prompt_tokens": 8108,
+    "cached_tokens": 8105,
+    "cost_nano": 162850,
+    "at": "2026-08-16T13:13:50.491702+00:00"
+  },
+  "no_prune#2@8": {
+    "condition": "no_prune#2",
+    "turn": 8,
+    "est_tokens": 10622,
+    "prompt_tokens": 8440,
+    "cached_tokens": 8437,
+    "cost_nano": 169490,
+    "at": "2026-08-16T13:13:51.649320+00:00"
+  },
+  "no_prune#2@9": {
+    "condition": "no_prune#2",
+    "turn": 9,
+    "est_tokens": 11022,
+    "prompt_tokens": 8772,
+    "cached_tokens": 8769,
+    "cost_nano": 176130,
+    "at": "2026-08-16T13:13:52.763982+00:00"
+  },
+  "no_prune#2@10": {
+    "condition": "no_prune#2",
+    "turn": 10,
+    "est_tokens": 11422,
+    "prompt_tokens": 9104,
+    "cached_tokens": 9101,
+    "cost_nano": 182770,
+    "at": "2026-08-16T13:13:53.886528+00:00"
+  },
+  "no_prune#2@11": {
+    "condition": "no_prune#2",
+    "turn": 11,
+    "est_tokens": 11822,
+    "prompt_tokens": 9436,
+    "cached_tokens": 9433,
+    "cost_nano": 189410,
+    "at": "2026-08-16T13:13:55.174657+00:00"
+  },
+  "no_prune#2@12": {
+    "condition": "no_prune#2",
+    "turn": 12,
+    "est_tokens": 12222,
+    "prompt_tokens": 9768,
+    "cached_tokens": 9765,
+    "cost_nano": 196050,
+    "at": "2026-08-16T13:13:56.309274+00:00"
+  },
+  "no_prune#2@13": {
+    "condition": "no_prune#2",
+    "turn": 13,
+    "est_tokens": 12622,
+    "prompt_tokens": 10100,
+    "cached_tokens": 10097,
+    "cost_nano": 202690,
+    "at": "2026-08-16T13:13:57.457273+00:00"
+  },
+  "no_prune#2@14": {
+    "condition": "no_prune#2",
+    "turn": 14,
+    "est_tokens": 13022,
+    "prompt_tokens": 10432,
+    "cached_tokens": 10429,
+    "cost_nano": 209330,
+    "at": "2026-08-16T13:13:58.844073+00:00"
+  },
+  "no_prune#2@15": {
+    "condition": "no_prune#2",
+    "turn": 15,
+    "est_tokens": 13422,
+    "prompt_tokens": 10764,
+    "cached_tokens": 10761,
+    "cost_nano": 215970,
+    "at": "2026-08-16T13:14:00.089463+00:00"
+  },
+  "no_prune#2@16": {
+    "condition": "no_prune#2",
+    "turn": 16,
+    "est_tokens": 13822,
+    "prompt_tokens": 11096,
+    "cached_tokens": 11093,
+    "cost_nano": 222610,
+    "at": "2026-08-16T13:14:01.549979+00:00"
+  },
+  "no_prune#2@17": {
+    "condition": "no_prune#2",
+    "turn": 17,
+    "est_tokens": 14222,
+    "prompt_tokens": 11428,
+    "cached_tokens": 11425,
+    "cost_nano": 229250,
+    "at": "2026-08-16T13:14:02.738207+00:00"
+  },
+  "no_prune#2@18": {
+    "condition": "no_prune#2",
+    "turn": 18,
+    "est_tokens": 14622,
+    "prompt_tokens": 11760,
+    "cached_tokens": 11757,
+    "cost_nano": 235890,
+    "at": "2026-08-16T13:14:04.110890+00:00"
+  },
+  "no_prune#2@19": {
+    "condition": "no_prune#2",
+    "turn": 19,
+    "est_tokens": 15022,
+    "prompt_tokens": 12092,
+    "cached_tokens": 12089,
+    "cost_nano": 242530,
+    "at": "2026-08-16T13:14:05.236757+00:00"
+  },
+  "no_prune#2@20": {
+    "condition": "no_prune#2",
+    "turn": 20,
+    "est_tokens": 15422,
+    "prompt_tokens": 12424,
+    "cached_tokens": 12421,
+    "cost_nano": 249170,
+    "at": "2026-08-16T13:14:06.395092+00:00"
+  },
+  "oldest_first#0@1": {
+    "condition": "oldest_first#0",
+    "turn": 1,
+    "est_tokens": 7822,
+    "prompt_tokens": 6116,
+    "cached_tokens": 6113,
+    "cost_nano": 123010,
+    "at": "2026-08-16T13:14:07.545413+00:00"
+  },
+  "oldest_first#0@2": {
+    "condition": "oldest_first#0",
+    "turn": 2,
+    "est_tokens": 7862,
+    "prompt_tokens": 6169,
+    "cached_tokens": 5781,
+    "cost_nano": 212620,
+    "at": "2026-08-16T13:14:08.804073+00:00"
+  },
+  "oldest_first#0@3": {
+    "condition": "oldest_first#0",
+    "turn": 3,
+    "est_tokens": 8262,
+    "prompt_tokens": 6501,
+    "cached_tokens": 6166,
+    "cost_nano": 207070,
+    "at": "2026-08-16T13:14:10.264120+00:00"
+  },
+  "oldest_first#0@4": {
+    "condition": "oldest_first#0",
+    "turn": 4,
+    "est_tokens": 8662,
+    "prompt_tokens": 6833,
+    "cached_tokens": 6498,
+    "cost_nano": 213710,
+    "at": "2026-08-16T13:14:11.544964+00:00"
+  },
+  "oldest_first#0@5": {
+    "condition": "oldest_first#0",
+    "turn": 5,
+    "est_tokens": 8702,
+    "prompt_tokens": 6886,
+    "cached_tokens": 5781,
+    "cost_nano": 391870,
+    "at": "2026-08-16T13:14:12.596608+00:00"
+  },
+  "oldest_first#0@6": {
+    "condition": "oldest_first#0",
+    "turn": 6,
+    "est_tokens": 9102,
+    "prompt_tokens": 7218,
+    "cached_tokens": 6883,
+    "cost_nano": 221410,
+    "at": "2026-08-16T13:14:13.939235+00:00"
+  },
+  "oldest_first#0@7": {
+    "condition": "oldest_first#0",
+    "turn": 7,
+    "est_tokens": 9142,
+    "prompt_tokens": 7271,
+    "cached_tokens": 5781,
+    "cost_nano": 488120,
+    "at": "2026-08-16T13:14:15.221294+00:00"
+  },
+  "oldest_first#0@8": {
+    "condition": "oldest_first#0",
+    "turn": 8,
+    "est_tokens": 9542,
+    "prompt_tokens": 7603,
+    "cached_tokens": 7268,
+    "cost_nano": 229110,
+    "at": "2026-08-16T13:14:16.310750+00:00"
+  },
+  "oldest_first#0@9": {
+    "condition": "oldest_first#0",
+    "turn": 9,
+    "est_tokens": 9582,
+    "prompt_tokens": 7656,
+    "cached_tokens": 5781,
+    "cost_nano": 584370,
+    "at": "2026-08-16T13:14:17.472468+00:00"
+  },
+  "oldest_first#0@10": {
+    "condition": "oldest_first#0",
+    "turn": 10,
+    "est_tokens": 9982,
+    "prompt_tokens": 7988,
+    "cached_tokens": 7653,
+    "cost_nano": 236810,
+    "at": "2026-08-16T13:14:19.366863+00:00"
+  },
+  "oldest_first#0@11": {
+    "condition": "oldest_first#0",
+    "turn": 11,
+    "est_tokens": 10022,
+    "prompt_tokens": 8041,
+    "cached_tokens": 5781,
+    "cost_nano": 680620,
+    "at": "2026-08-16T13:14:20.698168+00:00"
+  },
+  "oldest_first#0@12": {
+    "condition": "oldest_first#0",
+    "turn": 12,
+    "est_tokens": 10422,
+    "prompt_tokens": 8373,
+    "cached_tokens": 8038,
+    "cost_nano": 244510,
+    "at": "2026-08-16T13:14:21.910947+00:00"
+  },
+  "oldest_first#0@13": {
+    "condition": "oldest_first#0",
+    "turn": 13,
+    "est_tokens": 10462,
+    "prompt_tokens": 8426,
+    "cached_tokens": 5781,
+    "cost_nano": 776870,
+    "at": "2026-08-16T13:14:23.036689+00:00"
+  },
+  "oldest_first#0@14": {
+    "condition": "oldest_first#0",
+    "turn": 14,
+    "est_tokens": 10862,
+    "prompt_tokens": 8758,
+    "cached_tokens": 8423,
+    "cost_nano": 252210,
+    "at": "2026-08-16T13:14:24.385726+00:00"
+  },
+  "oldest_first#0@15": {
+    "condition": "oldest_first#0",
+    "turn": 15,
+    "est_tokens": 10902,
+    "prompt_tokens": 8811,
+    "cached_tokens": 5781,
+    "cost_nano": 873120,
+    "at": "2026-08-16T13:14:25.922250+00:00"
+  },
+  "oldest_first#0@16": {
+    "condition": "oldest_first#0",
+    "turn": 16,
+    "est_tokens": 11302,
+    "prompt_tokens": 9143,
+    "cached_tokens": 8808,
+    "cost_nano": 259910,
+    "at": "2026-08-16T13:14:27.153635+00:00"
+  },
+  "oldest_first#0@17": {
+    "condition": "oldest_first#0",
+    "turn": 17,
+    "est_tokens": 11342,
+    "prompt_tokens": 9196,
+    "cached_tokens": 5781,
+    "cost_nano": 969370,
+    "at": "2026-08-16T13:14:28.480500+00:00"
+  },
+  "oldest_first#0@18": {
+    "condition": "oldest_first#0",
+    "turn": 18,
+    "est_tokens": 11742,
+    "prompt_tokens": 9528,
+    "cached_tokens": 9193,
+    "cost_nano": 267610,
+    "at": "2026-08-16T13:14:30.046554+00:00"
+  },
+  "oldest_first#0@19": {
+    "condition": "oldest_first#0",
+    "turn": 19,
+    "est_tokens": 11782,
+    "prompt_tokens": 9581,
+    "cached_tokens": 5781,
+    "cost_nano": 1065620,
+    "at": "2026-08-16T13:14:31.346174+00:00"
+  },
+  "oldest_first#0@20": {
+    "condition": "oldest_first#0",
+    "turn": 20,
+    "est_tokens": 12182,
+    "prompt_tokens": 9913,
+    "cached_tokens": 9578,
+    "cost_nano": 275310,
+    "at": "2026-08-16T13:14:32.642557+00:00"
+  },
+  "oldest_first#1@1": {
+    "condition": "oldest_first#1",
+    "turn": 1,
+    "est_tokens": 7822,
+    "prompt_tokens": 6116,
+    "cached_tokens": 6113,
+    "cost_nano": 123010,
+    "at": "2026-08-16T13:14:33.805006+00:00"
+  },
+  "oldest_first#1@2": {
+    "condition": "oldest_first#1",
+    "turn": 2,
+    "est_tokens": 7862,
+    "prompt_tokens": 6169,
+    "cached_tokens": 6166,
+    "cost_nano": 124070,
+    "at": "2026-08-16T13:14:35.051406+00:00"
+  },
+  "oldest_first#1@3": {
+    "condition": "oldest_first#1",
+    "turn": 3,
+    "est_tokens": 8262,
+    "prompt_tokens": 6501,
+    "cached_tokens": 6498,
+    "cost_nano": 130710,
+    "at": "2026-08-16T13:14:36.274658+00:00"
+  },
+  "oldest_first#1@4": {
+    "condition": "oldest_first#1",
+    "turn": 4,
+    "est_tokens": 8662,
+    "prompt_tokens": 6833,
+    "cached_tokens": 6830,
+    "cost_nano": 137350,
+    "at": "2026-08-16T13:14:37.490529+00:00"
+  },
+  "oldest_first#1@5": {
+    "condition": "oldest_first#1",
+    "turn": 5,
+    "est_tokens": 8702,
+    "prompt_tokens": 6886,
+    "cached_tokens": 0,
+    "cost_nano": 1721500,
+    "at": "2026-08-16T13:14:38.516755+00:00"
+  },
+  "oldest_first#1@6": {
+    "condition": "oldest_first#1",
+    "turn": 6,
+    "est_tokens": 9102,
+    "prompt_tokens": 7218,
+    "cached_tokens": 7215,
+    "cost_nano": 145050,
+    "at": "2026-08-16T13:14:39.831114+00:00"
+  },
+  "oldest_first#1@7": {
+    "condition": "oldest_first#1",
+    "turn": 7,
+    "est_tokens": 9142,
+    "prompt_tokens": 7271,
+    "cached_tokens": 7268,
+    "cost_nano": 146110,
+    "at": "2026-08-16T13:14:41.020263+00:00"
+  },
+  "oldest_first#1@8": {
+    "condition": "oldest_first#1",
+    "turn": 8,
+    "est_tokens": 9542,
+    "prompt_tokens": 7603,
+    "cached_tokens": 7600,
+    "cost_nano": 152750,
+    "at": "2026-08-16T13:14:42.223404+00:00"
+  },
+  "oldest_first#1@9": {
+    "condition": "oldest_first#1",
+    "turn": 9,
+    "est_tokens": 9582,
+    "prompt_tokens": 7656,
+    "cached_tokens": 7653,
+    "cost_nano": 153810,
+    "at": "2026-08-16T13:14:43.533457+00:00"
+  },
+  "oldest_first#1@10": {
+    "condition": "oldest_first#1",
+    "turn": 10,
+    "est_tokens": 9982,
+    "prompt_tokens": 7988,
+    "cached_tokens": 7985,
+    "cost_nano": 160450,
+    "at": "2026-08-16T13:14:44.640780+00:00"
+  },
+  "oldest_first#1@11": {
+    "condition": "oldest_first#1",
+    "turn": 11,
+    "est_tokens": 10022,
+    "prompt_tokens": 8041,
+    "cached_tokens": 8038,
+    "cost_nano": 161510,
+    "at": "2026-08-16T13:14:45.689117+00:00"
+  },
+  "oldest_first#1@12": {
+    "condition": "oldest_first#1",
+    "turn": 12,
+    "est_tokens": 10422,
+    "prompt_tokens": 8373,
+    "cached_tokens": 8370,
+    "cost_nano": 168150,
+    "at": "2026-08-16T13:14:46.745966+00:00"
+  },
+  "oldest_first#1@13": {
+    "condition": "oldest_first#1",
+    "turn": 13,
+    "est_tokens": 10462,
+    "prompt_tokens": 8426,
+    "cached_tokens": 8423,
+    "cost_nano": 169210,
+    "at": "2026-08-16T13:14:47.861774+00:00"
+  },
+  "oldest_first#1@14": {
+    "condition": "oldest_first#1",
+    "turn": 14,
+    "est_tokens": 10862,
+    "prompt_tokens": 8758,
+    "cached_tokens": 8755,
+    "cost_nano": 175850,
+    "at": "2026-08-16T13:14:49.062907+00:00"
+  },
+  "oldest_first#1@15": {
+    "condition": "oldest_first#1",
+    "turn": 15,
+    "est_tokens": 10902,
+    "prompt_tokens": 8811,
+    "cached_tokens": 8808,
+    "cost_nano": 176910,
+    "at": "2026-08-16T13:14:50.456630+00:00"
+  },
+  "oldest_first#1@16": {
+    "condition": "oldest_first#1",
+    "turn": 16,
+    "est_tokens": 11302,
+    "prompt_tokens": 9143,
+    "cached_tokens": 9140,
+    "cost_nano": 183550,
+    "at": "2026-08-16T13:14:51.829257+00:00"
+  },
+  "oldest_first#1@17": {
+    "condition": "oldest_first#1",
+    "turn": 17,
+    "est_tokens": 11342,
+    "prompt_tokens": 9196,
+    "cached_tokens": 9193,
+    "cost_nano": 184610,
+    "at": "2026-08-16T13:14:53.159657+00:00"
+  },
+  "oldest_first#1@18": {
+    "condition": "oldest_first#1",
+    "turn": 18,
+    "est_tokens": 11742,
+    "prompt_tokens": 9528,
+    "cached_tokens": 9525,
+    "cost_nano": 191250,
+    "at": "2026-08-16T13:14:54.415876+00:00"
+  },
+  "oldest_first#1@19": {
+    "condition": "oldest_first#1",
+    "turn": 19,
+    "est_tokens": 11782,
+    "prompt_tokens": 9581,
+    "cached_tokens": 9578,
+    "cost_nano": 192310,
+    "at": "2026-08-16T13:14:55.679745+00:00"
+  },
+  "oldest_first#1@20": {
+    "condition": "oldest_first#1",
+    "turn": 20,
+    "est_tokens": 12182,
+    "prompt_tokens": 9913,
+    "cached_tokens": 9910,
+    "cost_nano": 198950,
+    "at": "2026-08-16T13:14:57.049185+00:00"
+  },
+  "oldest_first#2@1": {
+    "condition": "oldest_first#2",
+    "turn": 1,
+    "est_tokens": 7822,
+    "prompt_tokens": 6116,
+    "cached_tokens": 6113,
+    "cost_nano": 123010,
+    "at": "2026-08-16T13:14:58.140139+00:00"
+  },
+  "oldest_first#2@2": {
+    "condition": "oldest_first#2",
+    "turn": 2,
+    "est_tokens": 7862,
+    "prompt_tokens": 6169,
+    "cached_tokens": 6166,
+    "cost_nano": 124070,
+    "at": "2026-08-16T13:14:59.197830+00:00"
+  },
+  "oldest_first#2@3": {
+    "condition": "oldest_first#2",
+    "turn": 3,
+    "est_tokens": 8262,
+    "prompt_tokens": 6501,
+    "cached_tokens": 6498,
+    "cost_nano": 130710,
+    "at": "2026-08-16T13:15:00.335023+00:00"
+  },
+  "oldest_first#2@4": {
+    "condition": "oldest_first#2",
+    "turn": 4,
+    "est_tokens": 8662,
+    "prompt_tokens": 6833,
+    "cached_tokens": 6830,
+    "cost_nano": 137350,
+    "at": "2026-08-16T13:15:01.554410+00:00"
+  },
+  "oldest_first#2@5": {
+    "condition": "oldest_first#2",
+    "turn": 5,
+    "est_tokens": 8702,
+    "prompt_tokens": 6886,
+    "cached_tokens": 6883,
+    "cost_nano": 138410,
+    "at": "2026-08-16T13:15:03.331403+00:00"
+  },
+  "oldest_first#2@6": {
+    "condition": "oldest_first#2",
+    "turn": 6,
+    "est_tokens": 9102,
+    "prompt_tokens": 7218,
+    "cached_tokens": 7215,
+    "cost_nano": 145050,
+    "at": "2026-08-16T13:15:04.377442+00:00"
+  },
+  "oldest_first#2@7": {
+    "condition": "oldest_first#2",
+    "turn": 7,
+    "est_tokens": 9142,
+    "prompt_tokens": 7271,
+    "cached_tokens": 7268,
+    "cost_nano": 146110,
+    "at": "2026-08-16T13:15:05.620583+00:00"
+  },
+  "oldest_first#2@8": {
+    "condition": "oldest_first#2",
+    "turn": 8,
+    "est_tokens": 9542,
+    "prompt_tokens": 7603,
+    "cached_tokens": 7600,
+    "cost_nano": 152750,
+    "at": "2026-08-16T13:15:06.736560+00:00"
+  },
+  "oldest_first#2@9": {
+    "condition": "oldest_first#2",
+    "turn": 9,
+    "est_tokens": 9582,
+    "prompt_tokens": 7656,
+    "cached_tokens": 7653,
+    "cost_nano": 153810,
+    "at": "2026-08-16T13:15:07.901702+00:00"
+  },
+  "oldest_first#2@10": {
+    "condition": "oldest_first#2",
+    "turn": 10,
+    "est_tokens": 9982,
+    "prompt_tokens": 7988,
+    "cached_tokens": 7985,
+    "cost_nano": 160450,
+    "at": "2026-08-16T13:15:08.953687+00:00"
+  },
+  "oldest_first#2@11": {
+    "condition": "oldest_first#2",
+    "turn": 11,
+    "est_tokens": 10022,
+    "prompt_tokens": 8041,
+    "cached_tokens": 8038,
+    "cost_nano": 161510,
+    "at": "2026-08-16T13:15:10.144507+00:00"
+  },
+  "oldest_first#2@12": {
+    "condition": "oldest_first#2",
+    "turn": 12,
+    "est_tokens": 10422,
+    "prompt_tokens": 8373,
+    "cached_tokens": 8370,
+    "cost_nano": 168150,
+    "at": "2026-08-16T13:15:11.500135+00:00"
+  },
+  "oldest_first#2@13": {
+    "condition": "oldest_first#2",
+    "turn": 13,
+    "est_tokens": 10462,
+    "prompt_tokens": 8426,
+    "cached_tokens": 8423,
+    "cost_nano": 169210,
+    "at": "2026-08-16T13:15:12.812715+00:00"
+  },
+  "oldest_first#2@14": {
+    "condition": "oldest_first#2",
+    "turn": 14,
+    "est_tokens": 10862,
+    "prompt_tokens": 8758,
+    "cached_tokens": 8755,
+    "cost_nano": 175850,
+    "at": "2026-08-16T13:15:13.905279+00:00"
+  },
+  "oldest_first#2@15": {
+    "condition": "oldest_first#2",
+    "turn": 15,
+    "est_tokens": 10902,
+    "prompt_tokens": 8811,
+    "cached_tokens": 8808,
+    "cost_nano": 176910,
+    "at": "2026-08-16T13:15:15.036879+00:00"
+  },
+  "oldest_first#2@16": {
+    "condition": "oldest_first#2",
+    "turn": 16,
+    "est_tokens": 11302,
+    "prompt_tokens": 9143,
+    "cached_tokens": 9140,
+    "cost_nano": 183550,
+    "at": "2026-08-16T13:15:16.780037+00:00"
+  },
+  "oldest_first#2@17": {
+    "condition": "oldest_first#2",
+    "turn": 17,
+    "est_tokens": 11342,
+    "prompt_tokens": 9196,
+    "cached_tokens": 9193,
+    "cost_nano": 184610,
+    "at": "2026-08-16T13:15:17.770015+00:00"
+  },
+  "oldest_first#2@18": {
+    "condition": "oldest_first#2",
+    "turn": 18,
+    "est_tokens": 11742,
+    "prompt_tokens": 9528,
+    "cached_tokens": 9525,
+    "cost_nano": 191250,
+    "at": "2026-08-16T13:15:18.871480+00:00"
+  },
+  "oldest_first#2@19": {
+    "condition": "oldest_first#2",
+    "turn": 19,
+    "est_tokens": 11782,
+    "prompt_tokens": 9581,
+    "cached_tokens": 9578,
+    "cost_nano": 192310,
+    "at": "2026-08-16T13:15:20.190614+00:00"
+  },
+  "oldest_first#2@20": {
+    "condition": "oldest_first#2",
+    "turn": 20,
+    "est_tokens": 12182,
+    "prompt_tokens": 9913,
+    "cached_tokens": 9910,
+    "cost_nano": 198950,
+    "at": "2026-08-16T13:15:21.454914+00:00"
+  },
+  "tail_first#0@1": {
+    "condition": "tail_first#0",
+    "turn": 1,
+    "est_tokens": 7822,
+    "prompt_tokens": 6116,
+    "cached_tokens": 6113,
+    "cost_nano": 123010,
+    "at": "2026-08-16T13:15:22.415998+00:00"
+  },
+  "tail_first#0@2": {
+    "condition": "tail_first#0",
+    "turn": 2,
+    "est_tokens": 7861,
+    "prompt_tokens": 6169,
+    "cached_tokens": 5781,
+    "cost_nano": 212620,
+    "at": "2026-08-16T13:15:23.424525+00:00"
+  },
+  "tail_first#0@3": {
+    "condition": "tail_first#0",
+    "turn": 3,
+    "est_tokens": 8261,
+    "prompt_tokens": 6501,
+    "cached_tokens": 6113,
+    "cost_nano": 219260,
+    "at": "2026-08-16T13:15:24.825120+00:00"
+  },
+  "tail_first#0@4": {
+    "condition": "tail_first#0",
+    "turn": 4,
+    "est_tokens": 8661,
+    "prompt_tokens": 6833,
+    "cached_tokens": 6445,
+    "cost_nano": 225900,
+    "at": "2026-08-16T13:15:26.029057+00:00"
+  },
+  "tail_first#0@5": {
+    "condition": "tail_first#0",
+    "turn": 5,
+    "est_tokens": 8700,
+    "prompt_tokens": 6886,
+    "cached_tokens": 6445,
+    "cost_nano": 239150,
+    "at": "2026-08-16T13:15:27.252392+00:00"
+  },
+  "tail_first#0@6": {
+    "condition": "tail_first#0",
+    "turn": 6,
+    "est_tokens": 9100,
+    "prompt_tokens": 7218,
+    "cached_tokens": 6777,
+    "cost_nano": 245790,
+    "at": "2026-08-16T13:15:28.344527+00:00"
+  },
+  "tail_first#0@7": {
+    "condition": "tail_first#0",
+    "turn": 7,
+    "est_tokens": 9139,
+    "prompt_tokens": 7271,
+    "cached_tokens": 6777,
+    "cost_nano": 259040,
+    "at": "2026-08-16T13:15:29.541257+00:00"
+  },
+  "tail_first#0@8": {
+    "condition": "tail_first#0",
+    "turn": 8,
+    "est_tokens": 9539,
+    "prompt_tokens": 7603,
+    "cached_tokens": 7109,
+    "cost_nano": 265680,
+    "at": "2026-08-16T13:15:30.657865+00:00"
+  },
+  "tail_first#0@9": {
+    "condition": "tail_first#0",
+    "turn": 9,
+    "est_tokens": 9578,
+    "prompt_tokens": 7656,
+    "cached_tokens": 7109,
+    "cost_nano": 278930,
+    "at": "2026-08-16T13:15:31.875150+00:00"
+  },
+  "tail_first#0@10": {
+    "condition": "tail_first#0",
+    "turn": 10,
+    "est_tokens": 9978,
+    "prompt_tokens": 7988,
+    "cached_tokens": 7441,
+    "cost_nano": 285570,
+    "at": "2026-08-16T13:15:33.211927+00:00"
+  },
+  "tail_first#0@11": {
+    "condition": "tail_first#0",
+    "turn": 11,
+    "est_tokens": 10017,
+    "prompt_tokens": 8041,
+    "cached_tokens": 7441,
+    "cost_nano": 298820,
+    "at": "2026-08-16T13:15:34.505128+00:00"
+  },
+  "tail_first#0@12": {
+    "condition": "tail_first#0",
+    "turn": 12,
+    "est_tokens": 10417,
+    "prompt_tokens": 8373,
+    "cached_tokens": 7773,
+    "cost_nano": 305460,
+    "at": "2026-08-16T13:15:35.833608+00:00"
+  },
+  "tail_first#0@13": {
+    "condition": "tail_first#0",
+    "turn": 13,
+    "est_tokens": 10456,
+    "prompt_tokens": 8426,
+    "cached_tokens": 0,
+    "cost_nano": 2106500,
+    "at": "2026-08-16T13:15:37.026205+00:00"
+  },
+  "tail_first#0@14": {
+    "condition": "tail_first#0",
+    "turn": 14,
+    "est_tokens": 10856,
+    "prompt_tokens": 8758,
+    "cached_tokens": 8105,
+    "cost_nano": 325350,
+    "at": "2026-08-16T13:15:38.195119+00:00"
+  },
+  "tail_first#0@15": {
+    "condition": "tail_first#0",
+    "turn": 15,
+    "est_tokens": 10895,
+    "prompt_tokens": 8811,
+    "cached_tokens": 8105,
+    "cost_nano": 338600,
+    "at": "2026-08-16T13:15:39.413216+00:00"
+  },
+  "tail_first#0@16": {
+    "condition": "tail_first#0",
+    "turn": 16,
+    "est_tokens": 11295,
+    "prompt_tokens": 9143,
+    "cached_tokens": 8437,
+    "cost_nano": 345240,
+    "at": "2026-08-16T13:15:40.713958+00:00"
+  },
+  "tail_first#0@17": {
+    "condition": "tail_first#0",
+    "turn": 17,
+    "est_tokens": 11334,
+    "prompt_tokens": 9196,
+    "cached_tokens": 8437,
+    "cost_nano": 358490,
+    "at": "2026-08-16T13:15:41.988893+00:00"
+  },
+  "tail_first#0@18": {
+    "condition": "tail_first#0",
+    "turn": 18,
+    "est_tokens": 11734,
+    "prompt_tokens": 9528,
+    "cached_tokens": 8769,
+    "cost_nano": 365130,
+    "at": "2026-08-16T13:15:43.436237+00:00"
+  },
+  "tail_first#0@19": {
+    "condition": "tail_first#0",
+    "turn": 19,
+    "est_tokens": 11773,
+    "prompt_tokens": 9581,
+    "cached_tokens": 8769,
+    "cost_nano": 378380,
+    "at": "2026-08-16T13:15:44.645930+00:00"
+  },
+  "tail_first#0@20": {
+    "condition": "tail_first#0",
+    "turn": 20,
+    "est_tokens": 12173,
+    "prompt_tokens": 9913,
+    "cached_tokens": 9101,
+    "cost_nano": 385020,
+    "at": "2026-08-16T13:15:46.170590+00:00"
+  },
+  "tail_first#1@1": {
+    "condition": "tail_first#1",
+    "turn": 1,
+    "est_tokens": 7822,
+    "prompt_tokens": 6116,
+    "cached_tokens": 6113,
+    "cost_nano": 123010,
+    "at": "2026-08-16T13:15:47.135954+00:00"
+  },
+  "tail_first#1@2": {
+    "condition": "tail_first#1",
+    "turn": 2,
+    "est_tokens": 7861,
+    "prompt_tokens": 6169,
+    "cached_tokens": 6166,
+    "cost_nano": 124070,
+    "at": "2026-08-16T13:15:48.213728+00:00"
+  },
+  "tail_first#1@3": {
+    "condition": "tail_first#1",
+    "turn": 3,
+    "est_tokens": 8261,
+    "prompt_tokens": 6501,
+    "cached_tokens": 6498,
+    "cost_nano": 130710,
+    "at": "2026-08-16T13:15:49.466105+00:00"
+  },
+  "tail_first#1@4": {
+    "condition": "tail_first#1",
+    "turn": 4,
+    "est_tokens": 8661,
+    "prompt_tokens": 6833,
+    "cached_tokens": 6830,
+    "cost_nano": 137350,
+    "at": "2026-08-16T13:15:50.411901+00:00"
+  },
+  "tail_first#1@5": {
+    "condition": "tail_first#1",
+    "turn": 5,
+    "est_tokens": 8700,
+    "prompt_tokens": 6886,
+    "cached_tokens": 6883,
+    "cost_nano": 138410,
+    "at": "2026-08-16T13:15:51.305479+00:00"
+  },
+  "tail_first#1@6": {
+    "condition": "tail_first#1",
+    "turn": 6,
+    "est_tokens": 9100,
+    "prompt_tokens": 7218,
+    "cached_tokens": 7215,
+    "cost_nano": 145050,
+    "at": "2026-08-16T13:15:52.496279+00:00"
+  },
+  "tail_first#1@7": {
+    "condition": "tail_first#1",
+    "turn": 7,
+    "est_tokens": 9139,
+    "prompt_tokens": 7271,
+    "cached_tokens": 7268,
+    "cost_nano": 146110,
+    "at": "2026-08-16T13:15:53.658475+00:00"
+  },
+  "tail_first#1@8": {
+    "condition": "tail_first#1",
+    "turn": 8,
+    "est_tokens": 9539,
+    "prompt_tokens": 7603,
+    "cached_tokens": 7600,
+    "cost_nano": 152750,
+    "at": "2026-08-16T13:15:54.905264+00:00"
+  },
+  "tail_first#1@9": {
+    "condition": "tail_first#1",
+    "turn": 9,
+    "est_tokens": 9578,
+    "prompt_tokens": 7656,
+    "cached_tokens": 7653,
+    "cost_nano": 153810,
+    "at": "2026-08-16T13:15:56.054113+00:00"
+  },
+  "tail_first#1@10": {
+    "condition": "tail_first#1",
+    "turn": 10,
+    "est_tokens": 9978,
+    "prompt_tokens": 7988,
+    "cached_tokens": 7985,
+    "cost_nano": 160450,
+    "at": "2026-08-16T13:15:57.439776+00:00"
+  }
+}

@@ -1,16 +1,36 @@
 # context-slim
 
-**The only context pruner that will tell you not to prune.**
+**Prune your agent's context from the end that doesn't shred your prompt cache.**
+
+Measured on a live API: removing **identical token counts** from a 20-turn agent
+loop is **18.7% cheaper** when you cut from the newest end instead of the oldest.
+
+| | tokens sent | cache hit | cost |
+|---|---|---|---|
+| prune oldest-first | 480,033 | 95.1% | $0.015001 |
+| prune newest-first | 480,033 | **97.6%** | **$0.012202** |
+
+Same tokens removed. Same work done. The only variable is which end you cut
+from — and prefix caches invalidate *forward*, so cutting at the front throws
+away everything behind it.
+
+The mechanism is visible as the loop deepens. Cache hit rate under oldest-first:
 
 ```
-REFUSE  msg 2   pruning here costs $0.000412 to save $0.000020.
-                W/S = 41.2 means 461 turns to break even. You have 20.
+turn  7   80%
+turn  9   76%
+turn 11   72%
+turn 13   69%
+turn 15   66%
+turn 17   63%
 ```
 
-Every other tool reports tokens removed. You pay dollars. On a cached agent
-loop those are not the same number, and sometimes they have opposite signs.
+All six inside one 60-second window, so this is eviction, not TTL expiry.
 
-## Why
+Raw usage blocks: [`bench/results/`](bench/results/). Reproduce with
+`python -m bench.killgate` (~$0.04).
+
+## The arithmetic
 
 ```
 N = 11.5·(W/S) − 12.5
@@ -24,8 +44,16 @@ more turns** to break even. Your agent has twenty.
 
 None of this is a new observation — Anthropic documents the tradeoff,
 `clear_at_least` exists to blunt it, and Claude Code already moved its
-compaction to tail-first. What is missing everywhere is a policy that prices the
-decision and declines.
+compaction to tail-first. What was missing is the number, which is why this repo
+leads with a measurement rather than an argument.
+
+### What we tested and got wrong
+
+We set out to show pruning costs more than it saves. **It doesn't** — at 8k
+prefixes over 20 turns both pruning strategies beat not pruning. That claim is
+withdrawn. The result that survived is about *where* you cut, not *whether*.
+Larger prefixes over longer horizons may cross over; we haven't tested that and
+don't claim it.
 
 ## Install
 
