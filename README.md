@@ -1,59 +1,41 @@
 # context-slim
 
-**Prune your agent's context from the end that doesn't shred your prompt cache.**
+**Pruning your LLM agent's context can cost more than leaving it alone.**
 
-Measured on a live API: removing **identical token counts** from a 20-turn agent
-loop is **18.7% cheaper** when you cut from the newest end instead of the oldest.
+Measured against a live API, n=5 arms per condition, bootstrap 95% CIs:
 
-| | tokens sent | cache hit | cost |
-|---|---|---|---|
-| prune oldest-first | 480,033 | 95.1% | $0.015001 |
-| prune newest-first | 480,033 | **97.6%** | **$0.012202** |
+| strategy | tokens sent | cache hit | cost/arm | vs no pruning |
+|---|---|---|---|---|
+| don't prune | 928,400 | **92.2%** | **$0.007053** | — |
+| prune oldest-first | 735,790 | 75.5% | $0.011239 | **+59.4%** |
+| prune newest-first | 735,770 | 81.0% | $0.009376 | **+32.9%** |
 
-Same tokens removed. Same work done. The only variable is which end you cut
-from — and prefix caches invalidate *forward*, so cutting at the front throws
-away everything behind it.
+**20.7% fewer tokens. 33–59% more money.** All three differences significant.
 
-The mechanism is visible as the loop deepens. Cache hit rate under oldest-first:
+Prompt caches are *prefix* caches, so an un-pruned loop is append-only — every
+turn extends the last and the whole prompt is reusable. Pruning breaks that, and
+the re-write costs more than the tokens saved.
 
-```
-turn  7   80%
-turn  9   76%
-turn 11   72%
-turn 13   69%
-turn 15   66%
-turn 17   63%
-```
-
-All six inside one 60-second window, so this is eviction, not TTL expiry.
-
-Raw usage blocks: [`bench/results/`](bench/results/). Reproduce with
-`python -m bench.killgate` (~$0.04).
-
-## The arithmetic
+Where you cut still matters: newest-first is **16.6% cheaper** than oldest-first
+at identical token counts (a 20-token difference). Anthropic's context-editing
+API clears oldest-first by default.
 
 ```
-N = 11.5·(W/S) − 12.5
+cache hit rate by turn
+                t2    t5    t8   t11   t14   t17   t20
+don't prune    95%   96%   96%   96%   77%   97%   97%
+oldest-first   95%   96%   63%   77%   76%   77%   75%
+newest-first   95%   96%   93%   91%   76%   77%   60%
 ```
 
-Turns before a prune pays for itself. `W` is the tokens that must be
-re-written because you edited behind them; `S` is the tokens you saved. Prompt
-caches are *prefix* caches, so editing at any point invalidates everything after
-it. Delete 1k tokens from the front of a 10k cached prefix and you need **102
-more turns** to break even. Your agent has twenty.
+> **Caveat this properly.** 8k prefixes, 20 turns, synthetic loops, one model
+> (`gpt-5.6-luna`), one account. Larger contexts over longer horizons are
+> untested and may behave differently. Three earlier revisions of this
+> experiment produced confident numbers that were artifacts — see
+> [`METHODS.md`](METHODS.md) for what went wrong and how it was caught.
 
-None of this is a new observation — Anthropic documents the tradeoff,
-`clear_at_least` exists to blunt it, and Claude Code already moved its
-compaction to tail-first. What was missing is the number, which is why this repo
-leads with a measurement rather than an argument.
-
-### What we tested and got wrong
-
-We set out to show pruning costs more than it saves. **It doesn't** — at 8k
-prefixes over 20 turns both pruning strategies beat not pruning. That claim is
-withdrawn. The result that survived is about *where* you cut, not *whether*.
-Larger prefixes over longer horizons may cross over; we haven't tested that and
-don't claim it.
+Reproduce: `python -m bench.killgate --repeats 5` (~$0.14). Raw usage blocks in
+[`bench/results/`](bench/results/).
 
 ## Install
 

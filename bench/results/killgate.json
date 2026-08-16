@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-16T13:28:31.947028+00:00",
+  "timestamp": "2026-08-16T14:09:52.852477+00:00",
   "args": {
     "model": "openai/gpt-5.6-luna",
     "api_model": "gpt-5.6-luna",
@@ -13,13 +13,13 @@
     "fresh": true,
     "repeats": 5,
     "seed": 0,
-    "max_spend": 0.8,
+    "max_spend": 0.95,
     "dry_run": false
   },
   "completed": 300,
   "total_requests": 300,
   "failure": null,
-  "actual_cost_nano": 163665880,
+  "actual_cost_nano": 138338140,
   "records": [
     {
       "condition": "no_prune#1",
@@ -29,7 +29,7 @@
       "prompt_tokens": 6129,
       "cached_tokens": 0,
       "cost_nano": 1532250,
-      "at": "2026-08-16T13:22:15.070633+00:00"
+      "at": "2026-08-16T14:03:27.657276+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -39,7 +39,7 @@
       "prompt_tokens": 6461,
       "cached_tokens": 6126,
       "cost_nano": 206270,
-      "at": "2026-08-16T13:22:16.443211+00:00"
+      "at": "2026-08-16T14:03:28.988300+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -49,7 +49,7 @@
       "prompt_tokens": 6793,
       "cached_tokens": 6458,
       "cost_nano": 212910,
-      "at": "2026-08-16T13:22:17.627477+00:00"
+      "at": "2026-08-16T14:03:30.656103+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -59,7 +59,7 @@
       "prompt_tokens": 7125,
       "cached_tokens": 6790,
       "cost_nano": 219550,
-      "at": "2026-08-16T13:22:18.813488+00:00"
+      "at": "2026-08-16T14:03:31.800383+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -69,7 +69,7 @@
       "prompt_tokens": 7457,
       "cached_tokens": 7122,
       "cost_nano": 226190,
-      "at": "2026-08-16T13:22:19.888878+00:00"
+      "at": "2026-08-16T14:03:34.113797+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -79,7 +79,7 @@
       "prompt_tokens": 7789,
       "cached_tokens": 7454,
       "cost_nano": 232830,
-      "at": "2026-08-16T13:22:21.217318+00:00"
+      "at": "2026-08-16T14:03:35.440510+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -89,7 +89,7 @@
       "prompt_tokens": 8121,
       "cached_tokens": 7786,
       "cost_nano": 239470,
-      "at": "2026-08-16T13:22:22.434339+00:00"
+      "at": "2026-08-16T14:03:36.839985+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -99,7 +99,7 @@
       "prompt_tokens": 8453,
       "cached_tokens": 8118,
       "cost_nano": 246110,
-      "at": "2026-08-16T13:22:23.627410+00:00"
+      "at": "2026-08-16T14:03:38.106657+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -109,7 +109,7 @@
       "prompt_tokens": 8785,
       "cached_tokens": 8450,
       "cost_nano": 252750,
-      "at": "2026-08-16T13:22:25.300175+00:00"
+      "at": "2026-08-16T14:03:39.265381+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -119,7 +119,7 @@
       "prompt_tokens": 9117,
       "cached_tokens": 8782,
       "cost_nano": 259390,
-      "at": "2026-08-16T13:22:26.517921+00:00"
+      "at": "2026-08-16T14:03:40.618788+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -129,7 +129,7 @@
       "prompt_tokens": 9449,
       "cached_tokens": 9114,
       "cost_nano": 266030,
-      "at": "2026-08-16T13:22:27.648862+00:00"
+      "at": "2026-08-16T14:03:41.819909+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -139,7 +139,7 @@
       "prompt_tokens": 9781,
       "cached_tokens": 9446,
       "cost_nano": 272670,
-      "at": "2026-08-16T13:22:28.972088+00:00"
+      "at": "2026-08-16T14:03:43.020323+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -149,7 +149,7 @@
       "prompt_tokens": 10113,
       "cached_tokens": 9778,
       "cost_nano": 279310,
-      "at": "2026-08-16T13:22:30.142606+00:00"
+      "at": "2026-08-16T14:03:44.114043+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -159,7 +159,7 @@
       "prompt_tokens": 10445,
       "cached_tokens": 10110,
       "cost_nano": 285950,
-      "at": "2026-08-16T13:22:31.290854+00:00"
+      "at": "2026-08-16T14:03:45.727557+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -169,7 +169,7 @@
       "prompt_tokens": 10777,
       "cached_tokens": 10442,
       "cost_nano": 292590,
-      "at": "2026-08-16T13:22:32.639357+00:00"
+      "at": "2026-08-16T14:03:46.912447+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -179,7 +179,7 @@
       "prompt_tokens": 11109,
       "cached_tokens": 10774,
       "cost_nano": 299230,
-      "at": "2026-08-16T13:22:33.761037+00:00"
+      "at": "2026-08-16T14:03:48.159035+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -189,7 +189,7 @@
       "prompt_tokens": 11441,
       "cached_tokens": 11106,
       "cost_nano": 305870,
-      "at": "2026-08-16T13:22:34.940530+00:00"
+      "at": "2026-08-16T14:03:49.575753+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -199,7 +199,7 @@
       "prompt_tokens": 11773,
       "cached_tokens": 11438,
       "cost_nano": 312510,
-      "at": "2026-08-16T13:22:36.081921+00:00"
+      "at": "2026-08-16T14:03:50.861231+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -209,7 +209,7 @@
       "prompt_tokens": 12105,
       "cached_tokens": 11770,
       "cost_nano": 319150,
-      "at": "2026-08-16T13:22:37.358141+00:00"
+      "at": "2026-08-16T14:03:52.288137+00:00"
     },
     {
       "condition": "no_prune#1",
@@ -219,7 +219,7 @@
       "prompt_tokens": 12437,
       "cached_tokens": 12102,
       "cost_nano": 325790,
-      "at": "2026-08-16T13:22:38.656577+00:00"
+      "at": "2026-08-16T14:03:53.850915+00:00"
     },
     {
       "condition": "tail_first#0",
@@ -229,57 +229,57 @@
       "prompt_tokens": 6131,
       "cached_tokens": 0,
       "cost_nano": 1532750,
-      "at": "2026-08-16T13:22:39.528671+00:00"
+      "at": "2026-08-16T14:03:55.295689+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 2,
-      "est_tokens": 7867,
+      "est_tokens": 8228,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 6184,
-      "cached_tokens": 5796,
-      "cost_nano": 212920,
-      "at": "2026-08-16T13:22:40.640580+00:00"
+      "prompt_tokens": 6463,
+      "cached_tokens": 6128,
+      "cost_nano": 206310,
+      "at": "2026-08-16T14:03:56.534057+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 3,
-      "est_tokens": 8267,
+      "est_tokens": 8628,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 6516,
-      "cached_tokens": 6128,
-      "cost_nano": 219560,
-      "at": "2026-08-16T13:22:41.789408+00:00"
+      "prompt_tokens": 6795,
+      "cached_tokens": 6460,
+      "cost_nano": 212950,
+      "at": "2026-08-16T14:03:57.574967+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 4,
-      "est_tokens": 8667,
+      "est_tokens": 9028,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 6848,
-      "cached_tokens": 6128,
-      "cost_nano": 302560,
-      "at": "2026-08-16T13:22:42.963961+00:00"
+      "prompt_tokens": 7127,
+      "cached_tokens": 6792,
+      "cost_nano": 219590,
+      "at": "2026-08-16T14:03:59.509862+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 5,
-      "est_tokens": 8706,
+      "est_tokens": 9428,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 6901,
-      "cached_tokens": 6128,
-      "cost_nano": 315810,
-      "at": "2026-08-16T13:22:44.170390+00:00"
+      "prompt_tokens": 7459,
+      "cached_tokens": 7124,
+      "cost_nano": 226230,
+      "at": "2026-08-16T14:04:00.619073+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 6,
-      "est_tokens": 9106,
+      "est_tokens": 9467,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 7233,
-      "cached_tokens": 6128,
-      "cost_nano": 398810,
-      "at": "2026-08-16T13:22:45.441648+00:00"
+      "prompt_tokens": 7512,
+      "cached_tokens": 7124,
+      "cost_nano": 239480,
+      "at": "2026-08-16T14:04:02.684324+00:00"
     },
     {
       "condition": "tail_first#0",
@@ -287,139 +287,139 @@
       "est_tokens": 9145,
       "salt": "8f772fda9e69a34b",
       "prompt_tokens": 7286,
-      "cached_tokens": 6128,
-      "cost_nano": 412060,
-      "at": "2026-08-16T13:22:46.619257+00:00"
+      "cached_tokens": 6792,
+      "cost_nano": 259340,
+      "at": "2026-08-16T14:04:03.900232+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 8,
-      "est_tokens": 9545,
+      "est_tokens": 9184,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 7618,
-      "cached_tokens": 6128,
-      "cost_nano": 495060,
-      "at": "2026-08-16T13:22:47.868115+00:00"
+      "prompt_tokens": 7339,
+      "cached_tokens": 6792,
+      "cost_nano": 272590,
+      "at": "2026-08-16T14:04:04.922722+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 9,
-      "est_tokens": 9584,
+      "est_tokens": 9223,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 7671,
-      "cached_tokens": 6128,
-      "cost_nano": 508310,
-      "at": "2026-08-16T13:22:49.006913+00:00"
+      "prompt_tokens": 7392,
+      "cached_tokens": 6792,
+      "cost_nano": 285840,
+      "at": "2026-08-16T14:04:06.088720+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 10,
-      "est_tokens": 9984,
+      "est_tokens": 9262,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 8003,
-      "cached_tokens": 0,
-      "cost_nano": 2000750,
-      "at": "2026-08-16T13:22:50.232831+00:00"
+      "prompt_tokens": 7445,
+      "cached_tokens": 6792,
+      "cost_nano": 299090,
+      "at": "2026-08-16T14:04:07.354237+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 11,
-      "est_tokens": 10023,
+      "est_tokens": 9301,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 8056,
-      "cached_tokens": 6128,
-      "cost_nano": 604560,
-      "at": "2026-08-16T13:22:51.514311+00:00"
+      "prompt_tokens": 7498,
+      "cached_tokens": 6792,
+      "cost_nano": 312340,
+      "at": "2026-08-16T14:04:08.475890+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 12,
-      "est_tokens": 10423,
+      "est_tokens": 9340,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 8388,
-      "cached_tokens": 5796,
-      "cost_nano": 763920,
-      "at": "2026-08-16T13:22:52.932959+00:00"
+      "prompt_tokens": 7551,
+      "cached_tokens": 6792,
+      "cost_nano": 325590,
+      "at": "2026-08-16T14:04:10.362563+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 13,
-      "est_tokens": 10462,
+      "est_tokens": 9379,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 8441,
-      "cached_tokens": 5796,
-      "cost_nano": 777170,
-      "at": "2026-08-16T13:22:54.030919+00:00"
+      "prompt_tokens": 7604,
+      "cached_tokens": 6792,
+      "cost_nano": 338840,
+      "at": "2026-08-16T14:04:11.593550+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 14,
-      "est_tokens": 10862,
+      "est_tokens": 9418,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 8773,
+      "prompt_tokens": 7657,
       "cached_tokens": 5796,
-      "cost_nano": 860170,
-      "at": "2026-08-16T13:22:55.189937+00:00"
+      "cost_nano": 581170,
+      "at": "2026-08-16T14:04:12.922525+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 15,
-      "est_tokens": 10901,
+      "est_tokens": 9457,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 8826,
+      "prompt_tokens": 7710,
       "cached_tokens": 5796,
-      "cost_nano": 873420,
-      "at": "2026-08-16T13:22:56.308184+00:00"
+      "cost_nano": 594420,
+      "at": "2026-08-16T14:04:14.171534+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 16,
-      "est_tokens": 11301,
+      "est_tokens": 9496,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 9158,
+      "prompt_tokens": 7763,
       "cached_tokens": 5796,
-      "cost_nano": 956420,
-      "at": "2026-08-16T13:22:57.590947+00:00"
+      "cost_nano": 607670,
+      "at": "2026-08-16T14:04:15.480351+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 17,
-      "est_tokens": 11340,
+      "est_tokens": 9174,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 9211,
+      "prompt_tokens": 7537,
       "cached_tokens": 5796,
-      "cost_nano": 969670,
-      "at": "2026-08-16T13:22:59.041289+00:00"
+      "cost_nano": 551170,
+      "at": "2026-08-16T14:04:16.815457+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 18,
-      "est_tokens": 11740,
+      "est_tokens": 9213,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 9543,
+      "prompt_tokens": 7590,
       "cached_tokens": 5796,
-      "cost_nano": 1052670,
-      "at": "2026-08-16T13:23:00.427545+00:00"
+      "cost_nano": 564420,
+      "at": "2026-08-16T14:04:18.043594+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 19,
-      "est_tokens": 11779,
+      "est_tokens": 9252,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 9596,
+      "prompt_tokens": 7643,
       "cached_tokens": 5796,
-      "cost_nano": 1065920,
-      "at": "2026-08-16T13:23:01.729605+00:00"
+      "cost_nano": 577670,
+      "at": "2026-08-16T14:04:19.477566+00:00"
     },
     {
       "condition": "tail_first#0",
       "turn": 20,
-      "est_tokens": 12179,
+      "est_tokens": 9291,
       "salt": "8f772fda9e69a34b",
-      "prompt_tokens": 9928,
+      "prompt_tokens": 7696,
       "cached_tokens": 5796,
-      "cost_nano": 1148920,
-      "at": "2026-08-16T13:23:02.949801+00:00"
+      "cost_nano": 590920,
+      "at": "2026-08-16T14:04:20.565353+00:00"
     },
     {
       "condition": "oldest_first#4",
@@ -429,57 +429,57 @@
       "prompt_tokens": 6131,
       "cached_tokens": 0,
       "cost_nano": 1532750,
-      "at": "2026-08-16T13:23:04.100080+00:00"
+      "at": "2026-08-16T14:04:21.652251+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 2,
-      "est_tokens": 7868,
+      "est_tokens": 8228,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 6184,
-      "cached_tokens": 5796,
-      "cost_nano": 212920,
-      "at": "2026-08-16T13:23:05.338895+00:00"
+      "prompt_tokens": 6463,
+      "cached_tokens": 6128,
+      "cost_nano": 206310,
+      "at": "2026-08-16T14:04:22.924475+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 3,
-      "est_tokens": 8268,
+      "est_tokens": 8628,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 6516,
-      "cached_tokens": 6181,
-      "cost_nano": 207370,
-      "at": "2026-08-16T13:23:06.356928+00:00"
+      "prompt_tokens": 6795,
+      "cached_tokens": 6460,
+      "cost_nano": 212950,
+      "at": "2026-08-16T14:04:24.130944+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 4,
-      "est_tokens": 8668,
+      "est_tokens": 9028,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 6848,
-      "cached_tokens": 6513,
-      "cost_nano": 214010,
-      "at": "2026-08-16T13:23:07.506739+00:00"
+      "prompt_tokens": 7127,
+      "cached_tokens": 6792,
+      "cost_nano": 219590,
+      "at": "2026-08-16T14:04:25.415824+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 5,
-      "est_tokens": 8708,
+      "est_tokens": 9428,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 6901,
-      "cached_tokens": 5796,
-      "cost_nano": 392170,
-      "at": "2026-08-16T13:23:08.564539+00:00"
+      "prompt_tokens": 7459,
+      "cached_tokens": 7124,
+      "cost_nano": 226230,
+      "at": "2026-08-16T14:04:26.645643+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 6,
-      "est_tokens": 9108,
+      "est_tokens": 9468,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 7233,
-      "cached_tokens": 6898,
-      "cost_nano": 221710,
-      "at": "2026-08-16T13:23:09.895680+00:00"
+      "prompt_tokens": 7512,
+      "cached_tokens": 5796,
+      "cost_nano": 544920,
+      "at": "2026-08-16T14:04:27.872705+00:00"
     },
     {
       "condition": "oldest_first#4",
@@ -489,137 +489,137 @@
       "prompt_tokens": 7286,
       "cached_tokens": 5796,
       "cost_nano": 488420,
-      "at": "2026-08-16T13:23:11.043392+00:00"
+      "at": "2026-08-16T14:04:29.409255+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 8,
-      "est_tokens": 9548,
+      "est_tokens": 9188,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 7618,
-      "cached_tokens": 7283,
-      "cost_nano": 229410,
-      "at": "2026-08-16T13:23:12.249581+00:00"
+      "prompt_tokens": 7339,
+      "cached_tokens": 5796,
+      "cost_nano": 501670,
+      "at": "2026-08-16T14:04:30.428731+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 9,
-      "est_tokens": 9588,
+      "est_tokens": 9228,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 7671,
+      "prompt_tokens": 7392,
       "cached_tokens": 5796,
-      "cost_nano": 584670,
-      "at": "2026-08-16T13:23:13.410444+00:00"
+      "cost_nano": 514920,
+      "at": "2026-08-16T14:04:31.763877+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 10,
-      "est_tokens": 9988,
+      "est_tokens": 9268,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 8003,
-      "cached_tokens": 7668,
-      "cost_nano": 237110,
-      "at": "2026-08-16T13:23:14.584155+00:00"
+      "prompt_tokens": 7445,
+      "cached_tokens": 5796,
+      "cost_nano": 528170,
+      "at": "2026-08-16T14:04:32.955070+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 11,
-      "est_tokens": 10028,
+      "est_tokens": 9308,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 8056,
+      "prompt_tokens": 7498,
       "cached_tokens": 5796,
-      "cost_nano": 680920,
-      "at": "2026-08-16T13:23:15.940279+00:00"
+      "cost_nano": 541420,
+      "at": "2026-08-16T14:04:34.224007+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 12,
-      "est_tokens": 10428,
+      "est_tokens": 9348,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 8388,
-      "cached_tokens": 8053,
-      "cost_nano": 244810,
-      "at": "2026-08-16T13:23:17.104796+00:00"
+      "prompt_tokens": 7551,
+      "cached_tokens": 5796,
+      "cost_nano": 554670,
+      "at": "2026-08-16T14:04:35.295363+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 13,
-      "est_tokens": 10468,
+      "est_tokens": 9388,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 8441,
+      "prompt_tokens": 7604,
       "cached_tokens": 5796,
-      "cost_nano": 777170,
-      "at": "2026-08-16T13:23:18.295798+00:00"
+      "cost_nano": 567920,
+      "at": "2026-08-16T14:04:36.927448+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 14,
-      "est_tokens": 10868,
+      "est_tokens": 9428,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 8773,
-      "cached_tokens": 8438,
-      "cost_nano": 252510,
-      "at": "2026-08-16T13:23:19.624911+00:00"
+      "prompt_tokens": 7657,
+      "cached_tokens": 5796,
+      "cost_nano": 581170,
+      "at": "2026-08-16T14:04:38.152306+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 15,
-      "est_tokens": 10908,
+      "est_tokens": 9468,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 8826,
-      "cached_tokens": 5796,
-      "cost_nano": 873420,
-      "at": "2026-08-16T13:23:21.416719+00:00"
+      "prompt_tokens": 7710,
+      "cached_tokens": 0,
+      "cost_nano": 1927500,
+      "at": "2026-08-16T14:04:39.444201+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 16,
-      "est_tokens": 11308,
+      "est_tokens": 9508,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 9158,
-      "cached_tokens": 8823,
-      "cost_nano": 260210,
-      "at": "2026-08-16T13:23:22.658766+00:00"
+      "prompt_tokens": 7763,
+      "cached_tokens": 5796,
+      "cost_nano": 607670,
+      "at": "2026-08-16T14:04:40.704346+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 17,
-      "est_tokens": 11348,
+      "est_tokens": 9188,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 9211,
+      "prompt_tokens": 7537,
       "cached_tokens": 5796,
-      "cost_nano": 969670,
-      "at": "2026-08-16T13:23:23.708468+00:00"
+      "cost_nano": 551170,
+      "at": "2026-08-16T14:04:42.088804+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 18,
-      "est_tokens": 11748,
+      "est_tokens": 9228,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 9543,
-      "cached_tokens": 9208,
-      "cost_nano": 267910,
-      "at": "2026-08-16T13:23:24.974784+00:00"
+      "prompt_tokens": 7590,
+      "cached_tokens": 5796,
+      "cost_nano": 564420,
+      "at": "2026-08-16T14:04:43.438663+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 19,
-      "est_tokens": 11788,
+      "est_tokens": 9268,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 9596,
+      "prompt_tokens": 7643,
       "cached_tokens": 5796,
-      "cost_nano": 1065920,
-      "at": "2026-08-16T13:23:26.257481+00:00"
+      "cost_nano": 577670,
+      "at": "2026-08-16T14:04:44.955293+00:00"
     },
     {
       "condition": "oldest_first#4",
       "turn": 20,
-      "est_tokens": 12188,
+      "est_tokens": 9308,
       "salt": "f763a2a5d1c04f31",
-      "prompt_tokens": 9928,
-      "cached_tokens": 9593,
-      "cost_nano": 275610,
-      "at": "2026-08-16T13:23:27.746827+00:00"
+      "prompt_tokens": 7696,
+      "cached_tokens": 5796,
+      "cost_nano": 590920,
+      "at": "2026-08-16T14:04:46.299235+00:00"
     },
     {
       "condition": "oldest_first#0",
@@ -629,57 +629,57 @@
       "prompt_tokens": 6129,
       "cached_tokens": 0,
       "cost_nano": 1532250,
-      "at": "2026-08-16T13:23:28.873303+00:00"
+      "at": "2026-08-16T14:04:47.227274+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 2,
-      "est_tokens": 7868,
+      "est_tokens": 8228,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 6182,
-      "cached_tokens": 5794,
-      "cost_nano": 212880,
-      "at": "2026-08-16T13:23:30.078278+00:00"
+      "prompt_tokens": 6461,
+      "cached_tokens": 6126,
+      "cost_nano": 206270,
+      "at": "2026-08-16T14:04:48.518713+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 3,
-      "est_tokens": 8268,
+      "est_tokens": 8628,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 6514,
-      "cached_tokens": 6179,
-      "cost_nano": 207330,
-      "at": "2026-08-16T13:23:31.224515+00:00"
+      "prompt_tokens": 6793,
+      "cached_tokens": 6458,
+      "cost_nano": 212910,
+      "at": "2026-08-16T14:04:49.639900+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 4,
-      "est_tokens": 8668,
+      "est_tokens": 9028,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 6846,
-      "cached_tokens": 6511,
-      "cost_nano": 213970,
-      "at": "2026-08-16T13:23:32.407999+00:00"
+      "prompt_tokens": 7125,
+      "cached_tokens": 6790,
+      "cost_nano": 219550,
+      "at": "2026-08-16T14:04:50.979405+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 5,
-      "est_tokens": 8708,
+      "est_tokens": 9428,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 6899,
-      "cached_tokens": 5794,
-      "cost_nano": 392130,
-      "at": "2026-08-16T13:23:33.603772+00:00"
+      "prompt_tokens": 7457,
+      "cached_tokens": 7122,
+      "cost_nano": 226190,
+      "at": "2026-08-16T14:04:52.143432+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 6,
-      "est_tokens": 9108,
+      "est_tokens": 9468,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 7231,
-      "cached_tokens": 6896,
-      "cost_nano": 221670,
-      "at": "2026-08-16T13:23:34.748631+00:00"
+      "prompt_tokens": 7510,
+      "cached_tokens": 5794,
+      "cost_nano": 544880,
+      "at": "2026-08-16T14:04:53.371085+00:00"
     },
     {
       "condition": "oldest_first#0",
@@ -689,137 +689,137 @@
       "prompt_tokens": 7284,
       "cached_tokens": 5794,
       "cost_nano": 488380,
-      "at": "2026-08-16T13:23:36.109715+00:00"
+      "at": "2026-08-16T14:04:54.537072+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 8,
-      "est_tokens": 9548,
+      "est_tokens": 9188,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 7616,
-      "cached_tokens": 0,
-      "cost_nano": 1904000,
-      "at": "2026-08-16T13:23:37.273275+00:00"
+      "prompt_tokens": 7337,
+      "cached_tokens": 5794,
+      "cost_nano": 501630,
+      "at": "2026-08-16T14:04:55.930728+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 9,
-      "est_tokens": 9588,
+      "est_tokens": 9228,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 7669,
+      "prompt_tokens": 7390,
       "cached_tokens": 5794,
-      "cost_nano": 584630,
-      "at": "2026-08-16T13:23:38.599148+00:00"
+      "cost_nano": 514880,
+      "at": "2026-08-16T14:04:57.773541+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 10,
-      "est_tokens": 9988,
+      "est_tokens": 9268,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 8001,
-      "cached_tokens": 7666,
-      "cost_nano": 237070,
-      "at": "2026-08-16T13:23:39.926265+00:00"
+      "prompt_tokens": 7443,
+      "cached_tokens": 5794,
+      "cost_nano": 528130,
+      "at": "2026-08-16T14:04:59.104223+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 11,
-      "est_tokens": 10028,
+      "est_tokens": 9308,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 8054,
+      "prompt_tokens": 7496,
       "cached_tokens": 5794,
-      "cost_nano": 680880,
-      "at": "2026-08-16T13:23:40.962222+00:00"
+      "cost_nano": 541380,
+      "at": "2026-08-16T14:05:00.449484+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 12,
-      "est_tokens": 10428,
+      "est_tokens": 9348,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 8386,
-      "cached_tokens": 8051,
-      "cost_nano": 244770,
-      "at": "2026-08-16T13:23:42.140304+00:00"
+      "prompt_tokens": 7549,
+      "cached_tokens": 5794,
+      "cost_nano": 554630,
+      "at": "2026-08-16T14:05:01.620763+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 13,
-      "est_tokens": 10468,
+      "est_tokens": 9388,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 8439,
+      "prompt_tokens": 7602,
       "cached_tokens": 5794,
-      "cost_nano": 777130,
-      "at": "2026-08-16T13:23:43.295338+00:00"
+      "cost_nano": 567880,
+      "at": "2026-08-16T14:05:02.747786+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 14,
-      "est_tokens": 10868,
+      "est_tokens": 9428,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 8771,
-      "cached_tokens": 8436,
-      "cost_nano": 252470,
-      "at": "2026-08-16T13:23:45.039161+00:00"
+      "prompt_tokens": 7655,
+      "cached_tokens": 5794,
+      "cost_nano": 581130,
+      "at": "2026-08-16T14:05:04.182684+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 15,
-      "est_tokens": 10908,
+      "est_tokens": 9468,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 8824,
+      "prompt_tokens": 7708,
       "cached_tokens": 5794,
-      "cost_nano": 873380,
-      "at": "2026-08-16T13:23:46.371066+00:00"
+      "cost_nano": 594380,
+      "at": "2026-08-16T14:05:05.439644+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 16,
-      "est_tokens": 11308,
+      "est_tokens": 9508,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 9156,
-      "cached_tokens": 8821,
-      "cost_nano": 260170,
-      "at": "2026-08-16T13:23:47.465545+00:00"
+      "prompt_tokens": 7761,
+      "cached_tokens": 5794,
+      "cost_nano": 607630,
+      "at": "2026-08-16T14:05:06.686056+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 17,
-      "est_tokens": 11348,
+      "est_tokens": 9188,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 9209,
+      "prompt_tokens": 7535,
       "cached_tokens": 5794,
-      "cost_nano": 969630,
-      "at": "2026-08-16T13:23:48.802250+00:00"
+      "cost_nano": 551130,
+      "at": "2026-08-16T14:05:08.169195+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 18,
-      "est_tokens": 11748,
+      "est_tokens": 9228,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 9541,
-      "cached_tokens": 9206,
-      "cost_nano": 267870,
-      "at": "2026-08-16T13:23:50.270702+00:00"
+      "prompt_tokens": 7588,
+      "cached_tokens": 5794,
+      "cost_nano": 564380,
+      "at": "2026-08-16T14:05:09.413731+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 19,
-      "est_tokens": 11788,
+      "est_tokens": 9268,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 9594,
+      "prompt_tokens": 7641,
       "cached_tokens": 5794,
-      "cost_nano": 1065880,
-      "at": "2026-08-16T13:23:51.510294+00:00"
+      "cost_nano": 577630,
+      "at": "2026-08-16T14:05:10.645389+00:00"
     },
     {
       "condition": "oldest_first#0",
       "turn": 20,
-      "est_tokens": 12188,
+      "est_tokens": 9308,
       "salt": "a2b637ad388c91d0",
-      "prompt_tokens": 9926,
-      "cached_tokens": 9591,
-      "cost_nano": 275570,
-      "at": "2026-08-16T13:23:52.902700+00:00"
+      "prompt_tokens": 7694,
+      "cached_tokens": 5794,
+      "cost_nano": 590880,
+      "at": "2026-08-16T14:05:12.212883+00:00"
     },
     {
       "condition": "tail_first#1",
@@ -829,57 +829,57 @@
       "prompt_tokens": 6129,
       "cached_tokens": 0,
       "cost_nano": 1532250,
-      "at": "2026-08-16T13:23:53.904182+00:00"
+      "at": "2026-08-16T14:05:13.181234+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 2,
-      "est_tokens": 7867,
+      "est_tokens": 8228,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 6182,
-      "cached_tokens": 5794,
-      "cost_nano": 212880,
-      "at": "2026-08-16T13:23:55.055328+00:00"
+      "prompt_tokens": 6461,
+      "cached_tokens": 6126,
+      "cost_nano": 206270,
+      "at": "2026-08-16T14:05:14.363725+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 3,
-      "est_tokens": 8267,
+      "est_tokens": 8628,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 6514,
-      "cached_tokens": 6126,
-      "cost_nano": 219520,
-      "at": "2026-08-16T13:23:56.179980+00:00"
+      "prompt_tokens": 6793,
+      "cached_tokens": 6458,
+      "cost_nano": 212910,
+      "at": "2026-08-16T14:05:15.633387+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 4,
-      "est_tokens": 8667,
+      "est_tokens": 9028,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 6846,
-      "cached_tokens": 6126,
-      "cost_nano": 302520,
-      "at": "2026-08-16T13:23:57.572354+00:00"
+      "prompt_tokens": 7125,
+      "cached_tokens": 6790,
+      "cost_nano": 219550,
+      "at": "2026-08-16T14:05:16.820278+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 5,
-      "est_tokens": 8706,
+      "est_tokens": 9428,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 6899,
-      "cached_tokens": 6126,
-      "cost_nano": 315770,
-      "at": "2026-08-16T13:23:58.671556+00:00"
+      "prompt_tokens": 7457,
+      "cached_tokens": 7122,
+      "cost_nano": 226190,
+      "at": "2026-08-16T14:05:17.947189+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 6,
-      "est_tokens": 9106,
+      "est_tokens": 9467,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 7231,
-      "cached_tokens": 6126,
-      "cost_nano": 398770,
-      "at": "2026-08-16T13:23:59.820495+00:00"
+      "prompt_tokens": 7510,
+      "cached_tokens": 7122,
+      "cost_nano": 239440,
+      "at": "2026-08-16T14:05:19.179369+00:00"
     },
     {
       "condition": "tail_first#1",
@@ -887,139 +887,139 @@
       "est_tokens": 9145,
       "salt": "bd1f3171f5411bb2",
       "prompt_tokens": 7284,
-      "cached_tokens": 6126,
-      "cost_nano": 412020,
-      "at": "2026-08-16T13:24:01.104252+00:00"
+      "cached_tokens": 6790,
+      "cost_nano": 259300,
+      "at": "2026-08-16T14:05:20.097980+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 8,
-      "est_tokens": 9545,
+      "est_tokens": 9184,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 7616,
-      "cached_tokens": 6126,
-      "cost_nano": 495020,
-      "at": "2026-08-16T13:24:02.527841+00:00"
+      "prompt_tokens": 7337,
+      "cached_tokens": 6790,
+      "cost_nano": 272550,
+      "at": "2026-08-16T14:05:21.315345+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 9,
-      "est_tokens": 9584,
+      "est_tokens": 9223,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 7669,
-      "cached_tokens": 6126,
-      "cost_nano": 508270,
-      "at": "2026-08-16T13:24:03.756715+00:00"
+      "prompt_tokens": 7390,
+      "cached_tokens": 6790,
+      "cost_nano": 285800,
+      "at": "2026-08-16T14:05:23.169895+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 10,
-      "est_tokens": 9984,
+      "est_tokens": 9262,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 8001,
-      "cached_tokens": 6126,
-      "cost_nano": 591270,
-      "at": "2026-08-16T13:24:04.988021+00:00"
+      "prompt_tokens": 7443,
+      "cached_tokens": 6790,
+      "cost_nano": 299050,
+      "at": "2026-08-16T14:05:24.501141+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 11,
-      "est_tokens": 10023,
+      "est_tokens": 9301,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 8054,
-      "cached_tokens": 6126,
-      "cost_nano": 604520,
-      "at": "2026-08-16T13:24:06.558547+00:00"
+      "prompt_tokens": 7496,
+      "cached_tokens": 6790,
+      "cost_nano": 312300,
+      "at": "2026-08-16T14:05:25.673711+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 12,
-      "est_tokens": 10423,
+      "est_tokens": 9340,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 8386,
-      "cached_tokens": 5794,
-      "cost_nano": 763880,
-      "at": "2026-08-16T13:24:07.861761+00:00"
+      "prompt_tokens": 7549,
+      "cached_tokens": 6790,
+      "cost_nano": 325550,
+      "at": "2026-08-16T14:05:27.163569+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 13,
-      "est_tokens": 10462,
+      "est_tokens": 9379,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 8439,
-      "cached_tokens": 5794,
-      "cost_nano": 777130,
-      "at": "2026-08-16T13:24:09.334776+00:00"
+      "prompt_tokens": 7602,
+      "cached_tokens": 6790,
+      "cost_nano": 338800,
+      "at": "2026-08-16T14:05:28.406856+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 14,
-      "est_tokens": 10862,
+      "est_tokens": 9418,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 8771,
+      "prompt_tokens": 7655,
       "cached_tokens": 5794,
-      "cost_nano": 860130,
-      "at": "2026-08-16T13:24:10.562742+00:00"
+      "cost_nano": 581130,
+      "at": "2026-08-16T14:05:29.724885+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 15,
-      "est_tokens": 10901,
+      "est_tokens": 9457,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 8824,
+      "prompt_tokens": 7708,
       "cached_tokens": 5794,
-      "cost_nano": 873380,
-      "at": "2026-08-16T13:24:11.952147+00:00"
+      "cost_nano": 594380,
+      "at": "2026-08-16T14:05:31.072664+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 16,
-      "est_tokens": 11301,
+      "est_tokens": 9496,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 9156,
+      "prompt_tokens": 7761,
       "cached_tokens": 5794,
-      "cost_nano": 956380,
-      "at": "2026-08-16T13:24:13.302264+00:00"
+      "cost_nano": 607630,
+      "at": "2026-08-16T14:05:32.472731+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 17,
-      "est_tokens": 11340,
+      "est_tokens": 9174,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 9209,
+      "prompt_tokens": 7535,
       "cached_tokens": 5794,
-      "cost_nano": 969630,
-      "at": "2026-08-16T13:24:14.524727+00:00"
+      "cost_nano": 551130,
+      "at": "2026-08-16T14:05:33.857743+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 18,
-      "est_tokens": 11740,
+      "est_tokens": 9213,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 9541,
+      "prompt_tokens": 7588,
       "cached_tokens": 5794,
-      "cost_nano": 1052630,
-      "at": "2026-08-16T13:24:15.775086+00:00"
+      "cost_nano": 564380,
+      "at": "2026-08-16T14:05:35.065015+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 19,
-      "est_tokens": 11779,
+      "est_tokens": 9252,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 9594,
+      "prompt_tokens": 7641,
       "cached_tokens": 5794,
-      "cost_nano": 1065880,
-      "at": "2026-08-16T13:24:16.974091+00:00"
+      "cost_nano": 577630,
+      "at": "2026-08-16T14:05:36.380112+00:00"
     },
     {
       "condition": "tail_first#1",
       "turn": 20,
-      "est_tokens": 12179,
+      "est_tokens": 9291,
       "salt": "bd1f3171f5411bb2",
-      "prompt_tokens": 9926,
+      "prompt_tokens": 7694,
       "cached_tokens": 5794,
-      "cost_nano": 1148880,
-      "at": "2026-08-16T13:24:18.297646+00:00"
+      "cost_nano": 590880,
+      "at": "2026-08-16T14:05:37.608550+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1029,7 +1029,7 @@
       "prompt_tokens": 6131,
       "cached_tokens": 0,
       "cost_nano": 1532750,
-      "at": "2026-08-16T13:24:19.408620+00:00"
+      "at": "2026-08-16T14:05:38.592238+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1039,7 +1039,7 @@
       "prompt_tokens": 6463,
       "cached_tokens": 6128,
       "cost_nano": 206310,
-      "at": "2026-08-16T13:24:20.641414+00:00"
+      "at": "2026-08-16T14:05:39.656570+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1049,7 +1049,7 @@
       "prompt_tokens": 6795,
       "cached_tokens": 6460,
       "cost_nano": 212950,
-      "at": "2026-08-16T13:24:21.857325+00:00"
+      "at": "2026-08-16T14:05:40.681572+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1059,7 +1059,7 @@
       "prompt_tokens": 7127,
       "cached_tokens": 6792,
       "cost_nano": 219590,
-      "at": "2026-08-16T13:24:23.314802+00:00"
+      "at": "2026-08-16T14:05:41.807602+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1069,7 +1069,7 @@
       "prompt_tokens": 7459,
       "cached_tokens": 7124,
       "cost_nano": 226230,
-      "at": "2026-08-16T13:24:24.389502+00:00"
+      "at": "2026-08-16T14:05:43.137856+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1079,7 +1079,7 @@
       "prompt_tokens": 7791,
       "cached_tokens": 7456,
       "cost_nano": 232870,
-      "at": "2026-08-16T13:24:25.507189+00:00"
+      "at": "2026-08-16T14:05:44.366894+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1089,7 +1089,7 @@
       "prompt_tokens": 8123,
       "cached_tokens": 7788,
       "cost_nano": 239510,
-      "at": "2026-08-16T13:24:26.754002+00:00"
+      "at": "2026-08-16T14:05:45.557384+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1099,7 +1099,7 @@
       "prompt_tokens": 8455,
       "cached_tokens": 8120,
       "cost_nano": 246150,
-      "at": "2026-08-16T13:24:27.789607+00:00"
+      "at": "2026-08-16T14:05:46.822925+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1109,7 +1109,7 @@
       "prompt_tokens": 8787,
       "cached_tokens": 8452,
       "cost_nano": 252790,
-      "at": "2026-08-16T13:24:29.129366+00:00"
+      "at": "2026-08-16T14:05:47.912001+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1119,7 +1119,7 @@
       "prompt_tokens": 9119,
       "cached_tokens": 8784,
       "cost_nano": 259430,
-      "at": "2026-08-16T13:24:30.461684+00:00"
+      "at": "2026-08-16T14:05:49.171494+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1129,7 +1129,7 @@
       "prompt_tokens": 9451,
       "cached_tokens": 9116,
       "cost_nano": 266070,
-      "at": "2026-08-16T13:24:31.687856+00:00"
+      "at": "2026-08-16T14:05:50.310816+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1139,7 +1139,7 @@
       "prompt_tokens": 9783,
       "cached_tokens": 9448,
       "cost_nano": 272710,
-      "at": "2026-08-16T13:24:32.881568+00:00"
+      "at": "2026-08-16T14:05:51.740237+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1149,7 +1149,7 @@
       "prompt_tokens": 10115,
       "cached_tokens": 9780,
       "cost_nano": 279350,
-      "at": "2026-08-16T13:24:34.311488+00:00"
+      "at": "2026-08-16T14:05:53.276380+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1159,7 +1159,7 @@
       "prompt_tokens": 10447,
       "cached_tokens": 10112,
       "cost_nano": 285990,
-      "at": "2026-08-16T13:24:35.850522+00:00"
+      "at": "2026-08-16T14:05:54.607276+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1169,7 +1169,7 @@
       "prompt_tokens": 10779,
       "cached_tokens": 10444,
       "cost_nano": 292630,
-      "at": "2026-08-16T13:24:37.240441+00:00"
+      "at": "2026-08-16T14:05:55.688960+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1177,9 +1177,9 @@
       "est_tokens": 13828,
       "salt": "118f43f71e99d6b1",
       "prompt_tokens": 11111,
-      "cached_tokens": 0,
-      "cost_nano": 2777750,
-      "at": "2026-08-16T13:24:38.554850+00:00"
+      "cached_tokens": 10776,
+      "cost_nano": 299270,
+      "at": "2026-08-16T14:05:56.925586+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1189,7 +1189,7 @@
       "prompt_tokens": 11443,
       "cached_tokens": 11108,
       "cost_nano": 305910,
-      "at": "2026-08-16T13:24:39.663108+00:00"
+      "at": "2026-08-16T14:05:58.046750+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1199,7 +1199,7 @@
       "prompt_tokens": 11775,
       "cached_tokens": 11440,
       "cost_nano": 312550,
-      "at": "2026-08-16T13:24:40.958463+00:00"
+      "at": "2026-08-16T14:05:59.550178+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1209,7 +1209,7 @@
       "prompt_tokens": 12107,
       "cached_tokens": 11772,
       "cost_nano": 319190,
-      "at": "2026-08-16T13:24:42.188816+00:00"
+      "at": "2026-08-16T14:06:00.781767+00:00"
     },
     {
       "condition": "no_prune#2",
@@ -1219,7 +1219,7 @@
       "prompt_tokens": 12439,
       "cached_tokens": 12104,
       "cost_nano": 325830,
-      "at": "2026-08-16T13:24:43.414764+00:00"
+      "at": "2026-08-16T14:06:02.286458+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1229,7 +1229,7 @@
       "prompt_tokens": 6129,
       "cached_tokens": 0,
       "cost_nano": 1532250,
-      "at": "2026-08-16T13:24:44.487520+00:00"
+      "at": "2026-08-16T14:06:03.618026+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1239,7 +1239,7 @@
       "prompt_tokens": 6461,
       "cached_tokens": 6126,
       "cost_nano": 206270,
-      "at": "2026-08-16T13:24:45.637782+00:00"
+      "at": "2026-08-16T14:06:04.847450+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1249,7 +1249,7 @@
       "prompt_tokens": 6793,
       "cached_tokens": 6458,
       "cost_nano": 212910,
-      "at": "2026-08-16T13:24:46.856826+00:00"
+      "at": "2026-08-16T14:06:05.839560+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1259,7 +1259,7 @@
       "prompt_tokens": 7125,
       "cached_tokens": 6790,
       "cost_nano": 219550,
-      "at": "2026-08-16T13:24:47.904702+00:00"
+      "at": "2026-08-16T14:06:09.557107+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1269,7 +1269,7 @@
       "prompt_tokens": 7457,
       "cached_tokens": 7122,
       "cost_nano": 226190,
-      "at": "2026-08-16T13:24:48.953926+00:00"
+      "at": "2026-08-16T14:06:10.610706+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1279,7 +1279,7 @@
       "prompt_tokens": 7789,
       "cached_tokens": 7454,
       "cost_nano": 232830,
-      "at": "2026-08-16T13:24:50.177115+00:00"
+      "at": "2026-08-16T14:06:11.733425+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1289,7 +1289,7 @@
       "prompt_tokens": 8121,
       "cached_tokens": 7786,
       "cost_nano": 239470,
-      "at": "2026-08-16T13:24:51.419037+00:00"
+      "at": "2026-08-16T14:06:12.814020+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1299,7 +1299,7 @@
       "prompt_tokens": 8453,
       "cached_tokens": 8118,
       "cost_nano": 246110,
-      "at": "2026-08-16T13:24:52.798031+00:00"
+      "at": "2026-08-16T14:06:13.960772+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1309,7 +1309,7 @@
       "prompt_tokens": 8785,
       "cached_tokens": 8450,
       "cost_nano": 252750,
-      "at": "2026-08-16T13:24:53.943853+00:00"
+      "at": "2026-08-16T14:06:15.016212+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1319,7 +1319,7 @@
       "prompt_tokens": 9117,
       "cached_tokens": 8782,
       "cost_nano": 259390,
-      "at": "2026-08-16T13:24:55.104827+00:00"
+      "at": "2026-08-16T14:06:16.182632+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1329,7 +1329,7 @@
       "prompt_tokens": 9449,
       "cached_tokens": 9114,
       "cost_nano": 266030,
-      "at": "2026-08-16T13:24:56.290018+00:00"
+      "at": "2026-08-16T14:06:17.372788+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1339,7 +1339,7 @@
       "prompt_tokens": 9781,
       "cached_tokens": 9446,
       "cost_nano": 272670,
-      "at": "2026-08-16T13:24:57.496084+00:00"
+      "at": "2026-08-16T14:06:18.595871+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1349,7 +1349,7 @@
       "prompt_tokens": 10113,
       "cached_tokens": 9778,
       "cost_nano": 279310,
-      "at": "2026-08-16T13:24:58.632356+00:00"
+      "at": "2026-08-16T14:06:19.905497+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1359,7 +1359,7 @@
       "prompt_tokens": 10445,
       "cached_tokens": 10110,
       "cost_nano": 285950,
-      "at": "2026-08-16T13:24:59.832093+00:00"
+      "at": "2026-08-16T14:06:21.066274+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1369,7 +1369,7 @@
       "prompt_tokens": 10777,
       "cached_tokens": 10442,
       "cost_nano": 292590,
-      "at": "2026-08-16T13:25:01.117378+00:00"
+      "at": "2026-08-16T14:06:22.357482+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1379,7 +1379,7 @@
       "prompt_tokens": 11109,
       "cached_tokens": 10774,
       "cost_nano": 299230,
-      "at": "2026-08-16T13:25:02.361876+00:00"
+      "at": "2026-08-16T14:06:23.574588+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1389,7 +1389,7 @@
       "prompt_tokens": 11441,
       "cached_tokens": 11106,
       "cost_nano": 305870,
-      "at": "2026-08-16T13:25:03.483216+00:00"
+      "at": "2026-08-16T14:06:25.019255+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1399,7 +1399,7 @@
       "prompt_tokens": 11773,
       "cached_tokens": 11438,
       "cost_nano": 312510,
-      "at": "2026-08-16T13:25:04.687818+00:00"
+      "at": "2026-08-16T14:06:26.351180+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1409,7 +1409,7 @@
       "prompt_tokens": 12105,
       "cached_tokens": 11770,
       "cost_nano": 319150,
-      "at": "2026-08-16T13:25:05.875848+00:00"
+      "at": "2026-08-16T14:06:27.605934+00:00"
     },
     {
       "condition": "no_prune#3",
@@ -1419,7 +1419,7 @@
       "prompt_tokens": 12437,
       "cached_tokens": 12102,
       "cost_nano": 325790,
-      "at": "2026-08-16T13:25:07.145406+00:00"
+      "at": "2026-08-16T14:06:28.923704+00:00"
     },
     {
       "condition": "oldest_first#2",
@@ -1429,57 +1429,57 @@
       "prompt_tokens": 6128,
       "cached_tokens": 0,
       "cost_nano": 1532000,
-      "at": "2026-08-16T13:25:08.194957+00:00"
+      "at": "2026-08-16T14:06:30.038133+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 2,
-      "est_tokens": 7868,
+      "est_tokens": 8228,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 6181,
-      "cached_tokens": 5793,
-      "cost_nano": 212860,
-      "at": "2026-08-16T13:25:09.397507+00:00"
+      "prompt_tokens": 6460,
+      "cached_tokens": 6125,
+      "cost_nano": 206250,
+      "at": "2026-08-16T14:06:31.266571+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 3,
-      "est_tokens": 8268,
+      "est_tokens": 8628,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 6513,
-      "cached_tokens": 6178,
-      "cost_nano": 207310,
-      "at": "2026-08-16T13:25:10.554581+00:00"
+      "prompt_tokens": 6792,
+      "cached_tokens": 6457,
+      "cost_nano": 212890,
+      "at": "2026-08-16T14:06:32.411320+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 4,
-      "est_tokens": 8668,
+      "est_tokens": 9028,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 6845,
-      "cached_tokens": 6510,
-      "cost_nano": 213950,
-      "at": "2026-08-16T13:25:11.685759+00:00"
+      "prompt_tokens": 7124,
+      "cached_tokens": 6789,
+      "cost_nano": 219530,
+      "at": "2026-08-16T14:06:33.694357+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 5,
-      "est_tokens": 8708,
+      "est_tokens": 9428,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 6898,
-      "cached_tokens": 5793,
-      "cost_nano": 392110,
-      "at": "2026-08-16T13:25:12.980946+00:00"
+      "prompt_tokens": 7456,
+      "cached_tokens": 7121,
+      "cost_nano": 226170,
+      "at": "2026-08-16T14:06:34.833648+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 6,
-      "est_tokens": 9108,
+      "est_tokens": 9468,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 7230,
-      "cached_tokens": 6895,
-      "cost_nano": 221650,
-      "at": "2026-08-16T13:25:14.286732+00:00"
+      "prompt_tokens": 7509,
+      "cached_tokens": 5793,
+      "cost_nano": 544860,
+      "at": "2026-08-16T14:06:37.412973+00:00"
     },
     {
       "condition": "oldest_first#2",
@@ -1489,137 +1489,137 @@
       "prompt_tokens": 7283,
       "cached_tokens": 5793,
       "cost_nano": 488360,
-      "at": "2026-08-16T13:25:15.470675+00:00"
+      "at": "2026-08-16T14:06:38.511721+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 8,
-      "est_tokens": 9548,
+      "est_tokens": 9188,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 7615,
-      "cached_tokens": 7280,
-      "cost_nano": 229350,
-      "at": "2026-08-16T13:25:16.900520+00:00"
+      "prompt_tokens": 7336,
+      "cached_tokens": 0,
+      "cost_nano": 1834000,
+      "at": "2026-08-16T14:06:39.765470+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 9,
-      "est_tokens": 9588,
+      "est_tokens": 9228,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 7668,
+      "prompt_tokens": 7389,
       "cached_tokens": 5793,
-      "cost_nano": 584610,
-      "at": "2026-08-16T13:25:18.418092+00:00"
+      "cost_nano": 514860,
+      "at": "2026-08-16T14:06:40.998657+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 10,
-      "est_tokens": 9988,
+      "est_tokens": 9268,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 8000,
-      "cached_tokens": 7665,
-      "cost_nano": 237050,
-      "at": "2026-08-16T13:25:19.468497+00:00"
+      "prompt_tokens": 7442,
+      "cached_tokens": 5793,
+      "cost_nano": 528110,
+      "at": "2026-08-16T14:06:42.538398+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 11,
-      "est_tokens": 10028,
+      "est_tokens": 9308,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 8053,
+      "prompt_tokens": 7495,
       "cached_tokens": 5793,
-      "cost_nano": 680860,
-      "at": "2026-08-16T13:25:20.558904+00:00"
+      "cost_nano": 541360,
+      "at": "2026-08-16T14:06:43.759086+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 12,
-      "est_tokens": 10428,
+      "est_tokens": 9348,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 8385,
-      "cached_tokens": 8050,
-      "cost_nano": 244750,
-      "at": "2026-08-16T13:25:21.739160+00:00"
+      "prompt_tokens": 7548,
+      "cached_tokens": 5793,
+      "cost_nano": 554610,
+      "at": "2026-08-16T14:06:44.970507+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 13,
-      "est_tokens": 10468,
+      "est_tokens": 9388,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 8438,
+      "prompt_tokens": 7601,
       "cached_tokens": 5793,
-      "cost_nano": 777110,
-      "at": "2026-08-16T13:25:23.002693+00:00"
+      "cost_nano": 567860,
+      "at": "2026-08-16T14:06:46.219795+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 14,
-      "est_tokens": 10868,
+      "est_tokens": 9428,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 8770,
-      "cached_tokens": 8435,
-      "cost_nano": 252450,
-      "at": "2026-08-16T13:25:24.270468+00:00"
+      "prompt_tokens": 7654,
+      "cached_tokens": 5793,
+      "cost_nano": 581110,
+      "at": "2026-08-16T14:06:47.345072+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 15,
-      "est_tokens": 10908,
+      "est_tokens": 9468,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 8823,
+      "prompt_tokens": 7707,
       "cached_tokens": 5793,
-      "cost_nano": 873360,
-      "at": "2026-08-16T13:25:25.783576+00:00"
+      "cost_nano": 594360,
+      "at": "2026-08-16T14:06:48.639097+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 16,
-      "est_tokens": 11308,
+      "est_tokens": 9508,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 9155,
-      "cached_tokens": 8820,
-      "cost_nano": 260150,
-      "at": "2026-08-16T13:25:27.215816+00:00"
+      "prompt_tokens": 7760,
+      "cached_tokens": 5793,
+      "cost_nano": 607610,
+      "at": "2026-08-16T14:06:49.877217+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 17,
-      "est_tokens": 11348,
+      "est_tokens": 9188,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 9208,
+      "prompt_tokens": 7534,
       "cached_tokens": 5793,
-      "cost_nano": 969610,
-      "at": "2026-08-16T13:25:28.620790+00:00"
+      "cost_nano": 551110,
+      "at": "2026-08-16T14:06:51.644794+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 18,
-      "est_tokens": 11748,
+      "est_tokens": 9228,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 9540,
-      "cached_tokens": 9205,
-      "cost_nano": 267850,
-      "at": "2026-08-16T13:25:29.983456+00:00"
+      "prompt_tokens": 7587,
+      "cached_tokens": 5793,
+      "cost_nano": 564360,
+      "at": "2026-08-16T14:06:53.077964+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 19,
-      "est_tokens": 11788,
+      "est_tokens": 9268,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 9593,
+      "prompt_tokens": 7640,
       "cached_tokens": 5793,
-      "cost_nano": 1065860,
-      "at": "2026-08-16T13:25:31.313082+00:00"
+      "cost_nano": 577610,
+      "at": "2026-08-16T14:06:54.295184+00:00"
     },
     {
       "condition": "oldest_first#2",
       "turn": 20,
-      "est_tokens": 12188,
+      "est_tokens": 9308,
       "salt": "d858e7251a02576d",
-      "prompt_tokens": 9925,
-      "cached_tokens": 9590,
-      "cost_nano": 275550,
-      "at": "2026-08-16T13:25:32.675501+00:00"
+      "prompt_tokens": 7693,
+      "cached_tokens": 5793,
+      "cost_nano": 590860,
+      "at": "2026-08-16T14:06:55.740387+00:00"
     },
     {
       "condition": "oldest_first#3",
@@ -1629,57 +1629,57 @@
       "prompt_tokens": 6128,
       "cached_tokens": 0,
       "cost_nano": 1532000,
-      "at": "2026-08-16T13:25:33.684570+00:00"
+      "at": "2026-08-16T14:06:56.695659+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 2,
-      "est_tokens": 7868,
+      "est_tokens": 8228,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 6181,
-      "cached_tokens": 5793,
-      "cost_nano": 212860,
-      "at": "2026-08-16T13:25:34.674003+00:00"
+      "prompt_tokens": 6460,
+      "cached_tokens": 6125,
+      "cost_nano": 206250,
+      "at": "2026-08-16T14:06:57.890172+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 3,
-      "est_tokens": 8268,
+      "est_tokens": 8628,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 6513,
-      "cached_tokens": 6178,
-      "cost_nano": 207310,
-      "at": "2026-08-16T13:25:35.831289+00:00"
+      "prompt_tokens": 6792,
+      "cached_tokens": 6457,
+      "cost_nano": 212890,
+      "at": "2026-08-16T14:06:58.974834+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 4,
-      "est_tokens": 8668,
+      "est_tokens": 9028,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 6845,
-      "cached_tokens": 0,
-      "cost_nano": 1711250,
-      "at": "2026-08-16T13:25:37.045334+00:00"
+      "prompt_tokens": 7124,
+      "cached_tokens": 6789,
+      "cost_nano": 219530,
+      "at": "2026-08-16T14:07:00.144626+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 5,
-      "est_tokens": 8708,
+      "est_tokens": 9428,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 6898,
-      "cached_tokens": 5793,
-      "cost_nano": 392110,
-      "at": "2026-08-16T13:25:38.135233+00:00"
+      "prompt_tokens": 7456,
+      "cached_tokens": 7121,
+      "cost_nano": 226170,
+      "at": "2026-08-16T14:07:01.410390+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 6,
-      "est_tokens": 9108,
+      "est_tokens": 9468,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 7230,
-      "cached_tokens": 6895,
-      "cost_nano": 221650,
-      "at": "2026-08-16T13:25:39.398163+00:00"
+      "prompt_tokens": 7509,
+      "cached_tokens": 5793,
+      "cost_nano": 544860,
+      "at": "2026-08-16T14:07:02.544347+00:00"
     },
     {
       "condition": "oldest_first#3",
@@ -1689,137 +1689,137 @@
       "prompt_tokens": 7283,
       "cached_tokens": 5793,
       "cost_nano": 488360,
-      "at": "2026-08-16T13:25:40.663136+00:00"
+      "at": "2026-08-16T14:07:04.433481+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 8,
-      "est_tokens": 9548,
+      "est_tokens": 9188,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 7615,
-      "cached_tokens": 7280,
-      "cost_nano": 229350,
-      "at": "2026-08-16T13:25:42.009752+00:00"
+      "prompt_tokens": 7336,
+      "cached_tokens": 5793,
+      "cost_nano": 501610,
+      "at": "2026-08-16T14:07:05.458532+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 9,
-      "est_tokens": 9588,
+      "est_tokens": 9228,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 7668,
+      "prompt_tokens": 7389,
       "cached_tokens": 5793,
-      "cost_nano": 584610,
-      "at": "2026-08-16T13:25:43.135280+00:00"
+      "cost_nano": 514860,
+      "at": "2026-08-16T14:07:06.447264+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 10,
-      "est_tokens": 9988,
+      "est_tokens": 9268,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 8000,
-      "cached_tokens": 7665,
-      "cost_nano": 237050,
-      "at": "2026-08-16T13:25:44.330051+00:00"
+      "prompt_tokens": 7442,
+      "cached_tokens": 5793,
+      "cost_nano": 528110,
+      "at": "2026-08-16T14:07:07.702031+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 11,
-      "est_tokens": 10028,
+      "est_tokens": 9308,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 8053,
+      "prompt_tokens": 7495,
       "cached_tokens": 5793,
-      "cost_nano": 680860,
-      "at": "2026-08-16T13:25:45.750086+00:00"
+      "cost_nano": 541360,
+      "at": "2026-08-16T14:07:08.833025+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 12,
-      "est_tokens": 10428,
+      "est_tokens": 9348,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 8385,
-      "cached_tokens": 8050,
-      "cost_nano": 244750,
-      "at": "2026-08-16T13:25:47.262444+00:00"
+      "prompt_tokens": 7548,
+      "cached_tokens": 5793,
+      "cost_nano": 554610,
+      "at": "2026-08-16T14:07:10.075634+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 13,
-      "est_tokens": 10468,
+      "est_tokens": 9388,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 8438,
+      "prompt_tokens": 7601,
       "cached_tokens": 5793,
-      "cost_nano": 777110,
-      "at": "2026-08-16T13:25:48.415017+00:00"
+      "cost_nano": 567860,
+      "at": "2026-08-16T14:07:11.276573+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 14,
-      "est_tokens": 10868,
+      "est_tokens": 9428,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 8770,
-      "cached_tokens": 8435,
-      "cost_nano": 252450,
-      "at": "2026-08-16T13:25:49.600222+00:00"
+      "prompt_tokens": 7654,
+      "cached_tokens": 5793,
+      "cost_nano": 581110,
+      "at": "2026-08-16T14:07:12.533322+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 15,
-      "est_tokens": 10908,
+      "est_tokens": 9468,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 8823,
+      "prompt_tokens": 7707,
       "cached_tokens": 5793,
-      "cost_nano": 873360,
-      "at": "2026-08-16T13:25:50.831377+00:00"
+      "cost_nano": 594360,
+      "at": "2026-08-16T14:07:13.866655+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 16,
-      "est_tokens": 11308,
+      "est_tokens": 9508,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 9155,
-      "cached_tokens": 8820,
-      "cost_nano": 260150,
-      "at": "2026-08-16T13:25:52.090635+00:00"
+      "prompt_tokens": 7760,
+      "cached_tokens": 5793,
+      "cost_nano": 607610,
+      "at": "2026-08-16T14:07:15.299077+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 17,
-      "est_tokens": 11348,
+      "est_tokens": 9188,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 9208,
+      "prompt_tokens": 7534,
       "cached_tokens": 5793,
-      "cost_nano": 969610,
-      "at": "2026-08-16T13:25:53.225077+00:00"
+      "cost_nano": 551110,
+      "at": "2026-08-16T14:07:17.549768+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 18,
-      "est_tokens": 11748,
+      "est_tokens": 9228,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 9540,
-      "cached_tokens": 9205,
-      "cost_nano": 267850,
-      "at": "2026-08-16T13:25:54.473151+00:00"
+      "prompt_tokens": 7587,
+      "cached_tokens": 5793,
+      "cost_nano": 564360,
+      "at": "2026-08-16T14:07:18.747287+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 19,
-      "est_tokens": 11788,
+      "est_tokens": 9268,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 9593,
+      "prompt_tokens": 7640,
       "cached_tokens": 5793,
-      "cost_nano": 1065860,
-      "at": "2026-08-16T13:25:55.850201+00:00"
+      "cost_nano": 577610,
+      "at": "2026-08-16T14:07:19.957517+00:00"
     },
     {
       "condition": "oldest_first#3",
       "turn": 20,
-      "est_tokens": 12188,
+      "est_tokens": 9308,
       "salt": "cea18000f05d4df8",
-      "prompt_tokens": 9925,
-      "cached_tokens": 9590,
-      "cost_nano": 275550,
-      "at": "2026-08-16T13:25:58.344604+00:00"
+      "prompt_tokens": 7693,
+      "cached_tokens": 5793,
+      "cost_nano": 590860,
+      "at": "2026-08-16T14:07:21.332027+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1829,7 +1829,7 @@
       "prompt_tokens": 6131,
       "cached_tokens": 0,
       "cost_nano": 1532750,
-      "at": "2026-08-16T13:25:59.463179+00:00"
+      "at": "2026-08-16T14:07:22.569784+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1839,7 +1839,7 @@
       "prompt_tokens": 6463,
       "cached_tokens": 6128,
       "cost_nano": 206310,
-      "at": "2026-08-16T13:26:00.795406+00:00"
+      "at": "2026-08-16T14:07:23.694939+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1849,7 +1849,7 @@
       "prompt_tokens": 6795,
       "cached_tokens": 6460,
       "cost_nano": 212950,
-      "at": "2026-08-16T13:26:01.934710+00:00"
+      "at": "2026-08-16T14:07:25.226413+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1859,7 +1859,7 @@
       "prompt_tokens": 7127,
       "cached_tokens": 6792,
       "cost_nano": 219590,
-      "at": "2026-08-16T13:26:03.130814+00:00"
+      "at": "2026-08-16T14:07:26.321383+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1869,7 +1869,7 @@
       "prompt_tokens": 7459,
       "cached_tokens": 7124,
       "cost_nano": 226230,
-      "at": "2026-08-16T13:26:04.264948+00:00"
+      "at": "2026-08-16T14:07:27.432718+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1879,7 +1879,7 @@
       "prompt_tokens": 7791,
       "cached_tokens": 7456,
       "cost_nano": 232870,
-      "at": "2026-08-16T13:26:05.409210+00:00"
+      "at": "2026-08-16T14:07:28.671676+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1889,7 +1889,7 @@
       "prompt_tokens": 8123,
       "cached_tokens": 7788,
       "cost_nano": 239510,
-      "at": "2026-08-16T13:26:06.698366+00:00"
+      "at": "2026-08-16T14:07:29.816770+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1899,7 +1899,7 @@
       "prompt_tokens": 8455,
       "cached_tokens": 8120,
       "cost_nano": 246150,
-      "at": "2026-08-16T13:26:07.925860+00:00"
+      "at": "2026-08-16T14:07:30.965020+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1909,7 +1909,7 @@
       "prompt_tokens": 8787,
       "cached_tokens": 8452,
       "cost_nano": 252790,
-      "at": "2026-08-16T13:26:09.009772+00:00"
+      "at": "2026-08-16T14:07:32.401486+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1919,7 +1919,7 @@
       "prompt_tokens": 9119,
       "cached_tokens": 8784,
       "cost_nano": 259430,
-      "at": "2026-08-16T13:26:10.093309+00:00"
+      "at": "2026-08-16T14:07:33.628948+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1929,7 +1929,7 @@
       "prompt_tokens": 9451,
       "cached_tokens": 9116,
       "cost_nano": 266070,
-      "at": "2026-08-16T13:26:11.255035+00:00"
+      "at": "2026-08-16T14:07:34.801006+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1939,7 +1939,7 @@
       "prompt_tokens": 9783,
       "cached_tokens": 9448,
       "cost_nano": 272710,
-      "at": "2026-08-16T13:26:12.419648+00:00"
+      "at": "2026-08-16T14:07:36.291099+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1949,7 +1949,7 @@
       "prompt_tokens": 10115,
       "cached_tokens": 9780,
       "cost_nano": 279350,
-      "at": "2026-08-16T13:26:15.408181+00:00"
+      "at": "2026-08-16T14:07:37.876453+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1957,9 +1957,9 @@
       "est_tokens": 13028,
       "salt": "4c3483baf7c9bb13",
       "prompt_tokens": 10447,
-      "cached_tokens": 10112,
-      "cost_nano": 285990,
-      "at": "2026-08-16T13:26:16.485115+00:00"
+      "cached_tokens": 0,
+      "cost_nano": 2611750,
+      "at": "2026-08-16T14:07:39.158038+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1969,7 +1969,7 @@
       "prompt_tokens": 10779,
       "cached_tokens": 10444,
       "cost_nano": 292630,
-      "at": "2026-08-16T13:26:17.799605+00:00"
+      "at": "2026-08-16T14:07:40.489548+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1979,7 +1979,7 @@
       "prompt_tokens": 11111,
       "cached_tokens": 10776,
       "cost_nano": 299270,
-      "at": "2026-08-16T13:26:19.238041+00:00"
+      "at": "2026-08-16T14:07:41.673195+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1989,7 +1989,7 @@
       "prompt_tokens": 11443,
       "cached_tokens": 11108,
       "cost_nano": 305910,
-      "at": "2026-08-16T13:26:20.501054+00:00"
+      "at": "2026-08-16T14:07:43.151050+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -1999,7 +1999,7 @@
       "prompt_tokens": 11775,
       "cached_tokens": 11440,
       "cost_nano": 312550,
-      "at": "2026-08-16T13:26:21.906627+00:00"
+      "at": "2026-08-16T14:07:44.708843+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -2009,7 +2009,7 @@
       "prompt_tokens": 12107,
       "cached_tokens": 11772,
       "cost_nano": 319190,
-      "at": "2026-08-16T13:26:23.244046+00:00"
+      "at": "2026-08-16T14:07:46.133145+00:00"
     },
     {
       "condition": "no_prune#4",
@@ -2019,7 +2019,7 @@
       "prompt_tokens": 12439,
       "cached_tokens": 12104,
       "cost_nano": 325830,
-      "at": "2026-08-16T13:26:24.479975+00:00"
+      "at": "2026-08-16T14:07:47.452735+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2029,7 +2029,7 @@
       "prompt_tokens": 6130,
       "cached_tokens": 0,
       "cost_nano": 1532500,
-      "at": "2026-08-16T13:26:25.781355+00:00"
+      "at": "2026-08-16T14:07:48.596096+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2039,7 +2039,7 @@
       "prompt_tokens": 6462,
       "cached_tokens": 6127,
       "cost_nano": 206290,
-      "at": "2026-08-16T13:26:27.693253+00:00"
+      "at": "2026-08-16T14:07:50.011544+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2049,7 +2049,7 @@
       "prompt_tokens": 6794,
       "cached_tokens": 6459,
       "cost_nano": 212930,
-      "at": "2026-08-16T13:26:28.754680+00:00"
+      "at": "2026-08-16T14:07:51.241587+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2059,7 +2059,7 @@
       "prompt_tokens": 7126,
       "cached_tokens": 6791,
       "cost_nano": 219570,
-      "at": "2026-08-16T13:26:29.921722+00:00"
+      "at": "2026-08-16T14:07:52.369012+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2069,7 +2069,7 @@
       "prompt_tokens": 7458,
       "cached_tokens": 7123,
       "cost_nano": 226210,
-      "at": "2026-08-16T13:26:30.969806+00:00"
+      "at": "2026-08-16T14:07:53.837813+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2079,7 +2079,7 @@
       "prompt_tokens": 7790,
       "cached_tokens": 7455,
       "cost_nano": 232850,
-      "at": "2026-08-16T13:26:32.229978+00:00"
+      "at": "2026-08-16T14:07:55.013849+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2089,7 +2089,7 @@
       "prompt_tokens": 8122,
       "cached_tokens": 7787,
       "cost_nano": 239490,
-      "at": "2026-08-16T13:26:33.196462+00:00"
+      "at": "2026-08-16T14:07:56.106426+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2099,7 +2099,7 @@
       "prompt_tokens": 8454,
       "cached_tokens": 8119,
       "cost_nano": 246130,
-      "at": "2026-08-16T13:26:34.444009+00:00"
+      "at": "2026-08-16T14:07:57.141214+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2109,7 +2109,7 @@
       "prompt_tokens": 8786,
       "cached_tokens": 8451,
       "cost_nano": 252770,
-      "at": "2026-08-16T13:26:35.549140+00:00"
+      "at": "2026-08-16T14:07:58.554613+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2119,7 +2119,7 @@
       "prompt_tokens": 9118,
       "cached_tokens": 8783,
       "cost_nano": 259410,
-      "at": "2026-08-16T13:26:36.692965+00:00"
+      "at": "2026-08-16T14:07:59.637984+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2127,9 +2127,9 @@
       "est_tokens": 11828,
       "salt": "fc3b7c9abe9c3608",
       "prompt_tokens": 9450,
-      "cached_tokens": 0,
-      "cost_nano": 2362500,
-      "at": "2026-08-16T13:26:38.109946+00:00"
+      "cached_tokens": 9115,
+      "cost_nano": 266050,
+      "at": "2026-08-16T14:08:00.724429+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2139,7 +2139,7 @@
       "prompt_tokens": 9782,
       "cached_tokens": 9447,
       "cost_nano": 272690,
-      "at": "2026-08-16T13:26:39.203290+00:00"
+      "at": "2026-08-16T14:08:03.396704+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2149,7 +2149,7 @@
       "prompt_tokens": 10114,
       "cached_tokens": 9779,
       "cost_nano": 279330,
-      "at": "2026-08-16T13:26:40.553710+00:00"
+      "at": "2026-08-16T14:08:04.733411+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2159,7 +2159,7 @@
       "prompt_tokens": 10446,
       "cached_tokens": 10111,
       "cost_nano": 285970,
-      "at": "2026-08-16T13:26:41.668382+00:00"
+      "at": "2026-08-16T14:08:06.110004+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2169,7 +2169,7 @@
       "prompt_tokens": 10778,
       "cached_tokens": 10443,
       "cost_nano": 292610,
-      "at": "2026-08-16T13:26:42.844011+00:00"
+      "at": "2026-08-16T14:08:07.626456+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2179,7 +2179,7 @@
       "prompt_tokens": 11110,
       "cached_tokens": 10775,
       "cost_nano": 299250,
-      "at": "2026-08-16T13:26:44.006091+00:00"
+      "at": "2026-08-16T14:08:08.790139+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2189,7 +2189,7 @@
       "prompt_tokens": 11442,
       "cached_tokens": 11107,
       "cost_nano": 305890,
-      "at": "2026-08-16T13:26:45.243638+00:00"
+      "at": "2026-08-16T14:08:09.979960+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2199,7 +2199,7 @@
       "prompt_tokens": 11774,
       "cached_tokens": 11439,
       "cost_nano": 312530,
-      "at": "2026-08-16T13:26:46.612609+00:00"
+      "at": "2026-08-16T14:08:11.312613+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2209,7 +2209,7 @@
       "prompt_tokens": 12106,
       "cached_tokens": 11771,
       "cost_nano": 319170,
-      "at": "2026-08-16T13:26:47.763023+00:00"
+      "at": "2026-08-16T14:08:12.978218+00:00"
     },
     {
       "condition": "no_prune#0",
@@ -2219,7 +2219,7 @@
       "prompt_tokens": 12438,
       "cached_tokens": 12103,
       "cost_nano": 325810,
-      "at": "2026-08-16T13:26:49.119496+00:00"
+      "at": "2026-08-16T14:08:14.286434+00:00"
     },
     {
       "condition": "tail_first#4",
@@ -2229,57 +2229,57 @@
       "prompt_tokens": 6129,
       "cached_tokens": 0,
       "cost_nano": 1532250,
-      "at": "2026-08-16T13:26:50.056713+00:00"
+      "at": "2026-08-16T14:08:15.340504+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 2,
-      "est_tokens": 7867,
+      "est_tokens": 8228,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 6182,
-      "cached_tokens": 5794,
-      "cost_nano": 212880,
-      "at": "2026-08-16T13:26:51.280302+00:00"
+      "prompt_tokens": 6461,
+      "cached_tokens": 6126,
+      "cost_nano": 206270,
+      "at": "2026-08-16T14:08:16.432905+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 3,
-      "est_tokens": 8267,
+      "est_tokens": 8628,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 6514,
-      "cached_tokens": 6126,
-      "cost_nano": 219520,
-      "at": "2026-08-16T13:26:52.327055+00:00"
+      "prompt_tokens": 6793,
+      "cached_tokens": 6458,
+      "cost_nano": 212910,
+      "at": "2026-08-16T14:08:17.762203+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 4,
-      "est_tokens": 8667,
+      "est_tokens": 9028,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 6846,
-      "cached_tokens": 6126,
-      "cost_nano": 302520,
-      "at": "2026-08-16T13:26:53.435771+00:00"
+      "prompt_tokens": 7125,
+      "cached_tokens": 6790,
+      "cost_nano": 219550,
+      "at": "2026-08-16T14:08:18.810290+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 5,
-      "est_tokens": 8706,
+      "est_tokens": 9428,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 6899,
-      "cached_tokens": 6126,
-      "cost_nano": 315770,
-      "at": "2026-08-16T13:26:54.767654+00:00"
+      "prompt_tokens": 7457,
+      "cached_tokens": 7122,
+      "cost_nano": 226190,
+      "at": "2026-08-16T14:08:19.915302+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 6,
-      "est_tokens": 9106,
+      "est_tokens": 9467,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 7231,
-      "cached_tokens": 6126,
-      "cost_nano": 398770,
-      "at": "2026-08-16T13:26:55.996592+00:00"
+      "prompt_tokens": 7510,
+      "cached_tokens": 7122,
+      "cost_nano": 239440,
+      "at": "2026-08-16T14:08:21.141715+00:00"
     },
     {
       "condition": "tail_first#4",
@@ -2287,139 +2287,139 @@
       "est_tokens": 9145,
       "salt": "282c82b459f3eb74",
       "prompt_tokens": 7284,
-      "cached_tokens": 6126,
-      "cost_nano": 412020,
-      "at": "2026-08-16T13:26:57.068357+00:00"
+      "cached_tokens": 6790,
+      "cost_nano": 259300,
+      "at": "2026-08-16T14:08:22.780524+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 8,
-      "est_tokens": 9545,
+      "est_tokens": 9184,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 7616,
-      "cached_tokens": 6126,
-      "cost_nano": 495020,
-      "at": "2026-08-16T13:26:58.265936+00:00"
+      "prompt_tokens": 7337,
+      "cached_tokens": 6790,
+      "cost_nano": 272550,
+      "at": "2026-08-16T14:08:24.009117+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 9,
-      "est_tokens": 9584,
+      "est_tokens": 9223,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 7669,
-      "cached_tokens": 6126,
-      "cost_nano": 508270,
-      "at": "2026-08-16T13:26:59.423654+00:00"
+      "prompt_tokens": 7390,
+      "cached_tokens": 6790,
+      "cost_nano": 285800,
+      "at": "2026-08-16T14:08:25.325976+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 10,
-      "est_tokens": 9984,
+      "est_tokens": 9262,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 8001,
-      "cached_tokens": 6126,
-      "cost_nano": 591270,
-      "at": "2026-08-16T13:27:00.705392+00:00"
+      "prompt_tokens": 7443,
+      "cached_tokens": 6790,
+      "cost_nano": 299050,
+      "at": "2026-08-16T14:08:26.544999+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 11,
-      "est_tokens": 10023,
+      "est_tokens": 9301,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 8054,
-      "cached_tokens": 6126,
-      "cost_nano": 604520,
-      "at": "2026-08-16T13:27:02.227556+00:00"
+      "prompt_tokens": 7496,
+      "cached_tokens": 6790,
+      "cost_nano": 312300,
+      "at": "2026-08-16T14:08:27.684113+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 12,
-      "est_tokens": 10423,
+      "est_tokens": 9340,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 8386,
-      "cached_tokens": 5794,
-      "cost_nano": 763880,
-      "at": "2026-08-16T13:27:03.679200+00:00"
+      "prompt_tokens": 7549,
+      "cached_tokens": 6790,
+      "cost_nano": 325550,
+      "at": "2026-08-16T14:08:28.964578+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 13,
-      "est_tokens": 10462,
+      "est_tokens": 9379,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 8439,
-      "cached_tokens": 5794,
-      "cost_nano": 777130,
-      "at": "2026-08-16T13:27:05.011919+00:00"
+      "prompt_tokens": 7602,
+      "cached_tokens": 6790,
+      "cost_nano": 338800,
+      "at": "2026-08-16T14:08:30.179486+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 14,
-      "est_tokens": 10862,
+      "est_tokens": 9418,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 8771,
+      "prompt_tokens": 7655,
       "cached_tokens": 5794,
-      "cost_nano": 860130,
-      "at": "2026-08-16T13:27:06.582398+00:00"
+      "cost_nano": 581130,
+      "at": "2026-08-16T14:08:31.273513+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 15,
-      "est_tokens": 10901,
+      "est_tokens": 9457,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 8824,
+      "prompt_tokens": 7708,
       "cached_tokens": 5794,
-      "cost_nano": 873380,
-      "at": "2026-08-16T13:27:07.662785+00:00"
+      "cost_nano": 594380,
+      "at": "2026-08-16T14:08:32.816054+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 16,
-      "est_tokens": 11301,
+      "est_tokens": 9496,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 9156,
+      "prompt_tokens": 7761,
       "cached_tokens": 5794,
-      "cost_nano": 956380,
-      "at": "2026-08-16T13:27:08.843439+00:00"
+      "cost_nano": 607630,
+      "at": "2026-08-16T14:08:34.352119+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 17,
-      "est_tokens": 11340,
+      "est_tokens": 9174,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 9209,
+      "prompt_tokens": 7535,
       "cached_tokens": 5794,
-      "cost_nano": 969630,
-      "at": "2026-08-16T13:27:09.911031+00:00"
+      "cost_nano": 551130,
+      "at": "2026-08-16T14:08:35.786567+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 18,
-      "est_tokens": 11740,
+      "est_tokens": 9213,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 9541,
+      "prompt_tokens": 7588,
       "cached_tokens": 5794,
-      "cost_nano": 1052630,
-      "at": "2026-08-16T13:27:11.150769+00:00"
+      "cost_nano": 564380,
+      "at": "2026-08-16T14:08:37.116826+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 19,
-      "est_tokens": 11779,
+      "est_tokens": 9252,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 9594,
+      "prompt_tokens": 7641,
       "cached_tokens": 5794,
-      "cost_nano": 1065880,
-      "at": "2026-08-16T13:27:12.345878+00:00"
+      "cost_nano": 577630,
+      "at": "2026-08-16T14:08:38.576662+00:00"
     },
     {
       "condition": "tail_first#4",
       "turn": 20,
-      "est_tokens": 12179,
+      "est_tokens": 9291,
       "salt": "282c82b459f3eb74",
-      "prompt_tokens": 9926,
-      "cached_tokens": 5794,
-      "cost_nano": 1148880,
-      "at": "2026-08-16T13:27:13.462579+00:00"
+      "prompt_tokens": 7694,
+      "cached_tokens": 0,
+      "cost_nano": 1923500,
+      "at": "2026-08-16T14:08:39.852702+00:00"
     },
     {
       "condition": "tail_first#2",
@@ -2429,57 +2429,57 @@
       "prompt_tokens": 6127,
       "cached_tokens": 0,
       "cost_nano": 1531750,
-      "at": "2026-08-16T13:27:14.429622+00:00"
+      "at": "2026-08-16T14:08:40.749309+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 2,
-      "est_tokens": 7867,
+      "est_tokens": 8228,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 6180,
-      "cached_tokens": 5792,
-      "cost_nano": 212840,
-      "at": "2026-08-16T13:27:15.620344+00:00"
+      "prompt_tokens": 6459,
+      "cached_tokens": 6124,
+      "cost_nano": 206230,
+      "at": "2026-08-16T14:08:42.072126+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 3,
-      "est_tokens": 8267,
+      "est_tokens": 8628,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 6512,
-      "cached_tokens": 6124,
-      "cost_nano": 219480,
-      "at": "2026-08-16T13:27:17.063064+00:00"
+      "prompt_tokens": 6791,
+      "cached_tokens": 6456,
+      "cost_nano": 212870,
+      "at": "2026-08-16T14:08:43.192408+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 4,
-      "est_tokens": 8667,
+      "est_tokens": 9028,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 6844,
-      "cached_tokens": 6124,
-      "cost_nano": 302480,
-      "at": "2026-08-16T13:27:18.153780+00:00"
+      "prompt_tokens": 7123,
+      "cached_tokens": 6788,
+      "cost_nano": 219510,
+      "at": "2026-08-16T14:08:44.387169+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 5,
-      "est_tokens": 8706,
+      "est_tokens": 9428,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 6897,
-      "cached_tokens": 6124,
-      "cost_nano": 315730,
-      "at": "2026-08-16T13:27:19.311202+00:00"
+      "prompt_tokens": 7455,
+      "cached_tokens": 7120,
+      "cost_nano": 226150,
+      "at": "2026-08-16T14:08:45.411962+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 6,
-      "est_tokens": 9106,
+      "est_tokens": 9467,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 7229,
-      "cached_tokens": 6124,
-      "cost_nano": 398730,
-      "at": "2026-08-16T13:27:20.469723+00:00"
+      "prompt_tokens": 7508,
+      "cached_tokens": 7120,
+      "cost_nano": 239400,
+      "at": "2026-08-16T14:08:46.548596+00:00"
     },
     {
       "condition": "tail_first#2",
@@ -2487,139 +2487,139 @@
       "est_tokens": 9145,
       "salt": "a4ecd59044997a89",
       "prompt_tokens": 7282,
-      "cached_tokens": 6124,
-      "cost_nano": 411980,
-      "at": "2026-08-16T13:27:21.701129+00:00"
+      "cached_tokens": 6788,
+      "cost_nano": 259260,
+      "at": "2026-08-16T14:08:47.665474+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 8,
-      "est_tokens": 9545,
+      "est_tokens": 9184,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 7614,
-      "cached_tokens": 6124,
-      "cost_nano": 494980,
-      "at": "2026-08-16T13:27:22.923718+00:00"
+      "prompt_tokens": 7335,
+      "cached_tokens": 6788,
+      "cost_nano": 272510,
+      "at": "2026-08-16T14:08:48.941664+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 9,
-      "est_tokens": 9584,
+      "est_tokens": 9223,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 7667,
-      "cached_tokens": 6124,
-      "cost_nano": 508230,
-      "at": "2026-08-16T13:27:24.052221+00:00"
+      "prompt_tokens": 7388,
+      "cached_tokens": 6788,
+      "cost_nano": 285760,
+      "at": "2026-08-16T14:08:50.171636+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 10,
-      "est_tokens": 9984,
+      "est_tokens": 9262,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 7999,
-      "cached_tokens": 6124,
-      "cost_nano": 591230,
-      "at": "2026-08-16T13:27:25.066203+00:00"
+      "prompt_tokens": 7441,
+      "cached_tokens": 6788,
+      "cost_nano": 299010,
+      "at": "2026-08-16T14:08:51.156878+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 11,
-      "est_tokens": 10023,
+      "est_tokens": 9301,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 8052,
-      "cached_tokens": 6124,
-      "cost_nano": 604480,
-      "at": "2026-08-16T13:27:26.431888+00:00"
+      "prompt_tokens": 7494,
+      "cached_tokens": 6788,
+      "cost_nano": 312260,
+      "at": "2026-08-16T14:08:52.373595+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 12,
-      "est_tokens": 10423,
+      "est_tokens": 9340,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 8384,
-      "cached_tokens": 5792,
-      "cost_nano": 763840,
-      "at": "2026-08-16T13:27:27.809572+00:00"
+      "prompt_tokens": 7547,
+      "cached_tokens": 6788,
+      "cost_nano": 325510,
+      "at": "2026-08-16T14:08:54.012480+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 13,
-      "est_tokens": 10462,
+      "est_tokens": 9379,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 8437,
-      "cached_tokens": 5792,
-      "cost_nano": 777090,
-      "at": "2026-08-16T13:27:28.965941+00:00"
+      "prompt_tokens": 7600,
+      "cached_tokens": 6788,
+      "cost_nano": 338760,
+      "at": "2026-08-16T14:08:55.482691+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 14,
-      "est_tokens": 10862,
+      "est_tokens": 9418,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 8769,
+      "prompt_tokens": 7653,
       "cached_tokens": 5792,
-      "cost_nano": 860090,
-      "at": "2026-08-16T13:27:30.331634+00:00"
+      "cost_nano": 581090,
+      "at": "2026-08-16T14:08:56.657907+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 15,
-      "est_tokens": 10901,
+      "est_tokens": 9457,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 8822,
+      "prompt_tokens": 7706,
       "cached_tokens": 5792,
-      "cost_nano": 873340,
-      "at": "2026-08-16T13:27:31.466142+00:00"
+      "cost_nano": 594340,
+      "at": "2026-08-16T14:08:57.906196+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 16,
-      "est_tokens": 11301,
+      "est_tokens": 9496,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 9154,
+      "prompt_tokens": 7759,
       "cached_tokens": 5792,
-      "cost_nano": 956340,
-      "at": "2026-08-16T13:27:32.634453+00:00"
+      "cost_nano": 607590,
+      "at": "2026-08-16T14:08:59.440708+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 17,
-      "est_tokens": 11340,
+      "est_tokens": 9174,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 9207,
+      "prompt_tokens": 7533,
       "cached_tokens": 5792,
-      "cost_nano": 969590,
-      "at": "2026-08-16T13:27:33.797090+00:00"
+      "cost_nano": 551090,
+      "at": "2026-08-16T14:09:00.566184+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 18,
-      "est_tokens": 11740,
+      "est_tokens": 9213,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 9539,
+      "prompt_tokens": 7586,
       "cached_tokens": 5792,
-      "cost_nano": 1052590,
-      "at": "2026-08-16T13:27:34.979345+00:00"
+      "cost_nano": 564340,
+      "at": "2026-08-16T14:09:01.770826+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 19,
-      "est_tokens": 11779,
+      "est_tokens": 9252,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 9592,
+      "prompt_tokens": 7639,
       "cached_tokens": 5792,
-      "cost_nano": 1065840,
-      "at": "2026-08-16T13:27:36.307195+00:00"
+      "cost_nano": 577590,
+      "at": "2026-08-16T14:09:03.039109+00:00"
     },
     {
       "condition": "tail_first#2",
       "turn": 20,
-      "est_tokens": 12179,
+      "est_tokens": 9291,
       "salt": "a4ecd59044997a89",
-      "prompt_tokens": 9924,
-      "cached_tokens": 0,
-      "cost_nano": 2481000,
-      "at": "2026-08-16T13:27:37.610290+00:00"
+      "prompt_tokens": 7692,
+      "cached_tokens": 5792,
+      "cost_nano": 590840,
+      "at": "2026-08-16T14:09:04.458025+00:00"
     },
     {
       "condition": "oldest_first#1",
@@ -2629,57 +2629,57 @@
       "prompt_tokens": 6129,
       "cached_tokens": 0,
       "cost_nano": 1532250,
-      "at": "2026-08-16T13:27:38.512665+00:00"
+      "at": "2026-08-16T14:09:05.474038+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 2,
-      "est_tokens": 7868,
+      "est_tokens": 8228,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 6182,
-      "cached_tokens": 5794,
-      "cost_nano": 212880,
-      "at": "2026-08-16T13:27:39.695814+00:00"
+      "prompt_tokens": 6461,
+      "cached_tokens": 6126,
+      "cost_nano": 206270,
+      "at": "2026-08-16T14:09:06.814684+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 3,
-      "est_tokens": 8268,
+      "est_tokens": 8628,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 6514,
-      "cached_tokens": 6179,
-      "cost_nano": 207330,
-      "at": "2026-08-16T13:27:40.819064+00:00"
+      "prompt_tokens": 6793,
+      "cached_tokens": 6458,
+      "cost_nano": 212910,
+      "at": "2026-08-16T14:09:08.042369+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 4,
-      "est_tokens": 8668,
+      "est_tokens": 9028,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 6846,
-      "cached_tokens": 6511,
-      "cost_nano": 213970,
-      "at": "2026-08-16T13:27:42.864047+00:00"
+      "prompt_tokens": 7125,
+      "cached_tokens": 6790,
+      "cost_nano": 219550,
+      "at": "2026-08-16T14:09:09.063307+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 5,
-      "est_tokens": 8708,
+      "est_tokens": 9428,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 6899,
-      "cached_tokens": 5794,
-      "cost_nano": 392130,
-      "at": "2026-08-16T13:27:43.978780+00:00"
+      "prompt_tokens": 7457,
+      "cached_tokens": 7122,
+      "cost_nano": 226190,
+      "at": "2026-08-16T14:09:10.214895+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 6,
-      "est_tokens": 9108,
+      "est_tokens": 9468,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 7231,
-      "cached_tokens": 6896,
-      "cost_nano": 221670,
-      "at": "2026-08-16T13:27:47.044472+00:00"
+      "prompt_tokens": 7510,
+      "cached_tokens": 5794,
+      "cost_nano": 544880,
+      "at": "2026-08-16T14:09:11.307129+00:00"
     },
     {
       "condition": "oldest_first#1",
@@ -2689,137 +2689,137 @@
       "prompt_tokens": 7284,
       "cached_tokens": 5794,
       "cost_nano": 488380,
-      "at": "2026-08-16T13:27:48.582143+00:00"
+      "at": "2026-08-16T14:09:12.630399+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 8,
-      "est_tokens": 9548,
+      "est_tokens": 9188,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 7616,
-      "cached_tokens": 7281,
-      "cost_nano": 229370,
-      "at": "2026-08-16T13:27:49.803227+00:00"
+      "prompt_tokens": 7337,
+      "cached_tokens": 5794,
+      "cost_nano": 501630,
+      "at": "2026-08-16T14:09:14.082911+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 9,
-      "est_tokens": 9588,
+      "est_tokens": 9228,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 7669,
+      "prompt_tokens": 7390,
       "cached_tokens": 5794,
-      "cost_nano": 584630,
-      "at": "2026-08-16T13:27:51.059691+00:00"
+      "cost_nano": 514880,
+      "at": "2026-08-16T14:09:15.324453+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 10,
-      "est_tokens": 9988,
+      "est_tokens": 9268,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 8001,
-      "cached_tokens": 7666,
-      "cost_nano": 237070,
-      "at": "2026-08-16T13:27:52.625794+00:00"
+      "prompt_tokens": 7443,
+      "cached_tokens": 5794,
+      "cost_nano": 528130,
+      "at": "2026-08-16T14:09:16.493729+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 11,
-      "est_tokens": 10028,
+      "est_tokens": 9308,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 8054,
+      "prompt_tokens": 7496,
       "cached_tokens": 5794,
-      "cost_nano": 680880,
-      "at": "2026-08-16T13:27:53.803191+00:00"
+      "cost_nano": 541380,
+      "at": "2026-08-16T14:09:17.856477+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 12,
-      "est_tokens": 10428,
+      "est_tokens": 9348,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 8386,
-      "cached_tokens": 8051,
-      "cost_nano": 244770,
-      "at": "2026-08-16T13:27:55.082045+00:00"
+      "prompt_tokens": 7549,
+      "cached_tokens": 5794,
+      "cost_nano": 554630,
+      "at": "2026-08-16T14:09:19.134934+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 13,
-      "est_tokens": 10468,
+      "est_tokens": 9388,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 8439,
+      "prompt_tokens": 7602,
       "cached_tokens": 5794,
-      "cost_nano": 777130,
-      "at": "2026-08-16T13:27:56.927822+00:00"
+      "cost_nano": 567880,
+      "at": "2026-08-16T14:09:20.432535+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 14,
-      "est_tokens": 10868,
+      "est_tokens": 9428,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 8771,
-      "cached_tokens": 8436,
-      "cost_nano": 252470,
-      "at": "2026-08-16T13:27:58.050508+00:00"
+      "prompt_tokens": 7655,
+      "cached_tokens": 5794,
+      "cost_nano": 581130,
+      "at": "2026-08-16T14:09:21.558675+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 15,
-      "est_tokens": 10908,
+      "est_tokens": 9468,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 8824,
+      "prompt_tokens": 7708,
       "cached_tokens": 5794,
-      "cost_nano": 873380,
-      "at": "2026-08-16T13:27:59.376034+00:00"
+      "cost_nano": 594380,
+      "at": "2026-08-16T14:09:22.684600+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 16,
-      "est_tokens": 11308,
+      "est_tokens": 9508,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 9156,
-      "cached_tokens": 8821,
-      "cost_nano": 260170,
-      "at": "2026-08-16T13:28:00.577480+00:00"
+      "prompt_tokens": 7761,
+      "cached_tokens": 5794,
+      "cost_nano": 607630,
+      "at": "2026-08-16T14:09:23.900720+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 17,
-      "est_tokens": 11348,
+      "est_tokens": 9188,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 9209,
+      "prompt_tokens": 7535,
       "cached_tokens": 5794,
-      "cost_nano": 969630,
-      "at": "2026-08-16T13:28:01.765907+00:00"
+      "cost_nano": 551130,
+      "at": "2026-08-16T14:09:25.188013+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 18,
-      "est_tokens": 11748,
+      "est_tokens": 9228,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 9541,
-      "cached_tokens": 9206,
-      "cost_nano": 267870,
-      "at": "2026-08-16T13:28:03.044650+00:00"
+      "prompt_tokens": 7588,
+      "cached_tokens": 5794,
+      "cost_nano": 564380,
+      "at": "2026-08-16T14:09:26.405449+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 19,
-      "est_tokens": 11788,
+      "est_tokens": 9268,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 9594,
+      "prompt_tokens": 7641,
       "cached_tokens": 5794,
-      "cost_nano": 1065880,
-      "at": "2026-08-16T13:28:04.297170+00:00"
+      "cost_nano": 577630,
+      "at": "2026-08-16T14:09:27.805525+00:00"
     },
     {
       "condition": "oldest_first#1",
       "turn": 20,
-      "est_tokens": 12188,
+      "est_tokens": 9308,
       "salt": "4d37187d3c841ada",
-      "prompt_tokens": 9926,
-      "cached_tokens": 9591,
-      "cost_nano": 275570,
-      "at": "2026-08-16T13:28:05.730430+00:00"
+      "prompt_tokens": 7694,
+      "cached_tokens": 5794,
+      "cost_nano": 590880,
+      "at": "2026-08-16T14:09:28.852709+00:00"
     },
     {
       "condition": "tail_first#3",
@@ -2829,57 +2829,57 @@
       "prompt_tokens": 6128,
       "cached_tokens": 0,
       "cost_nano": 1532000,
-      "at": "2026-08-16T13:28:06.757571+00:00"
+      "at": "2026-08-16T14:09:29.954054+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 2,
-      "est_tokens": 7867,
+      "est_tokens": 8228,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 6181,
-      "cached_tokens": 5793,
-      "cost_nano": 212860,
-      "at": "2026-08-16T13:28:08.187624+00:00"
+      "prompt_tokens": 6460,
+      "cached_tokens": 6125,
+      "cost_nano": 206250,
+      "at": "2026-08-16T14:09:31.228920+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 3,
-      "est_tokens": 8267,
+      "est_tokens": 8628,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 6513,
-      "cached_tokens": 6125,
-      "cost_nano": 219500,
-      "at": "2026-08-16T13:28:09.337416+00:00"
+      "prompt_tokens": 6792,
+      "cached_tokens": 6457,
+      "cost_nano": 212890,
+      "at": "2026-08-16T14:09:32.578278+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 4,
-      "est_tokens": 8667,
+      "est_tokens": 9028,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 6845,
-      "cached_tokens": 6125,
-      "cost_nano": 302500,
-      "at": "2026-08-16T13:28:10.613951+00:00"
+      "prompt_tokens": 7124,
+      "cached_tokens": 6789,
+      "cost_nano": 219530,
+      "at": "2026-08-16T14:09:33.613121+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 5,
-      "est_tokens": 8706,
+      "est_tokens": 9428,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 6898,
-      "cached_tokens": 6125,
-      "cost_nano": 315750,
-      "at": "2026-08-16T13:28:11.692154+00:00"
+      "prompt_tokens": 7456,
+      "cached_tokens": 7121,
+      "cost_nano": 226170,
+      "at": "2026-08-16T14:09:34.699341+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 6,
-      "est_tokens": 9106,
+      "est_tokens": 9467,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 7230,
-      "cached_tokens": 6125,
-      "cost_nano": 398750,
-      "at": "2026-08-16T13:28:14.338462+00:00"
+      "prompt_tokens": 7509,
+      "cached_tokens": 7121,
+      "cost_nano": 239420,
+      "at": "2026-08-16T14:09:35.782717+00:00"
     },
     {
       "condition": "tail_first#3",
@@ -2887,139 +2887,139 @@
       "est_tokens": 9145,
       "salt": "d56324f8b64ea915",
       "prompt_tokens": 7283,
-      "cached_tokens": 6125,
-      "cost_nano": 412000,
-      "at": "2026-08-16T13:28:15.626735+00:00"
+      "cached_tokens": 0,
+      "cost_nano": 1820750,
+      "at": "2026-08-16T14:09:36.908933+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 8,
-      "est_tokens": 9545,
+      "est_tokens": 9184,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 7615,
-      "cached_tokens": 6125,
-      "cost_nano": 495000,
-      "at": "2026-08-16T13:28:16.585519+00:00"
+      "prompt_tokens": 7336,
+      "cached_tokens": 6789,
+      "cost_nano": 272530,
+      "at": "2026-08-16T14:09:38.041317+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 9,
-      "est_tokens": 9584,
+      "est_tokens": 9223,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 7668,
-      "cached_tokens": 6125,
-      "cost_nano": 508250,
-      "at": "2026-08-16T13:28:17.825849+00:00"
+      "prompt_tokens": 7389,
+      "cached_tokens": 6789,
+      "cost_nano": 285780,
+      "at": "2026-08-16T14:09:39.425831+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 10,
-      "est_tokens": 9984,
+      "est_tokens": 9262,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 8000,
-      "cached_tokens": 6125,
-      "cost_nano": 591250,
-      "at": "2026-08-16T13:28:19.144827+00:00"
+      "prompt_tokens": 7442,
+      "cached_tokens": 6789,
+      "cost_nano": 299030,
+      "at": "2026-08-16T14:09:40.401870+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 11,
-      "est_tokens": 10023,
+      "est_tokens": 9301,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 8053,
-      "cached_tokens": 6125,
-      "cost_nano": 604500,
-      "at": "2026-08-16T13:28:20.344403+00:00"
+      "prompt_tokens": 7495,
+      "cached_tokens": 6789,
+      "cost_nano": 312280,
+      "at": "2026-08-16T14:09:41.624180+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 12,
-      "est_tokens": 10423,
+      "est_tokens": 9340,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 8385,
-      "cached_tokens": 5793,
-      "cost_nano": 763860,
-      "at": "2026-08-16T13:28:21.602354+00:00"
+      "prompt_tokens": 7548,
+      "cached_tokens": 6789,
+      "cost_nano": 325530,
+      "at": "2026-08-16T14:09:42.998738+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 13,
-      "est_tokens": 10462,
+      "est_tokens": 9379,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 8438,
-      "cached_tokens": 5793,
-      "cost_nano": 777110,
-      "at": "2026-08-16T13:28:22.748513+00:00"
+      "prompt_tokens": 7601,
+      "cached_tokens": 6789,
+      "cost_nano": 338780,
+      "at": "2026-08-16T14:09:44.190600+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 14,
-      "est_tokens": 10862,
+      "est_tokens": 9418,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 8770,
+      "prompt_tokens": 7654,
       "cached_tokens": 5793,
-      "cost_nano": 860110,
-      "at": "2026-08-16T13:28:23.911088+00:00"
+      "cost_nano": 581110,
+      "at": "2026-08-16T14:09:45.523444+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 15,
-      "est_tokens": 10901,
+      "est_tokens": 9457,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 8823,
+      "prompt_tokens": 7707,
       "cached_tokens": 5793,
-      "cost_nano": 873360,
-      "at": "2026-08-16T13:28:25.187638+00:00"
+      "cost_nano": 594360,
+      "at": "2026-08-16T14:09:46.596833+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 16,
-      "est_tokens": 11301,
+      "est_tokens": 9496,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 9155,
+      "prompt_tokens": 7760,
       "cached_tokens": 5793,
-      "cost_nano": 956360,
-      "at": "2026-08-16T13:28:26.379768+00:00"
+      "cost_nano": 607610,
+      "at": "2026-08-16T14:09:47.875708+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 17,
-      "est_tokens": 11340,
+      "est_tokens": 9174,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 9208,
+      "prompt_tokens": 7534,
       "cached_tokens": 5793,
-      "cost_nano": 969610,
-      "at": "2026-08-16T13:28:27.578817+00:00"
+      "cost_nano": 551110,
+      "at": "2026-08-16T14:09:49.197652+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 18,
-      "est_tokens": 11740,
+      "est_tokens": 9213,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 9540,
+      "prompt_tokens": 7587,
       "cached_tokens": 5793,
-      "cost_nano": 1052610,
-      "at": "2026-08-16T13:28:28.978205+00:00"
+      "cost_nano": 564360,
+      "at": "2026-08-16T14:09:50.224236+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 19,
-      "est_tokens": 11779,
+      "est_tokens": 9252,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 9593,
+      "prompt_tokens": 7640,
       "cached_tokens": 5793,
-      "cost_nano": 1065860,
-      "at": "2026-08-16T13:28:30.511994+00:00"
+      "cost_nano": 577610,
+      "at": "2026-08-16T14:09:51.561319+00:00"
     },
     {
       "condition": "tail_first#3",
       "turn": 20,
-      "est_tokens": 12179,
+      "est_tokens": 9291,
       "salt": "d56324f8b64ea915",
-      "prompt_tokens": 9925,
+      "prompt_tokens": 7693,
       "cached_tokens": 5793,
-      "cost_nano": 1148860,
-      "at": "2026-08-16T13:28:31.943847+00:00"
+      "cost_nano": 590860,
+      "at": "2026-08-16T14:09:52.845724+00:00"
     }
   ]
 }
