@@ -39,11 +39,13 @@ Reproduce: `python -m bench.killgate --repeats 5` (~$0.14). Raw usage blocks in
 
 ## Install
 
+> **Not on PyPI yet.** Install from source until v0.1.0 ships:
+
 ```bash
-pip install context-slim
+pip install git+https://github.com/Ramtin2000/context-slim
 ```
 
-Zero runtime dependencies. No model, no GPU, no network.
+Zero runtime dependencies. No model, no GPU, no network. Python 3.9+.
 
 ## Use
 
