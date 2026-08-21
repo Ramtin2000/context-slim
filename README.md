@@ -56,6 +56,29 @@ Measured on ~93 KB (`python -m bench.bench_dedupe`):
 **104× on the hashing step.** The rejected implementation is kept in
 `bench/bench_dedupe.py` so the comparison is measured rather than asserted.
 
+## The cost model is checkable
+
+Most token accounting asks you to trust it. This one predicts how much of a
+request the API will report as cached, *before* the call, then diffs against
+`usage.prompt_tokens_details`.
+
+Measured over 24 live requests (`python -m bench.validate`, ~$0.01):
+
+| | raw | calibrated |
+|---|---|---|
+| prompt-token error (median) | 26.11% | **0.64%** |
+| cached-token error (median) | 25.80% | **0.84%** |
+
+The raw 26% was a single wrong constant, not a broken model — the
+predicted/actual ratio had a spread of 0.9%, so dividing it out left a max
+residual of 1.78%. The estimator is calibrated by that constant in
+`cache/prefix.py`, with both caveats stated there: it is fit to one tokenizer
+family, and it sits inside the pruning policy's own budget, so it cannot be
+recalibrated and replayed against an old run.
+
+No dollar figure in this repo comes from the estimator. Those all read the
+provider's usage counters.
+
 ## Install
 
 > **Not on PyPI yet.** Install from source until v0.1.0 ships:
