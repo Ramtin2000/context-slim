@@ -28,6 +28,7 @@ from .killgate import (
     RESULTS,
     actual_cost,
     build_loop,
+    load_dotenv,
     load_ledger,
     prune,
     save_ledger,
@@ -123,6 +124,10 @@ def main() -> int:
     if spent.nano + worst.nano > cap.nano:
         print(f"\nABORT: would exceed the {cap} cap.", file=sys.stderr)
         return 2
+
+    # Same .env handling as the kill gate: a key on the command line lands in
+    # shell history, a mode-600 file does not.
+    load_dotenv()
 
     from openai import OpenAI
 

@@ -24,16 +24,36 @@ no warning, just a bill."""
 MAX_BREAKPOINTS = 4
 
 
-def estimate_tokens(text: str) -> int:
-    """Dependency-free token estimate.
+# Calibrated against 24 live gpt-5.6-luna requests (bench/results/validation.json).
+# The uncalibrated form over-predicted by a factor of 1.2608 with sd 0.0113 - a
+# 0.9% relative spread, so the miss was one constant rather than a modelling
+# error. Dividing it out left a maximum residual of 1.77% across every request.
+#
+# Two caveats worth stating plainly:
+#
+# 1. This constant is fit to gpt-5.6-luna on one validation set. It is a scale
+#    factor for one tokenizer family, not a universal correction.
+# 2. The estimator sits INSIDE the budget-triggered pruning policy, so changing
+#    it changes which messages get stubbed. That means you cannot recalibrate
+#    and replay against an old run - the policy would have behaved differently.
+#    Verification has to scale the recorded predictions, not recompute them.
+#
+# It is also why no reported dollar figure in this project comes from this
+# function - those all read the provider's own usage counters.
+_CALIBRATION = 1.2608
 
-    Roughly chars/4 with a correction for whitespace runs. Good enough to
-    *rank* candidates; never used for a reported dollar figure, which always
-    comes from the provider's own usage counters.
+
+def estimate_tokens(text: str) -> int:
+    """Dependency-free token estimate, calibrated against measured usage.
+
+    Roughly chars/5 with a correction for whitespace runs, then divided by a
+    measured constant. Accurate to within ~2% on the validation set; still only
+    used to *rank* candidates, never to report a dollar figure.
     """
     if not text:
         return 0
-    return max(1, (len(text) + len(text.split()) ) // 5)
+    raw = (len(text) + len(text.split())) / 5
+    return max(1, int(raw / _CALIBRATION))
 
 
 def message_tokens(message: Message) -> int:

@@ -1,0 +1,194 @@
+[
+  {
+    "turn": 1,
+    "condition": "no_prune",
+    "predicted_prompt": 7828,
+    "predicted_cached": 0,
+    "actual_prompt": 6123,
+    "actual_cached": 0
+  },
+  {
+    "turn": 2,
+    "condition": "no_prune",
+    "predicted_prompt": 8228,
+    "predicted_cached": 7828,
+    "actual_prompt": 6455,
+    "actual_cached": 6120
+  },
+  {
+    "turn": 3,
+    "condition": "no_prune",
+    "predicted_prompt": 8628,
+    "predicted_cached": 8228,
+    "actual_prompt": 6787,
+    "actual_cached": 6452
+  },
+  {
+    "turn": 4,
+    "condition": "no_prune",
+    "predicted_prompt": 9028,
+    "predicted_cached": 8628,
+    "actual_prompt": 7119,
+    "actual_cached": 6784
+  },
+  {
+    "turn": 5,
+    "condition": "no_prune",
+    "predicted_prompt": 9428,
+    "predicted_cached": 9028,
+    "actual_prompt": 7451,
+    "actual_cached": 7116
+  },
+  {
+    "turn": 6,
+    "condition": "no_prune",
+    "predicted_prompt": 9828,
+    "predicted_cached": 9428,
+    "actual_prompt": 7783,
+    "actual_cached": 7448
+  },
+  {
+    "turn": 7,
+    "condition": "no_prune",
+    "predicted_prompt": 10228,
+    "predicted_cached": 9828,
+    "actual_prompt": 8115,
+    "actual_cached": 7780
+  },
+  {
+    "turn": 8,
+    "condition": "no_prune",
+    "predicted_prompt": 10628,
+    "predicted_cached": 10228,
+    "actual_prompt": 8447,
+    "actual_cached": 8112
+  },
+  {
+    "turn": 9,
+    "condition": "no_prune",
+    "predicted_prompt": 11028,
+    "predicted_cached": 10628,
+    "actual_prompt": 8779,
+    "actual_cached": 8444
+  },
+  {
+    "turn": 10,
+    "condition": "no_prune",
+    "predicted_prompt": 11428,
+    "predicted_cached": 11028,
+    "actual_prompt": 9111,
+    "actual_cached": 8776
+  },
+  {
+    "turn": 11,
+    "condition": "no_prune",
+    "predicted_prompt": 11828,
+    "predicted_cached": 11428,
+    "actual_prompt": 9443,
+    "actual_cached": 9108
+  },
+  {
+    "turn": 12,
+    "condition": "no_prune",
+    "predicted_prompt": 12228,
+    "predicted_cached": 11828,
+    "actual_prompt": 9775,
+    "actual_cached": 9440
+  },
+  {
+    "turn": 1,
+    "condition": "tail_first",
+    "predicted_prompt": 7828,
+    "predicted_cached": 0,
+    "actual_prompt": 6122,
+    "actual_cached": 0
+  },
+  {
+    "turn": 2,
+    "condition": "tail_first",
+    "predicted_prompt": 8228,
+    "predicted_cached": 7828,
+    "actual_prompt": 6454,
+    "actual_cached": 6119
+  },
+  {
+    "turn": 3,
+    "condition": "tail_first",
+    "predicted_prompt": 8628,
+    "predicted_cached": 8228,
+    "actual_prompt": 6786,
+    "actual_cached": 6451
+  },
+  {
+    "turn": 4,
+    "condition": "tail_first",
+    "predicted_prompt": 9028,
+    "predicted_cached": 8628,
+    "actual_prompt": 7118,
+    "actual_cached": 6783
+  },
+  {
+    "turn": 5,
+    "condition": "tail_first",
+    "predicted_prompt": 9428,
+    "predicted_cached": 9028,
+    "actual_prompt": 7450,
+    "actual_cached": 7115
+  },
+  {
+    "turn": 6,
+    "condition": "tail_first",
+    "predicted_prompt": 9467,
+    "predicted_cached": 9056,
+    "actual_prompt": 7503,
+    "actual_cached": 7115
+  },
+  {
+    "turn": 7,
+    "condition": "tail_first",
+    "predicted_prompt": 9145,
+    "predicted_cached": 8656,
+    "actual_prompt": 7277,
+    "actual_cached": 6783
+  },
+  {
+    "turn": 8,
+    "condition": "tail_first",
+    "predicted_prompt": 9184,
+    "predicted_cached": 8773,
+    "actual_prompt": 7330,
+    "actual_cached": 6783
+  },
+  {
+    "turn": 9,
+    "condition": "tail_first",
+    "predicted_prompt": 9223,
+    "predicted_cached": 8812,
+    "actual_prompt": 7383,
+    "actual_cached": 6783
+  },
+  {
+    "turn": 10,
+    "condition": "tail_first",
+    "predicted_prompt": 9262,
+    "predicted_cached": 8851,
+    "actual_prompt": 7436,
+    "actual_cached": 6783
+  },
+  {
+    "turn": 11,
+    "condition": "tail_first",
+    "predicted_prompt": 9301,
+    "predicted_cached": 8890,
+    "actual_prompt": 7489,
+    "actual_cached": 6783
+  },
+  {
+    "turn": 12,
+    "condition": "tail_first",
+    "predicted_prompt": 9340,
+    "predicted_cached": 8929,
+    "actual_prompt": 7542,
+    "actual_cached": 6783
+  }
+]
