@@ -73,3 +73,22 @@ def test_reads_from_stdin(
 def test_unknown_preset_is_rejected_by_argparse(loop_file: str) -> None:
     with pytest.raises(SystemExit):
         main(["plan", loop_file, "--preset", "reckless"])
+
+
+ANTHROPIC_OVERRUN: list[dict[str, object]] = [
+    {"role": "system", "content": "S" * 40_000, "cache_control": {"type": "ephemeral"}},
+    *[{"role": "user", "content": f"turn {i} " + "x" * 400} for i in range(30)],
+]
+
+
+def test_doctor_exits_nonzero_on_a_pathology(
+    tmp_path: pathlib.Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """This is the CI wedge: a silent cache miss has to fail a build."""
+    p = tmp_path / "overrun.json"
+    p.write_text(json.dumps(ANTHROPIC_OVERRUN))
+    code = main(["doctor", str(p), "--model", "anthropic/claude-opus-5"])
+    out = capsys.readouterr().out
+    assert code == 1
+    assert "lookback-overrun" in out
+    assert "/turn" in out  # the cost of ignoring it, not just the fact of it

@@ -122,3 +122,27 @@ def test_every_rate_declares_its_provenance():
 def test_unknown_model_raises_with_suggestions():
     with pytest.raises(KeyError, match="known:"):
         rates.get("openai/does-not-exist")
+
+
+def test_doctor_flags_missing_anthropic_breakpoint() -> None:
+    """Anthropic caching is opt-in; no breakpoint means nothing is ever cached."""
+    from context_slim import doctor
+
+    found = doctor(
+        [{"role": "system", "content": "S" * 40_000}, {"role": "user", "content": "hi"}],
+        model="anthropic/claude-opus-5",
+    )
+    assert any(d.code == "no-breakpoint" for d in found)
+
+
+def test_doctor_prices_the_lookback_overrun() -> None:
+    """A diagnostic without a cost is a fact; with one it is an argument."""
+    from context_slim import doctor
+
+    msgs: list[dict[str, object]] = [
+        {"role": "system", "content": "S" * 40_000, "cache_control": {"type": "ephemeral"}},
+        *[{"role": "user", "content": f"turn {i} " + "x" * 400} for i in range(30)],
+    ]
+    found = doctor(msgs, model="anthropic/claude-opus-5")
+    overrun = [d for d in found if d.code == "lookback-overrun"]
+    assert overrun and overrun[0].est_cost_per_turn.nano > 0
