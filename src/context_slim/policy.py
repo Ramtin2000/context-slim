@@ -30,6 +30,7 @@ def verdict(
     rates: ModelRates,
     horizon: int,
     ttl: int | None = None,
+    max_payback_turns: float | None = None,
 ) -> Verdict:
     """Decide whether a single candidate edit is worth making.
 
@@ -39,6 +40,20 @@ def verdict(
     """
     math_ = model.break_even(rates, candidate.w_tokens, candidate.s_tokens, horizon, ttl)
     decision, reason = _classify(math_, candidate, horizon)
+
+    # A preset may cap payback more tightly than the horizon alone would. This
+    # only ever downgrades a verdict, so Law 1 cannot be weakened by it.
+    if (
+        decision is Decision.PLAN
+        and max_payback_turns is not None
+        and math_.turns is not None
+        and math_.turns > max_payback_turns
+    ):
+        decision = Decision.DEFER
+        reason = (
+            f"pays back in {math_.turns:.1f} turns, over this preset's "
+            f"{max_payback_turns:.0f}-turn limit — held for a cheaper moment"
+        )
 
     if decision is Decision.PLAN and math_.net_at_horizon.nano < 0:  # pragma: no cover
         raise AssertionError("Law 1 violated: PLAN emitted with negative projected value")
@@ -94,9 +109,12 @@ def plan(
     rates: ModelRates,
     horizon: int,
     ttl: int | None = None,
+    max_payback_turns: float | None = None,
 ) -> PrunePlan:
     """Cost every candidate and return a pure, side-effect-free plan."""
-    verdicts: list[Verdict] = [verdict(c, rates, horizon, ttl) for c in candidates]
+    verdicts: list[Verdict] = [
+        verdict(c, rates, horizon, ttl, max_payback_turns) for c in candidates
+    ]
     return PrunePlan(model=rates.key, horizon=horizon, verdicts=verdicts)
 
 

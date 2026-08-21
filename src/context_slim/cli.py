@@ -13,6 +13,7 @@ from collections.abc import Sequence
 
 from . import __version__, apply, doctor, plan, simulate
 from ._types import Message
+from .presets import PRESETS
 
 _SEVERITY_EXIT = {"error": 1, "warning": 0, "info": 0}
 
@@ -41,8 +42,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         s.add_argument("file", help="JSON file of messages, or '-' for stdin")
         s.add_argument("--model", default="openai/gpt-5.6-luna")
         if name != "doctor":
-            s.add_argument("--horizon", type=int, default=20)
-            s.add_argument("--order", default="tail_first", choices=["tail_first", "oldest_first"])
+            s.add_argument("--horizon", type=int, default=None)
+            s.add_argument("--order", default=None, choices=["tail_first", "oldest_first"])
+            s.add_argument(
+                "--preset",
+                default="balanced",
+                choices=sorted(PRESETS),
+                help="named stance on how much cache damage is acceptable",
+            )
 
     args = p.parse_args(argv)
     messages = _load(args.file)
@@ -57,10 +64,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         return worst
 
     if args.cmd == "simulate":
-        print(simulate(messages, model=args.model, turns=args.horizon, order=args.order))
+        turns = args.horizon if args.horizon is not None else PRESETS[args.preset].horizon
+        print(simulate(messages, model=args.model, turns=turns, order=args.order))
         return 0
 
-    pl = plan(messages, model=args.model, horizon=args.horizon, order=args.order)
+    pl = plan(
+        messages,
+        model=args.model,
+        preset=args.preset,
+        horizon=args.horizon,
+        order=args.order,
+    )
     if args.cmd == "plan":
         for v in pl.verdicts:
             print(f"{v.decision.value:<7} msg {v.candidate.index:<4} {v.reason}")

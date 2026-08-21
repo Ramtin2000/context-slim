@@ -29,9 +29,13 @@ from ._types import (
 from .cache import prefix as _prefix
 from .cache.rates import ModelRates
 from .cache.rates import get as get_rates
+from .ledger import DischargeReason, Ledger, detect_discharge_windows
 from .ops import expiry as _expiry
 from .policy import break_even_turns, estimate_horizon
 from .policy import plan as _plan_candidates
+from .presets import PRESETS, Preset
+from .presets import get as get_preset
+from .providers import adapter_for, detect
 
 __version__ = "0.1.0"
 
@@ -49,15 +53,37 @@ def plan(
     messages: Sequence[Message],
     *,
     model: str = "openai/gpt-5.6-luna",
-    horizon: int = 20,
-    order: str = "tail_first",
-    keep_recent: int = 2,
+    preset: str | Preset | None = None,
+    horizon: int | None = None,
+    order: str | None = None,
+    keep_recent: int | None = None,
     ttl: int | None = None,
 ) -> PrunePlan:
-    """Decide what to prune. Pure: never mutates ``messages``, never does I/O."""
+    """Decide what to prune. Pure: never mutates ``messages``, never does I/O.
+
+    A ``preset`` supplies order, keep_recent, horizon and a payback cap; any
+    argument passed explicitly overrides it. Every override defaults to ``None``
+    rather than to the preset's value, because comparing against a default
+    cannot distinguish "not passed" from "passed the same value on purpose".
+
+    With no preset, ``BALANCED`` applies: tail-first, refusing anything slower
+    than ~12 turns to pay back. Conservative on purpose — the measured result
+    was that pruning usually loses money.
+    """
+    cfg = get_preset(preset) if isinstance(preset, str) else (preset or get_preset("balanced"))
     rates = get_rates(model)
-    cands = _expiry.candidates(messages, order=order, keep_recent=keep_recent)
-    return _plan_candidates(cands, rates, horizon, ttl)
+    cands = _expiry.candidates(
+        messages,
+        order=cfg.order if order is None else order,
+        keep_recent=cfg.keep_recent if keep_recent is None else keep_recent,
+    )
+    return _plan_candidates(
+        cands,
+        rates,
+        cfg.horizon if horizon is None else horizon,
+        ttl,
+        cfg.max_payback_turns,
+    )
 
 
 def apply(messages: Sequence[Message], prune_plan: PrunePlan) -> tuple[list[Message], CostReport]:
@@ -102,29 +128,38 @@ def simulate(
     model: str = "openai/gpt-5.6-luna",
     turns: int = 20,
     order: str = "tail_first",
+    preset: str | Preset | None = None,
 ) -> CostReport:
     """Project the outcome of pruning over ``turns`` future turns. No API calls."""
-    p = plan(messages, model=model, horizon=turns, order=order)
+    p = plan(messages, model=model, horizon=turns, order=order, preset=preset)
     _, report = apply(messages, p)
     return report
 
 
 __all__ = [
+    "PRESETS",
     "BreakEven",
     "Candidate",
     "CostReport",
     "Decision",
     "Diagnostic",
+    "DischargeReason",
+    "Ledger",
     "Message",
     "ModelRates",
     "Money",
+    "Preset",
     "PrunePlan",
     "Verdict",
     "__version__",
+    "adapter_for",
     "apply",
     "break_even_turns",
+    "detect",
+    "detect_discharge_windows",
     "doctor",
     "estimate_horizon",
+    "get_preset",
     "get_rates",
     "plan",
     "simulate",
