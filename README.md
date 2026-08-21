@@ -37,6 +37,25 @@ newest-first   95%   96%   93%   91%   76%   77%   60%
 Reproduce: `python -m bench.killgate --repeats 5` (~$0.14). Raw usage blocks in
 [`bench/results/`](bench/results/).
 
+## Why the dedupe is built the way it is
+
+The textbook approach to block deduplication is a byte-level rolling hash with
+content-defined boundaries. In pure Python that is one interpreter iteration per
+byte, and it does not fit a sub-5ms budget. `str.split` plus `hashlib.blake2b`
+does the same job at block granularity with both halves running in C.
+
+Measured on ~93 KB (`python -m bench.bench_dedupe`):
+
+| | time |
+|---|---|
+| rejected: 64-byte rolling hash (per-byte Python loop) | 25.26 ms |
+| shipped: `str.split` + `blake2b` (per-block loop) | **0.24 ms** |
+| shipped: full `dedupe_blocks` pass | 0.54 ms |
+| shipped: `collapse_whitespace` | 1.06 ms |
+
+**104× on the hashing step.** The rejected implementation is kept in
+`bench/bench_dedupe.py` so the comparison is measured rather than asserted.
+
 ## Install
 
 > **Not on PyPI yet.** Install from source until v0.1.0 ships:

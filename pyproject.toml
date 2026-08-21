@@ -67,5 +67,12 @@ python_version = "3.10"
 strict = true
 files = ["src/context_slim"]
 
+# bench/figures.py is deliberately outside `files`. It imports matplotlib, whose
+# numpy stubs use `type` statements requiring python_version >= 3.12 and fail to
+# parse at the 3.10 floor above. That is a third-party stub incompatibility, not
+# our code, and it cannot be silenced by an override because the failure happens
+# during parsing. Shipped code in src/ is fully strict-checked; the plotting
+# script is not.
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
