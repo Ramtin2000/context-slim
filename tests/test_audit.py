@@ -7,7 +7,7 @@ import pathlib
 
 import pytest
 
-from context_slim.cli import main
+from context_slim.audit import main
 
 LOOP: list[dict[str, object]] = [{"role": "system", "content": "S" * 32_000}]
 for _i in range(10):

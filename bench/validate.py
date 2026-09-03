@@ -22,7 +22,7 @@ import sys
 from dataclasses import asdict, dataclass
 
 from context_slim import get_rates
-from context_slim._types import Message, Money
+from context_slim.schemas import Message, Money
 
 from .killgate import (
     RESULTS,

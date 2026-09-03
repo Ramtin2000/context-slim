@@ -10,9 +10,9 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 
-from ._types import BreakEven, Candidate, Decision, Money, PrunePlan, Verdict
 from .cache import model
 from .cache.rates import ModelRates
+from .schemas import BreakEven, Candidate, Decision, Money, PrunePlan, Verdict
 
 
 def break_even_turns(

@@ -12,8 +12,8 @@ import sys
 from collections.abc import Sequence
 
 from . import __version__, apply, doctor, plan, simulate
-from ._types import Message
 from .presets import PRESETS
+from .schemas import Message
 
 _SEVERITY_EXIT = {"error": 1, "warning": 0, "info": 0}
 

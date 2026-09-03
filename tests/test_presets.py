@@ -5,8 +5,8 @@ from __future__ import annotations
 import pytest
 
 from context_slim import plan
-from context_slim._types import Decision
 from context_slim.presets import PRESETS, get
+from context_slim.schemas import Decision
 
 LOOP: list[dict[str, object]] = [{"role": "system", "content": "S" * 32_000}]
 for _i in range(10):

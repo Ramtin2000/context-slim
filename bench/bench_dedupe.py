@@ -13,7 +13,7 @@ import hashlib
 import statistics
 import time
 
-from context_slim.ops.pruner import collapse_whitespace, dedupe_blocks
+from context_slim.pruner import collapse_whitespace, dedupe_blocks
 
 WINDOW = 64
 MOD = (1 << 61) - 1

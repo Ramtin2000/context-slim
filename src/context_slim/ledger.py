@@ -22,7 +22,7 @@ from dataclasses import asdict, dataclass, field
 from enum import Enum
 from typing import Any
 
-from ._types import Candidate, Decision, Verdict
+from .schemas import Candidate, Decision, Verdict
 
 __all__ = ["DischargeReason", "Ledger", "LedgerEntry"]
 

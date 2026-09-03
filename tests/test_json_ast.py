@@ -6,7 +6,13 @@ import base64
 import json
 import os
 
-from context_slim.ops.json_ast import detect_json_spans, trim_json, trim_json_text
+from context_slim.json_ast import (
+    detect_json_spans,
+    minify_json_string,
+    strip_null_fields,
+    trim_json,
+    trim_json_text,
+)
 
 
 def _paths(obj: object, prefix: str = "") -> set[str]:
@@ -77,3 +83,55 @@ def test_json_embedded_in_prose_is_trimmed_in_place() -> None:
     out = trim_json_text('before {"xs": [1,2,3,4,5,6,7,8,9]} after')
     assert out.startswith("before ") and out.endswith(" after")
     json.loads(out[len("before ") : -len(" after")])
+
+
+# --- minify_json_string ------------------------------------------------------
+
+
+def test_minify_strips_whitespace_outside_strings() -> None:
+    text = '{\n  "a" : 1 ,\n  "b" :   [ 1, 2,  3 ]\n}'
+    out = minify_json_string(text)
+    assert out == '{"a":1,"b":[1,2,3]}'
+
+
+def test_minify_preserves_whitespace_inside_strings() -> None:
+    text = '{ "note" : "keep   this   spacing" }'
+    out = minify_json_string(text)
+    assert out == '{"note":"keep   this   spacing"}'
+    json.loads(out)
+
+
+def test_minify_preserves_escaped_quotes_inside_strings() -> None:
+    text = '{ "q" : "she said \\"hi\\"  there" }'
+    out = minify_json_string(text)
+    assert json.loads(out) == json.loads(text)
+
+
+def test_minify_is_idempotent() -> None:
+    text = '{"a":1,"b":[1,2,3]}'
+    assert minify_json_string(minify_json_string(text)) == text
+
+
+def test_minify_output_still_parses_as_the_same_value() -> None:
+    src = {"xs": [{"k": i, "v": f"row {i}"} for i in range(50)], "n": None}
+    pretty = json.dumps(src, indent=2)
+    assert json.loads(minify_json_string(pretty)) == src
+
+
+# --- strip_null_fields --------------------------------------------------------
+
+
+def test_strip_null_fields_drops_none_valued_keys() -> None:
+    out = strip_null_fields({"a": 1, "error": None, "b": {"c": None, "d": 2}})
+    assert out == {"a": 1, "b": {"d": 2}}
+
+
+def test_strip_null_fields_recurses_into_lists() -> None:
+    out = strip_null_fields([{"a": 1, "error": None}, {"a": 2, "error": None}])
+    assert out == [{"a": 1}, {"a": 2}]
+
+
+def test_strip_null_fields_keeps_falsy_non_none_values() -> None:
+    """0, "", and False are real values — only the absence-marker null is dropped."""
+    out = strip_null_fields({"count": 0, "label": "", "ok": False, "error": None})
+    assert out == {"count": 0, "label": "", "ok": False}

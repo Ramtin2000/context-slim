@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from context_slim.ops.pruner import collapse_whitespace, dedupe_blocks
+from context_slim.pruner import collapse_whitespace, dedupe_blocks
 
 PARA = ("alpha beta gamma delta epsilon zeta eta theta iota kappa " * 3).strip()
 

@@ -47,7 +47,7 @@ from __future__ import annotations
 
 from fractions import Fraction
 
-from .._types import BreakEven, Money
+from ..schemas import BreakEven, Money
 from .rates import ModelRates
 
 _PER_MTOK = 1_000_000

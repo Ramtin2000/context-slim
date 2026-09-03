@@ -143,6 +143,43 @@ finding, so it can sit in CI.
 Short loops, uncached workloads, and any prefix below the model's cache minimum
 (512 tokens on Claude Opus 5, 1024 on GPT-5.6). `doctor` reports all three.
 
+## Repository layout
+
+```
+src/context_slim/
+  core.py       CacheAlignedContext — pins the Anchor Zone, orchestrates plan/apply
+  expiry.py     candidate generation, tail-first ordering, ATOMIC_PURGE / TOMBSTONE
+  pruner.py     block dedupe and whitespace collapse (Layer 4 text ops)
+  json_ast.py   schema-preserving trim, and dependency-free JSON minification
+  schemas.py    frozen dataclasses — Money is exact-integer, never float
+  audit.py      CLI: `context-slim doctor|plan|apply|simulate`
+  policy.py     the break-even decision engine (Law 1 lives here)
+  ledger.py     defers unprofitable prunes until the cache breaks anyway
+  cache/        the cost model, rate tables, and prefix diagnostics
+  providers/    OpenAI / Anthropic wire-shape adapters
+bench/          the real benchmark: live API calls, salted cache namespaces,
+                bootstrap CIs. Costs real money to run — see METHODS.md for
+                what it took to make it trustworthy.
+benchmarks/     an offline, zero-cost illustration of the same idea, using
+                the same cost primitives against a synthetic trace. Useful to
+                see the shape of the argument before spending anything
+                confirming it — not a substitute for bench/.
+```
+
+`CacheAlignedContext` (`core.py`) is an optional stateful wrapper around the
+same four functions exported at the package root — it computes the Anchor
+Zone boundary once and threads it through every call, so a candidate can
+never be proposed inside the immutable prefix regardless of preset:
+
+```python
+from context_slim import CacheAlignedContext
+
+ctx = CacheAlignedContext(messages, model="openai/gpt-5.6-luna", preset="balanced")
+ctx.anchor              # the immutable prefix — system prompt, tools, Turn 1
+ctx.compaction_zone      # everything eligible for pruning
+messages, report = ctx.apply(ctx.plan(horizon=30))
+```
+
 ## Status
 
 Pre-release, built in public over 14 days. The cost model is validated against

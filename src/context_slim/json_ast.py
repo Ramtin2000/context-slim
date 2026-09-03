@@ -18,10 +18,17 @@ import re
 from collections import Counter
 from typing import Any
 
-__all__ = ["detect_json_spans", "trim_json", "trim_json_text"]
+__all__ = [
+    "detect_json_spans",
+    "minify_json_string",
+    "strip_null_fields",
+    "trim_json",
+    "trim_json_text",
+]
 
 _B64ISH = re.compile(r"^[A-Za-z0-9+/=_-]{256,}$")
 _OPENERS = {"{": "}", "[": "]"}
+_STRING_OR_WS = re.compile(r'"(?:\\.|[^"\\])*"|[ \t\n\r]+')
 
 
 def _entropy(s: str) -> float:
@@ -195,3 +202,37 @@ def trim_json_text(text: str, **kwargs: Any) -> str:
         last = end
     out.append(text[last:])
     return "".join(out)
+
+
+def minify_json_string(text: str) -> str:
+    """Strip insignificant whitespace from JSON text without parsing it.
+
+    ``json.loads`` followed by ``json.dumps(..., separators=(",", ":"))`` does
+    the same job but pays the cost of building and re-walking a full Python
+    object graph. This does it in one ``re.sub`` pass instead: the regex
+    engine (running in C) matches either a complete string literal — kept
+    verbatim, escapes and all, so whitespace *inside* a value is never
+    touched — or a run of whitespace *outside* any string, which is deleted.
+    Every other character passes through untouched.
+
+    Malformed JSON is not rejected; this is a textual pass, not a validator.
+    Feeding it non-JSON text is safe but pointless: nothing outside a `"..."`
+    string looks like whitespace worth stripping.
+    """
+    return _STRING_OR_WS.sub(lambda m: m.group(0) if m.group(0)[0] == '"' else "", text)
+
+
+def strip_null_fields(obj: Any) -> Any:
+    """Drop ``None``-valued keys from every dict, recursively.
+
+    A tool schema that always emits ``"error": null`` on success repeats a
+    redundant key on every single result in a loop. The field's *absence*
+    means exactly the same thing to a model as an explicit ``null`` — neither
+    is present in the schema either way — so dropping it loses no information
+    a well-formed consumer relies on.
+    """
+    if isinstance(obj, dict):
+        return {k: strip_null_fields(v) for k, v in obj.items() if v is not None}
+    if isinstance(obj, list):
+        return [strip_null_fields(v) for v in obj]
+    return obj

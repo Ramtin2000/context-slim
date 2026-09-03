@@ -37,7 +37,7 @@ dev = [
 bench = ["openai>=1.40"]
 
 [project.scripts]
-context-slim = "context_slim.cli:main"
+context-slim = "context_slim.audit:main"
 
 [project.urls]
 Homepage = "https://github.com/ramtin/context-slim"

@@ -5,9 +5,9 @@ from __future__ import annotations
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
-from context_slim._types import Candidate, Decision
 from context_slim.cache import rates
 from context_slim.policy import plan, verdict
+from context_slim.schemas import Candidate, Decision
 
 LUNA = rates.GPT_5_6_LUNA
 

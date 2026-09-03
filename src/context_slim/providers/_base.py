@@ -6,7 +6,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Any, Protocol
 
-from .._types import Message
+from ..schemas import Message
 
 __all__ = ["Adapter", "ToolCall", "adapter_for", "detect"]
 

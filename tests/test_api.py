@@ -8,7 +8,7 @@ import pathlib
 
 import context_slim
 from context_slim import apply, doctor, plan, simulate
-from context_slim._types import Decision
+from context_slim.schemas import Decision
 
 SRC = pathlib.Path(context_slim.__file__).parent
 
@@ -111,7 +111,7 @@ def test_money_math_never_touches_float():
     derived from it.
     """
     offenders = []
-    for path in [SRC / "_types.py", SRC / "cache" / "rates.py"]:
+    for path in [SRC / "schemas.py", SRC / "cache" / "rates.py"]:
         tree = ast.parse(path.read_text())
         for node in ast.walk(tree):
             if isinstance(node, ast.Constant) and isinstance(node.value, float):

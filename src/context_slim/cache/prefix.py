@@ -12,7 +12,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Any
 
-from .._types import Diagnostic, Message, Money
+from ..schemas import Diagnostic, Message, Money
 from .model import read_cost
 from .rates import ModelRates
 
@@ -113,6 +113,27 @@ def cacheable_prefix(messages: Sequence[Message], rates: ModelRates) -> PrefixIn
     return PrefixInfo(tokens=tokens, cacheable=True, reason=f"{tokens:,} tokens cacheable")
 
 
+def anchor_boundary(messages: Sequence[Message], min_tokens: int) -> int:
+    """Index of the last message inside the immutable Anchor Zone.
+
+    The Anchor Zone is the smallest head of the conversation whose cumulative
+    tokens reach ``min_tokens`` — the point past which the provider's prefix
+    cache actually activates (1,024 tokens on GPT-5.6, 512 on Claude Opus 5).
+    Nothing at or before the returned index may ever be edited: doing so would
+    mutate byte 0 of the cached prefix and invalidate the whole hash chain.
+
+    Returns ``len(messages) - 1`` if the entire conversation is smaller than
+    ``min_tokens`` — the boundary cannot exceed the last message, and in that
+    case ``cacheable_prefix`` already reports nothing is cacheable anyway.
+    """
+    running = 0
+    for i, m in enumerate(messages):
+        running += message_tokens(m)
+        if running >= min_tokens:
+            return i
+    return max(0, len(messages) - 1)
+
+
 def _breakpoint_indices(messages: Sequence[Message]) -> list[int]:
     out = []
     for i, m in enumerate(messages):
@@ -194,6 +215,7 @@ __all__ = [
     "MAX_BREAKPOINTS",
     "Money",
     "PrefixInfo",
+    "anchor_boundary",
     "cacheable_prefix",
     "doctor",
     "estimate_tokens",

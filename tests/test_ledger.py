@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from context_slim._types import BreakEven, Candidate, Decision, Money, Verdict
 from context_slim.ledger import DischargeReason, Ledger, detect_discharge_windows
+from context_slim.schemas import BreakEven, Candidate, Decision, Money, Verdict
 
 
 def _verdict(decision: Decision, index: int = 3, s: int = 400) -> Verdict:

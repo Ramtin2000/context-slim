@@ -1,6 +1,6 @@
 """context-slim — prune your LLM agent's context without destroying your prompt cache.
 
-The public surface is deliberately four functions:
+The public surface is deliberately four functions, implemented in :mod:`context_slim.core`:
 
 ``doctor``   find cache pathologies that cost money silently
 ``plan``     decide what is worth pruning — pure, no I/O, no mutation
@@ -9,13 +9,22 @@ The public surface is deliberately four functions:
 
 ``plan`` and ``apply`` are separate so that "don't prune" is an ordinary
 outcome you can inspect, rather than an exception or a silent no-op.
+:class:`~context_slim.core.CacheAlignedContext` wraps the same four functions
+for callers who want the Anchor Zone boundary computed and threaded through
+automatically instead of passed by hand.
 """
 
 from __future__ import annotations
 
-from collections.abc import Sequence
-
-from ._types import (
+from .cache.rates import ModelRates
+from .cache.rates import get as get_rates
+from .core import CacheAlignedContext, apply, doctor, plan, simulate
+from .ledger import DischargeReason, Ledger, detect_discharge_windows
+from .policy import break_even_turns, estimate_horizon
+from .presets import PRESETS, Preset
+from .presets import get as get_preset
+from .providers import adapter_for, detect
+from .schemas import (
     BreakEven,
     Candidate,
     CostReport,
@@ -26,119 +35,13 @@ from ._types import (
     PrunePlan,
     Verdict,
 )
-from .cache import prefix as _prefix
-from .cache.rates import ModelRates
-from .cache.rates import get as get_rates
-from .ledger import DischargeReason, Ledger, detect_discharge_windows
-from .ops import expiry as _expiry
-from .policy import break_even_turns, estimate_horizon
-from .policy import plan as _plan_candidates
-from .presets import PRESETS, Preset
-from .presets import get as get_preset
-from .providers import adapter_for, detect
 
 __version__ = "0.1.0"
-
-
-def doctor(
-    messages: Sequence[Message],
-    model: str = "openai/gpt-5.6-luna",
-    breakpoints: Sequence[int] | None = None,
-) -> list[Diagnostic]:
-    """Report cache pathologies. Costs nothing and calls nothing."""
-    return _prefix.doctor(messages, get_rates(model), breakpoints)
-
-
-def plan(
-    messages: Sequence[Message],
-    *,
-    model: str = "openai/gpt-5.6-luna",
-    preset: str | Preset | None = None,
-    horizon: int | None = None,
-    order: str | None = None,
-    keep_recent: int | None = None,
-    ttl: int | None = None,
-) -> PrunePlan:
-    """Decide what to prune. Pure: never mutates ``messages``, never does I/O.
-
-    A ``preset`` supplies order, keep_recent, horizon and a payback cap; any
-    argument passed explicitly overrides it. Every override defaults to ``None``
-    rather than to the preset's value, because comparing against a default
-    cannot distinguish "not passed" from "passed the same value on purpose".
-
-    With no preset, ``BALANCED`` applies: tail-first, refusing anything slower
-    than ~12 turns to pay back. Conservative on purpose — the measured result
-    was that pruning usually loses money.
-    """
-    cfg = get_preset(preset) if isinstance(preset, str) else (preset or get_preset("balanced"))
-    rates = get_rates(model)
-    cands = _expiry.candidates(
-        messages,
-        order=cfg.order if order is None else order,
-        keep_recent=cfg.keep_recent if keep_recent is None else keep_recent,
-    )
-    return _plan_candidates(
-        cands,
-        rates,
-        cfg.horizon if horizon is None else horizon,
-        ttl,
-        cfg.max_payback_turns,
-    )
-
-
-def apply(messages: Sequence[Message], prune_plan: PrunePlan) -> tuple[list[Message], CostReport]:
-    """Execute the approved edits in ``prune_plan``, returning a new message list."""
-    out = [dict(m) for m in messages]
-    approved = prune_plan.approved
-
-    cost_now = Money.zero()
-    saving = Money.zero()
-    net = Money.zero()
-    removed = 0
-
-    for v in approved:
-        i = v.candidate.index
-        out[i] = _expiry.render_stub(out[i], v.reason)
-        removed += v.candidate.s_tokens
-        cost_now = cost_now + v.math.cost_now
-        saving = saving + v.math.saving_per_turn
-        net = net + v.math.net_at_horizon
-
-    counts = {d: 0 for d in Decision}
-    for v in prune_plan.verdicts:
-        counts[v.decision] += 1
-
-    report = CostReport(
-        model=prune_plan.model,
-        horizon=prune_plan.horizon,
-        edits_applied=len(approved),
-        edits_refused=counts[Decision.REFUSE],
-        edits_deferred=counts[Decision.DEFER],
-        tokens_removed=removed,
-        cost_now=cost_now,
-        saving_per_turn=saving,
-        net_at_horizon=net,
-    )
-    return out, report
-
-
-def simulate(
-    messages: Sequence[Message],
-    *,
-    model: str = "openai/gpt-5.6-luna",
-    turns: int = 20,
-    order: str = "tail_first",
-    preset: str | Preset | None = None,
-) -> CostReport:
-    """Project the outcome of pruning over ``turns`` future turns. No API calls."""
-    p = plan(messages, model=model, horizon=turns, order=order, preset=preset)
-    _, report = apply(messages, p)
-    return report
-
 
 __all__ = [
     "PRESETS",
     "BreakEven",
+    "CacheAlignedContext",
     "Candidate",
     "CostReport",
     "Decision",
