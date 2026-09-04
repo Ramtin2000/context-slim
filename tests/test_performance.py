@@ -11,6 +11,7 @@ that regression: if the O(n^2) path comes back, this is what catches it.
 
 from __future__ import annotations
 
+import os
 import sys
 import time
 
@@ -25,6 +26,23 @@ from context_slim.schemas import Message
 BUDGET_MS = 5.0
 WARMUP = 2
 REPEATS = 10
+
+# The full doctor+plan+apply pipeline measures ~3.0-3.5ms on the dev machine
+# this budget was set on. On GitHub's hosted Ubuntu runners it measured
+# 5.56-6.29ms across Python 3.9/3.11/3.13 in the same CI run - consistent
+# across all three, not noise, just a slower shared CPU. Asserting a
+# wall-clock number measured on one laptop as a portable CI gate was the bug;
+# the fix is a wider, still-real budget for the pipeline tests specifically,
+# not a looser number pretending to be the same claim.
+#
+# 12ms keeps real margin above that measured ~6.3ms CI baseline while staying
+# well under where the O(n^2) regression this suite exists to catch would
+# land: it measured 6.9ms locally against a 3.4ms fix, roughly 2x, and a
+# quadratic blowup compounds faster under a shared, throttled CI CPU than on a
+# quiet dev machine, not slower. The 5ms number stays the one anyone measures
+# by cloning the repo and running the suite themselves outside CI - see the
+# module docstring and the README's own "measured, not asserted" claim.
+PIPELINE_BUDGET_MS = 12.0 if os.environ.get("CI") else BUDGET_MS
 
 # A coverage tracer fires per line of Python executed, which is precisely what
 # these tests measure — under `pytest --cov` the JSON passes land at ~5.5ms
@@ -69,7 +87,9 @@ def test_doctor_plan_apply_pipeline_is_under_budget(large_openai_loop: list[Mess
         apply(msgs, p)
 
     median = _median_ms(run)
-    assert median < BUDGET_MS, f"doctor+plan+apply took {median:.2f}ms, budget is {BUDGET_MS}ms"
+    assert median < PIPELINE_BUDGET_MS, (
+        f"doctor+plan+apply took {median:.2f}ms, budget is {PIPELINE_BUDGET_MS}ms"
+    )
 
 
 @requires_untraced
@@ -81,7 +101,7 @@ def test_cache_aligned_context_is_under_budget(large_openai_loop: list[Message])
         ctx.apply(p)
 
     median = _median_ms(run)
-    assert median < BUDGET_MS, f"CacheAlignedContext.plan+apply took {median:.2f}ms"
+    assert median < PIPELINE_BUDGET_MS, f"CacheAlignedContext.plan+apply took {median:.2f}ms"
 
 
 @requires_untraced
