@@ -1,7 +1,7 @@
 name: CI
 
 on:
-  push: { branches: [main] }
+  push: { branches: [master] }
   pull_request:
   schedule:
     # Rates go stale at 90 days; catch it on a Monday, not in a launch thread.
