@@ -32,6 +32,8 @@ from .cache import prefix as _prefix
 from .cache.prefix import anchor_boundary
 from .cache.rates import ModelRates
 from .cache.rates import get as get_rates
+from .checkpoint import Checkpoint
+from .ledger import Ledger
 from .policy import plan as _plan_candidates
 from .presets import Preset
 from .presets import get as get_preset
@@ -218,3 +220,40 @@ class CacheAlignedContext:
         p = self.plan(horizon=turns, order=order)
         _, report = self.apply(p)
         return report
+
+    def snapshot(
+        self,
+        live: Sequence[Message],
+        *,
+        turn: int = 0,
+        ledger: Ledger | None = None,
+    ) -> Checkpoint:
+        """Record the compaction of ``live`` so it can be replayed byte-for-byte.
+
+        ``live`` is this conversation *after* compaction — what
+        :meth:`apply` returned and what the agent is actually sending. The
+        checkpoint stores each replaced message's rendered content verbatim
+        rather than the size and reason needed to re-render it, because
+        re-rendering a stub measures the stub instead of the original and
+        silently changes the bytes. See :mod:`context_slim.checkpoint`.
+        """
+        if len(live) != len(self.messages):
+            raise ValueError(
+                f"live conversation has {len(live)} messages, held has "
+                f"{len(self.messages)} — snapshot compares them index by index, "
+                "so they must be the same conversation"
+            )
+
+        anchor_index = self.anchor_index
+        stubbed = {
+            i: str(live[i]["content"])
+            for i in range(anchor_index + 1, len(live))
+            if live[i].get("content") != self.messages[i].get("content")
+        }
+        return Checkpoint(
+            anchor_index=anchor_index,
+            model=self.model,
+            turn=turn,
+            stubbed=stubbed,
+            ledger=ledger if ledger is not None else Ledger(),
+        )
