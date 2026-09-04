@@ -7,6 +7,8 @@ alternating assistant tool calls and tool results, and a trailing user turn.
 
 from __future__ import annotations
 
+from collections.abc import Callable
+
 import pytest
 
 from context_slim.schemas import Message
@@ -43,6 +45,19 @@ def build_openai_loop(
         msgs.append({"role": "tool", "tool_call_id": call_id, "content": "y" * body_chars})
     msgs.append({"role": "user", "content": "and then?"})
     return msgs
+
+
+@pytest.fixture
+def loop_builder() -> Callable[..., list[Message]]:
+    """The raw builder, for tests needing a shape the two standard fixtures don't cover.
+
+    Handed over as a fixture rather than imported directly: ``tests/`` is not a
+    package, so ``from tests.conftest import build_openai_loop`` resolves on a
+    developer machine (pytest inserts rootdir into ``sys.path``) and then fails
+    on a clean CI checkout with ``No module named 'tests'``. Asking for the
+    fixture works identically in both.
+    """
+    return build_openai_loop
 
 
 @pytest.fixture

@@ -20,13 +20,14 @@ That rule is the whole design, and these tests exist to keep it true.
 
 from __future__ import annotations
 
+from collections.abc import Callable
+
 import pytest
 
 from context_slim.checkpoint import Checkpoint
 from context_slim.core import CacheAlignedContext
 from context_slim.expiry import render_stub
 from context_slim.schemas import Message
-from tests.conftest import build_openai_loop
 
 
 def _compacted(loop: list[Message]) -> tuple[CacheAlignedContext, list[Message]]:
@@ -101,9 +102,11 @@ def test_restore_never_shrinks_the_cleared_set(openai_loop: list[Message]) -> No
         early.merge(later)
 
 
-def test_anchor_survives_fifty_turns_of_checkpointing() -> None:
+def test_anchor_survives_fifty_turns_of_checkpointing(
+    loop_builder: Callable[..., list[Message]],
+) -> None:
     """The 50-turn exit criterion: the Anchor Zone is byte-identical at turn 50."""
-    loop = build_openai_loop(n_tools=25, body_chars=1_200, system_chars=4_000)
+    loop = loop_builder(n_tools=25, body_chars=1_200, system_chars=4_000)
     ctx = CacheAlignedContext(loop)
     anchor_at_start = ctx.anchor
 
