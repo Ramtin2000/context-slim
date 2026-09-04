@@ -1,0 +1,20 @@
+name: publish-test
+
+on:
+  workflow_dispatch:  # manual only - a test upload should never fire by accident
+
+jobs:
+  testpypi:
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+      id-token: write  # OIDC token for trusted publishing - no API token or secret needed
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install build
+      - run: python -m build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
