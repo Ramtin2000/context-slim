@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "context-slim"
+name = "ctx-slim"
 dynamic = ["version"]
 description = "Prune your LLM agent's context without destroying your prompt cache."
 readme = "README.md"
@@ -40,9 +40,9 @@ bench = ["openai>=1.40"]
 context-slim = "context_slim.audit:main"
 
 [project.urls]
-Homepage = "https://github.com/ramtin/context-slim"
-Repository = "https://github.com/ramtin/context-slim"
-Issues = "https://github.com/ramtin/context-slim/issues"
+Homepage = "https://github.com/Ramtin2000/context-slim"
+Repository = "https://github.com/Ramtin2000/context-slim"
+Issues = "https://github.com/Ramtin2000/context-slim/issues"
 
 [tool.hatch.version]
 path = "src/context_slim/__init__.py"
