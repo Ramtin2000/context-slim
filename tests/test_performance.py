@@ -11,7 +11,10 @@ that regression: if the O(n^2) path comes back, this is what catches it.
 
 from __future__ import annotations
 
+import sys
 import time
+
+import pytest
 
 from context_slim import CacheAlignedContext, apply, doctor, plan
 from context_slim.cache.prefix import total_tokens
@@ -22,6 +25,20 @@ from context_slim.schemas import Message
 BUDGET_MS = 5.0
 WARMUP = 2
 REPEATS = 10
+
+# A coverage tracer fires per line of Python executed, which is precisely what
+# these tests measure — under `pytest --cov` the JSON passes land at ~5.5ms
+# against the same 5ms budget they clear at ~1ms without it. Timing an
+# instrumented interpreter measures the instrument, so the assertions are
+# skipped rather than loosened; loosening them to accommodate the tracer would
+# raise the budget past the point where it catches a real regression.
+#
+# CI keeps the guard by running this file a second time without coverage —
+# see the "performance (uninstrumented)" step in .github/workflows/ci.yml.
+TRACED = sys.gettrace() is not None
+requires_untraced = pytest.mark.skipif(
+    TRACED, reason="timing assertions are meaningless under a coverage tracer"
+)
 
 
 def _median_ms(fn) -> float:
@@ -42,6 +59,7 @@ def test_loop_fixture_is_at_least_25k_tokens(large_openai_loop: list[Message]) -
     assert total_tokens(large_openai_loop) >= 20_000
 
 
+@requires_untraced
 def test_doctor_plan_apply_pipeline_is_under_budget(large_openai_loop: list[Message]) -> None:
     msgs = large_openai_loop
 
@@ -54,6 +72,7 @@ def test_doctor_plan_apply_pipeline_is_under_budget(large_openai_loop: list[Mess
     assert median < BUDGET_MS, f"doctor+plan+apply took {median:.2f}ms, budget is {BUDGET_MS}ms"
 
 
+@requires_untraced
 def test_cache_aligned_context_is_under_budget(large_openai_loop: list[Message]) -> None:
     ctx = CacheAlignedContext(large_openai_loop)
 
@@ -65,6 +84,7 @@ def test_cache_aligned_context_is_under_budget(large_openai_loop: list[Message])
     assert median < BUDGET_MS, f"CacheAlignedContext.plan+apply took {median:.2f}ms"
 
 
+@requires_untraced
 def test_json_ast_minify_is_well_under_budget() -> None:
     rows = ",\n  ".join(
         f'{{ "id" : {i} , "name" : "row" , "tags" : [ "a" , "b" , "c" ] , "note" : null }}'
@@ -76,6 +96,7 @@ def test_json_ast_minify_is_well_under_budget() -> None:
     assert median < BUDGET_MS, f"minify_json_string took {median:.2f}ms on {len(text):,} chars"
 
 
+@requires_untraced
 def test_json_ast_trim_is_well_under_budget() -> None:
     text = "prefix prose\n" + str(
         [{"id": i, "value": "v" * 40} for i in range(500)]
@@ -85,6 +106,7 @@ def test_json_ast_trim_is_well_under_budget() -> None:
     assert median < BUDGET_MS, f"trim_json_text took {median:.2f}ms on {len(text):,} chars"
 
 
+@requires_untraced
 def test_pruner_dedupe_is_well_under_budget() -> None:
     block = ("alpha beta gamma delta epsilon zeta eta theta iota kappa " * 3).strip()
     doc = "\n\n".join([block] * 60 + ["something unique " * 20])
@@ -93,6 +115,7 @@ def test_pruner_dedupe_is_well_under_budget() -> None:
     assert median < BUDGET_MS, f"dedupe_blocks took {median:.2f}ms on {len(doc):,} chars"
 
 
+@requires_untraced
 def test_pruner_collapse_whitespace_is_well_under_budget() -> None:
     text = ("line one   \n\n\n\n   line two\t\t\n" * 2_000) + "```\n  keep me  \n```"
 

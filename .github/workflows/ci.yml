@@ -21,6 +21,14 @@ jobs:
         with: { python-version: "${{ matrix.python }}" }
       - run: pip install -e ".[dev]"
       - run: pytest -q --cov=context_slim --cov-report=term-missing
+      - name: performance (uninstrumented)
+        # The timing assertions skip themselves under a coverage tracer, which
+        # would otherwise measure the tracer rather than the code. Run them
+        # once more with coverage off so the sub-5ms budget is still enforced.
+        # Linux only: hosted macOS/Windows runners are too noisy for a
+        # wall-clock budget, and a flaky perf gate gets ignored, not fixed.
+        run: pytest -q --no-cov tests/test_performance.py
+        if: matrix.os == 'ubuntu-latest'
       - name: no runtime dependencies
         run: |
           pip install pipdeptree
