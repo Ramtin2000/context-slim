@@ -81,13 +81,15 @@ provider's usage counters.
 
 ## Install
 
-> **Not on PyPI yet.** Install from source until v0.1.0 ships:
-
 ```bash
-pip install git+https://github.com/Ramtin2000/context-slim
+pip install ctx-slim
 ```
 
 Zero runtime dependencies. No model, no GPU, no network. Python 3.9+.
+
+> The distribution is `ctx-slim`; the import is `context_slim` and the CLI is
+> `context-slim`. PyPI normalises `context-slim` to `contextslim`, which is an
+> unrelated package that got there first.
 
 ## Use
 
