@@ -142,8 +142,44 @@ finding, so it can sit in CI.
 
 ## When NOT to use it
 
-Short loops, uncached workloads, and any prefix below the model's cache minimum
-(512 tokens on Claude Opus 5, 1024 on GPT-5.6). `doctor` reports all three.
+The result above holds under specific conditions. Outside them this library is
+either wrong or unnecessary, and it is cheaper for both of us if you find that
+out on this page.
+
+- **You aren't hitting a cache at all.** Below the activation minimum — 1,024
+  tokens on GPT-5.6, 512 on Claude Opus 5 — or a prefix that changes every
+  request. With no cache there is no write premium to eat, so pruning just
+  saves money. Prune freely; you don't need this. `doctor` reports it.
+
+- **Your model has no cache-write premium.** Only `gpt-5.6-sol/terra/luna`
+  charge one. On gpt-5, 5.1–5.5, 4.1, 4o and o3 the break-even collapses to
+  `N = (W−S)/S`, and pruning wins far more often than the headline suggests.
+
+- **Short loops.** A prune pays back over N turns. If the conversation ends
+  before N, it is a pure loss. `plan()` returns `REFUSE` here — that is the
+  tool working, not failing.
+
+- **You self-host.** Prefix-only invalidation is a *billing* artifact of hosted
+  APIs, not physics. Run vLLM or SGLang yourself and partial KV reuse
+  (CacheBlend, EPIC, LMCache blending) changes the economics entirely — you are
+  buying GPU time, not tokens with a write multiplier. Explicitly out of scope.
+
+- **You are pruning for accuracy, not cost.** Long contexts degrade quality
+  independently of price, and Anthropic measured a 29% agent improvement from
+  context editing alone. That is a real reason to prune that none of the maths
+  here models. If quality is why you are cutting, cut.
+
+- **You are far past the measured regime.** Everything above was measured at
+  8k-token prefixes over 20 turns, one model, one account. At 100k tokens over
+  100 turns the sign could differ. Nobody has checked, including me.
+
+**"So the conclusion is don't prune — why ship a library?"**
+
+Because *sometimes* is the whole point, and the boundary is a dollar figure
+that moves with your prefix size, your edit size, your horizon and your
+provider's rates. This tells you which side of it you are on and shows the
+arithmetic, so you can disagree with it. If it returns `REFUSE` on every
+conversation you have, you got your answer for free and should uninstall it.
 
 ## Repository layout
 
