@@ -17,13 +17,23 @@ import pytest
 README = pathlib.Path(__file__).resolve().parent.parent / "README.md"
 
 
-def _block(heading: str) -> str:
-    """Return the first ```python block under ``heading``."""
+def _read() -> str:
+    """Always UTF-8.
+
+    ``Path.read_text()`` uses the platform default, which is cp1252 on Windows
+    — and the README is full of em dashes, × and →. CI caught this; a
+    Mac-only run never would.
+    """
     if not README.exists():  # installed without the repo
         pytest.skip("README.md is not present in this checkout")
+    return README.read_text(encoding="utf-8")
+
+
+def _block(heading: str) -> str:
+    """Return the first ```python block under ``heading``."""
     match = re.search(
         rf"^## {re.escape(heading)}\n.*?```python\n(.*?)```",
-        README.read_text(),
+        _read(),
         re.S | re.M,
     )
     assert match, f"no python block found under '## {heading}' — has the README been restructured?"
@@ -53,7 +63,7 @@ def test_quickstart_defines_everything_it_uses() -> None:
 
 def test_install_command_names_the_real_distribution() -> None:
     """`pip install context-slim` installs someone else's package."""
-    text = README.read_text() if README.exists() else pytest.skip("no README")
+    text = _read()
     assert "pip install ctx-slim" in text
     assert "pip install context-slim" not in text, (
         "the distribution is `ctx-slim`; `context-slim` normalises to the unrelated "
