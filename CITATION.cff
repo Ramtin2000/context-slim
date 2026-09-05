@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "context-slim: cache-aware context pruning for LLM agent loops"
+message: "If you use this software or its measurements, please cite it."
+type: software
+authors:
+  - family-names: Rahmati
+    given-names: Ramtin
+repository-code: "https://github.com/Ramtin2000/context-slim"
+url: "https://pypi.org/project/ctx-slim/"
+abstract: >-
+  Context pruning in LLM agent loops is universally reported in tokens removed.
+  Because commercial prompt caches are prefix caches, an un-pruned conversation
+  is append-only and the whole prior prompt is billed at the discounted
+  cache-read rate, so any prune breaks that property and forces a re-write at a
+  premium. Measured against a live API using providers' own cached-token
+  counters, pruning sent 20.7% fewer tokens while costing 33-59% more
+  (oldest-first +59.4%, newest-first +32.9%, n=5, bootstrap 95% CIs, all
+  significant), and prune order alone accounted for 16.6% at identical token
+  counts. context-slim implements the resulting break-even model as a policy
+  that declines unprofitable prunes, pins the cache-activation prefix, and
+  edits tool-calling turns atomically.
+keywords:
+  - large language models
+  - prompt caching
+  - context engineering
+  - agents
+  - inference cost
+license: MIT
+version: 0.1.0
+date-released: "2026-09-04"
