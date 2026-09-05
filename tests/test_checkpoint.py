@@ -24,8 +24,8 @@ from collections.abc import Callable
 
 import pytest
 
-from context_slim.checkpoint import Checkpoint
-from context_slim.core import CacheAlignedContext
+from context_slim.checkpoint import SCHEMA_VERSION, Checkpoint
+from context_slim.core import CacheAlignedContext, doctor
 from context_slim.expiry import render_stub
 from context_slim.schemas import Message
 
@@ -136,6 +136,65 @@ def test_apply_only_ever_changes_content(openai_loop: list[Message]) -> None:
         for key in before:
             if key != "content":
                 assert before[key] == after[key], f"apply mutated {key!r}, which snapshot ignores"
+
+
+class TestRefusals:
+    """Every guard in this module exists to prevent a specific cache-destroying
+    mistake, so each one is tested for the condition it fires on rather than
+    left to coverage-by-accident. A guard nobody has watched fire is a guard
+    that might not.
+    """
+
+    def _ck(self, **over: object) -> Checkpoint:
+        base = {
+            "anchor_index": 2,
+            "model": "openai/gpt-5.6-luna",
+            "turn": 0,
+            "stubbed": {5: "[tool result elided: ~900 tokens, x]"},
+        }
+        base.update(over)
+        return Checkpoint(**base)  # type: ignore[arg-type]
+
+    def test_refuses_to_rewrite_inside_the_anchor_zone(self) -> None:
+        # The one that matters most: the Anchor Zone is the prefix the whole
+        # library exists to keep byte-stable.
+        ck = self._ck(stubbed={2: "[elided]"})  # index == anchor_index
+        with pytest.raises(ValueError, match="Anchor Zone"):
+            Checkpoint.restore(ck, [{"role": "user", "content": "x"}] * 8)
+
+    def test_refuses_a_conversation_of_the_wrong_length(self) -> None:
+        ck = self._ck(stubbed={5: "[elided]"})
+        with pytest.raises(ValueError, match="not the one this checkpoint"):
+            Checkpoint.restore(ck, [{"role": "user", "content": "x"}] * 3)
+
+    def test_refuses_a_negative_index(self) -> None:
+        ck = self._ck(stubbed={-1: "[elided]"})
+        with pytest.raises(ValueError, match="not the one this checkpoint"):
+            Checkpoint.restore(ck, [{"role": "user", "content": "x"}] * 8)
+
+    def test_refuses_a_future_schema_version(self) -> None:
+        ck = self._ck(version=SCHEMA_VERSION + 1)
+        with pytest.raises(ValueError, match="cannot be read"):
+            Checkpoint.restore(ck, [{"role": "user", "content": "x"}] * 8)
+
+    def test_from_json_refuses_a_future_schema_version(self) -> None:
+        raw = self._ck().to_json().replace(f'"version": {SCHEMA_VERSION}', '"version": 99')
+        with pytest.raises(ValueError, match="cannot be read"):
+            Checkpoint.from_json(raw)
+
+    def test_snapshot_refuses_a_conversation_of_a_different_length(
+        self, openai_loop: list[Message]
+    ) -> None:
+        ctx = CacheAlignedContext(openai_loop)
+        with pytest.raises(ValueError, match="same conversation"):
+            ctx.snapshot(list(openai_loop)[:-1])
+
+
+def test_context_helpers_delegate(openai_loop: list[Message]) -> None:
+    ctx = CacheAlignedContext(openai_loop)
+    assert ctx.anchor + ctx.compaction_zone == list(openai_loop)
+    assert ctx.doctor() == doctor(openai_loop)
+    assert ctx.simulate(turns=30).horizon == 30
 
 
 def test_checkpoint_round_trips_through_json(openai_loop: list[Message]) -> None:
