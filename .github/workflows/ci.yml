@@ -30,10 +30,19 @@ jobs:
         run: pytest -q --no-cov tests/test_performance.py
         if: matrix.os == 'ubuntu-latest'
       - name: no runtime dependencies
+        # Zero runtime deps is the headline claim, so this check must fail
+        # closed. The previous version grepped for `context-slim`, which stopped
+        # being the distribution name at the rename to `ctx-slim` - pipdeptree
+        # then printed nothing, exited 0, and the assertion passed on an empty
+        # file. It enforced nothing for several commits. Hence the first line:
+        # prove the package is actually there before asserting anything about it.
         run: |
           pip install pipdeptree
-          pipdeptree -p context-slim --warn silence | tee /tmp/deps.txt
-          test "$(grep -c '^  ' /tmp/deps.txt || true)" -eq 0
+          pipdeptree -p ctx-slim --warn silence | tee /tmp/deps.txt
+          grep -q '^ctx-slim==' /tmp/deps.txt \
+            || { echo "::error::ctx-slim not found - this check is not looking at the real package"; exit 1; }
+          test "$(grep -c '^  ' /tmp/deps.txt || true)" -eq 0 \
+            || { echo "::error::ctx-slim has gained a runtime dependency"; exit 1; }
         shell: bash
         if: matrix.os == 'ubuntu-latest'
 
