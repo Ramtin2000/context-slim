@@ -37,6 +37,35 @@ All notable changes to this project are documented here. Format follows
 
 ## [Unreleased]
 
+No user-facing changes — repository and test-suite work only.
+
+### Added
+- `SECURITY.md` and `CONTRIBUTING.md`. The security policy is specific rather
+  than boilerplate: with no network, no subprocess, no untrusted
+  deserialisation and no runtime dependencies, the honest threat model is
+  small, so it names what actually remains (Anchor Zone mutation as a
+  cache-poisoning vector on a shared namespace, tool-call pairing violations as
+  a DoS on the caller's loop, checkpoint deserialisation, regex backtracking on
+  hostile tool output).
+- Tests for every refusal path in `checkpoint.py` and `core.py`. Each guard
+  prevents a specific cache-destroying mistake, and every one of them was
+  previously uncovered — a guard nobody has watched fire is a guard that might
+  not. Both modules now at 100%.
+- `tests/test_readme.py` — the README's quickstart is now executed as a test,
+  asserts it produces real verdicts rather than importing cleanly and printing
+  nothing, and checks the install line names `ctx-slim`. Verified by
+  reintroducing the exact 0.1.0 `NameError` and watching it fail.
+
+### Fixed
+- The zero-dependency CI check was enforcing nothing. It ran
+  `pipdeptree -p context-slim` while CI installs `ctx-slim`, so it printed
+  nothing, exited 0, and the assertion passed on an empty file — vacuous since
+  the rename. It now proves the package is present before asserting anything
+  about its dependencies, and fails closed.
+- `tests/test_readme.py` read the README with the platform default encoding,
+  which is cp1252 on Windows; the README is full of em dashes. Passed on macOS,
+  failed on every Windows runner.
+
 ## [0.1.0] — 2026-09-04
 
 First release. Published to PyPI as **`ctx-slim`**; the import is
