@@ -93,8 +93,23 @@ Zero runtime dependencies. No model, no GPU, no network. Python 3.9+.
 
 ## Use
 
+Copy-pasteable as-is. `messages` is whatever you already send the provider —
+OpenAI or Anthropic wire format, no conversion:
+
 ```python
 from context_slim import doctor, plan, apply
+
+# Your real conversation goes here. This stand-in is sized to cross the
+# 1,024-token cache minimum so the example actually has something to decide.
+messages = [{"role": "system", "content": "You are a coding agent. " + "x" * 4000}]
+for i in range(3):
+    messages += [
+        {"role": "assistant", "content": None, "tool_calls": [
+            {"id": f"call_{i}", "type": "function",
+             "function": {"name": "read_file", "arguments": '{"path": "main.py"}'}}]},
+        {"role": "tool", "tool_call_id": f"call_{i}", "content": "y" * 6000},
+    ]
+messages.append({"role": "user", "content": "and then?"})
 
 # 1. Find cache pathologies that cost money silently.
 for d in doctor(messages, model="openai/gpt-5.6-luna"):
@@ -103,21 +118,32 @@ for d in doctor(messages, model="openai/gpt-5.6-luna"):
 # 2. Decide what is worth pruning. Pure — no I/O, no mutation.
 p = plan(messages, model="openai/gpt-5.6-luna", horizon=30)
 for v in p.verdicts:
-    print(v.decision.value, v.reason)
+    print(f"{v.decision.value:7} msg {v.candidate.index:<3} {v.reason}")
 
 # 3. Execute only the approved edits.
 messages, report = apply(messages, p)
 print(report)
 ```
 
-`plan()` and `apply()` are separate so that **"don't prune" is an ordinary
-outcome you can inspect**, not an exception or a silent no-op:
+That prints, verbatim:
 
 ```
-REFUSE  msg 2   structurally unprofitable: W/S = 41.2 means 461.3 turns to pay
-                back $0.000412, against a horizon of 20. Prune closer to the tail.
-PLAN    msg 14  pays back after 4.1 turns (horizon 20); costs $0.000082 now,
-                saves $0.000020/turn, net $0.000318 at horizon
+PLAN    msg 4   pays back after 10.7 turns (horizon 30); costs $0.000204 now,
+                saves $0.000019/turn, net $0.000366 at horizon
+DEFER   msg 2   pays back in 22.5 turns, over this preset's 12-turn limit —
+                held for a cheaper moment
+1 edit(s), 951 tokens removed | costs $0.000204 now, saves $0.000019/turn
+```
+
+`plan()` and `apply()` are separate so that **"don't prune" is an ordinary
+outcome you can inspect**, not an exception or a silent no-op. Drop the same
+conversation to `horizon=5` and both edits stop being worth it:
+
+```
+DEFER   msg 4   needs 10.7 turns to pay back but only 5 remain; deferring
+                until the cache is invalidated anyway (W/S = 2.0)
+REFUSE  msg 2   structurally unprofitable: W/S = 3.0 means 22.5 turns to pay
+                back $0.000427, against a horizon of 5. Prune closer to the tail.
 ```
 
 ## The `doctor` check

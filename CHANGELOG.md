@@ -4,7 +4,24 @@ All notable changes to this project are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.1.1] — 2026-09-05
+
+### Fixed
+- The README — which is also the PyPI project page — said **"Not on PyPI yet"**
+  and gave a `git+https` install. PyPI renders the description from the
+  uploaded package, so 0.1.0's page kept saying this after the package
+  existed. Fixed at the only point it can be: a new release.
+- The quickstart under `## Use` never defined `messages`, so pasting it raised
+  `NameError` on the first call. It now includes a stand-in conversation, is
+  runnable end to end, and the sample output in the README is that code's real
+  output rather than an illustration.
+- Performance assertions no longer run under a coverage tracer, which inflated
+  the very thing they measure (~5.5ms against a 5ms budget the same code clears
+  at ~1ms uninstrumented). CI enforces the budget in a separate uninstrumented
+  step instead.
+- CI now triggers on pushes to `master`. It had been watching `main`, a branch
+  this repository has never had, so no commit had ever been checked on push —
+  only the weekly schedule ran.
 
 ### Added
 - `checkpoint.Checkpoint` — epoch checkpointing for agent loops that outlive
@@ -15,15 +32,10 @@ All notable changes to this project are documented here. Format follows
   refuses to drop a previously cleared index.
 - `CacheAlignedContext.snapshot()` — records a compaction so it can be replayed
   byte-for-byte.
+- A "When NOT to use it" section in the README covering the six conditions the
+  measured result depends on, three of which mean you should not install this.
 
-### Fixed
-- Performance assertions no longer run under a coverage tracer, which inflated
-  the very thing they measure (~5.5ms against a 5ms budget that the same code
-  clears at ~1ms uninstrumented). CI enforces the budget in a separate
-  uninstrumented step instead.
-- CI now triggers on pushes to `master`. It had been watching `main`, a branch
-  this repository has never had, so no commit had ever been checked on push —
-  only the weekly schedule ran.
+## [Unreleased]
 
 ## [0.1.0] — 2026-09-04
 
@@ -88,5 +100,6 @@ untested and may behave differently. Three earlier revisions of this experiment
 produced confident numbers that were artifacts; see `METHODS.md` for what went
 wrong and how each was caught.
 
-[Unreleased]: https://github.com/Ramtin2000/context-slim/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/Ramtin2000/context-slim/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/Ramtin2000/context-slim/releases/tag/v0.1.1
 [0.1.0]: https://github.com/Ramtin2000/context-slim/releases/tag/v0.1.0
